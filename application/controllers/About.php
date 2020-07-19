@@ -1,23 +1,41 @@
 <?php
-class About extends CI_Controller{
-	
-	function __construct(){
+class About extends CI_Controller
+{
+
+	function __construct()
+	{
 		parent::__construct();
-		$this->load->model('Visitor_model','visitor_model');
-        $this->visitor_model->count_visitor();
-        $this->load->helper('text');
-        error_reporting(0);
+		$this->load->model('Visitor_model', 'visitor_model');
+		$this->visitor_model->count_visitor();
+		$this->load->helper('text');
+		error_reporting(0);
 	}
 
-	function index(){
+	function index()
+	{
 		$site_info = $this->db->get('tbl_site', 1)->row();
 		$about = $this->db->get('tbl_about', 1)->row();
 		$data['about_img'] = $about->about_image;
 		$data['about_desc'] = $about->about_description;
 		$v['logo'] =  $site_info->site_logo_header;
 		$data['icon'] = $site_info->site_favicon;
-		$data['header'] = $this->load->view('header',$v,TRUE);
-		$data['footer'] = $this->load->view('footer','',TRUE);
-		$this->load->view('about_view',$data);
+		$data['header'] = $this->load->view('header', $v, TRUE);
+		$data['footer'] = $this->load->view('footer', '', TRUE);
+		$this->load->view('about_view', $data);
+	}
+	function visimisi()
+	{
+		$site_info = $this->db->get('tbl_site', 1)->row();
+		$profile = $this->db->get('tbl_profile', 1)->row();
+		$data['profile_img'] = $profile->profile_image;
+		$data['profile_visi'] = $profile->profile_visi;
+		$data['profile_misi'] = $profile->profile_misi;
+		$data['profile_nilai'] = $profile->profile_nilai;
+
+		$v['logo'] =  $site_info->site_logo_header;
+		$data['icon'] = $site_info->site_favicon;
+		$data['header'] = $this->load->view('header', $v, TRUE);
+		$data['footer'] = $this->load->view('footer', '', TRUE);
+		$this->load->view('visi_view', $data);
 	}
 }

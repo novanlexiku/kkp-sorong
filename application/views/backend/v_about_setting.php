@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>About Settings</title>
+    <title>Sambutan Settings</title>
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="UTF-8">
@@ -242,7 +242,8 @@
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
                                 <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
-                                <li class="active"><a href="<?php echo site_url('backend/about_setting'); ?>">About</a></li>
+                                <li class="active"><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
+                                <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
                             </ul>
                         </li>
@@ -258,7 +259,7 @@
         </div><!-- Page Sidebar -->
         <div class="page-inner">
             <div class="page-title">
-                <h3>About Information</h3>
+                <h3>Sambutan Information</h3>
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb">
                         <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
@@ -354,7 +355,7 @@
         <script type="text/javascript">
             $.toast({
                 heading: 'Success',
-                text: "About Information Saved!",
+                text: "Sambutan Information Saved!",
                 showHideTransition: 'slide',
                 icon: 'success',
                 hideAfter: false,

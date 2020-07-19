@@ -2,9 +2,8 @@
 <html>
 
 <head>
-
     <!-- Title -->
-    <title>Inbox</title>
+    <title>Profile Settings</title>
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="UTF-8">
@@ -27,6 +26,7 @@
     <link href="<?php echo base_url() . 'assets/plugins/datatables/css/jquery.datatables.min.css' ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() . 'assets/plugins/datatables/css/jquery.datatables_themeroller.css' ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() . 'assets/plugins/toastr/jquery.toast.min.css' ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url() . 'assets/plugins/summernote-master/summernote.css' ?>" rel="stylesheet" type="text/css" />
     <!-- Theme Styles -->
     <link href="<?php echo base_url() . 'assets/css/modern.min.css' ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() . 'assets/css/themes/green.css' ?>" class="theme-color" rel="stylesheet" type="text/css" />
@@ -38,7 +38,7 @@
 
 </head>
 
-<body class="page-header-fixed compact-menu pace-done page-sidebar-fixed">
+<body class="page-header-fixed  compact-menu  pace-done page-sidebar-fixed">
     <div class="overlay"></div>
     <main class="page-content content-wrap">
         <div class="navbar">
@@ -51,6 +51,9 @@
                 <div class="logo-box">
                     <a href="<?php echo site_url('backend/dashboard'); ?>" class="logo-text"><span>KKP-Sorong</span></a>
                 </div><!-- Logo Box -->
+                <div class="search-button">
+                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
+                </div>
                 <div class="topmenu-outer">
                     <div class="top-menu">
                         <ul class="nav navbar-nav navbar-left">
@@ -210,7 +213,7 @@
                             <li><a href="<?php echo site_url('backend/post'); ?>">Post List</a></li>
                             <li><a href="<?php echo site_url('backend/category'); ?>">Category</a></li>
                             <li><a href="<?php echo site_url('backend/tag'); ?>">Tag</a></li>
-                            <li class="active"><a href="<?php echo site_url('backend/inbox'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
+                            <li><a href="<?php echo site_url('backend/inbox'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
                                     <p>Inbox</p>
                                 </a></li>
                             <li><a href="<?php echo site_url('backend/comment'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span>
@@ -229,20 +232,22 @@
                         <li><a href="<?php echo site_url('backend/kuesioner'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
                                 <p>SIJABLAY</p>
                             </a></li>
+
                         <li><a href="<?php echo site_url('backend/users'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span>
                                 <p>Users</p>
                             </a></li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink active open"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
                                 <p>Settings</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
                                 <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
                                 <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
-                                <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
+                                <li class="active"><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
                             </ul>
                         </li>
+
                     <?php else : ?>
                     <?php endif; ?>
                     <li><a href="<?php echo site_url('logout'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-logout"></span>
@@ -253,87 +258,66 @@
             </div><!-- Page Sidebar Inner -->
         </div><!-- Page Sidebar -->
         <div class="page-inner">
+            <div class="page-title">
+                <h3>Profile Information</h3>
+                <div class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
+                        <li><a href="#">Site</a></li>
+                        <li class="active">Settings</li>
+                    </ol>
+                </div>
+            </div>
             <div id="main-wrapper">
-                <div class="row m-t-md">
-                    <div class="col-md-12">
-                        <div class="row mailbox-header">
-                            <div class="col-md-6">
-                                <h2>Inbox</h2>
-                            </div>
-                            <div class="col-md-4 col-md-offset-2">
-                                <form action="<?php echo site_url('backend/inbox/result'); ?>" method="GET">
-                                    <div class="input-group">
-                                        <input type="text" name="search_query" class="form-control input-search" placeholder="Search..." required>
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
-                                        </span>
-                                    </div><!-- Input Group -->
-                                </form>
+                <div class="row">
+                    <form class="form-horizontal" action="<?php echo base_url() . 'backend/profile_setting/update' ?>" method="post" enctype="multipart/form-data">
+                        <div class="col-md-12">
+                            <div class="panel panel-white">
+
+                                <div class="panel-body">
+
+                                    <div class="form-group">
+                                        <label for="input1" class="col-sm-2 control-label">Image</label>
+                                        <div class="col-sm-10">
+                                            <input type="file" name="img_profile" class="form-control" id="input1">
+                                            <p class="help-block">Image Heading harus beresolusi 456 x 470 Pixels.</p>
+                                            <img src="<?php echo base_url() . 'theme/images/' . $profile_img; ?>" width="300" class="thumbnail">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="input1" class="col-sm-2 control-label">Visi</label>
+                                        <div class="col-sm-10">
+                                            <textarea name="visi" class="form-control" id="summernote1" placeholder="Visi"><?php echo $profile_visi; ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="input1" class="col-sm-2 control-label">Misi</label>
+                                        <div class="col-sm-10">
+                                            <textarea name="misi" class="form-control" id="summernote2" placeholder="Misi"><?php echo $profile_misi; ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="input1" class="col-sm-2 control-label">Nilai</label>
+                                        <div class="col-sm-10">
+                                            <textarea name="nilai" class="form-control" id="summernote3" placeholder="Nilai"><?php echo $profile_nilai; ?></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="hidden" name="profile_id" value="<?php echo $profile_id ?>" required>
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-success btn-lg">UPDATE</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-12">
-                        <div class="mailbox-content">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th class="text-right" colspan="5">
-                                            <div class="btn-group">
-                                                <?php echo $page; ?>
-                                            </div>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($data->result() as $row) : ?>
-                                        <?php if ($row->inbox_status == '0') : ?>
-                                            <tr class="unread">
-                                                <td class="hidden-xs">
-                                                    <span><a href="javascript:void(0);" class="btn-delete" data-inbox_id="<?php echo $row->inbox_id; ?>"><span class="icon icon-trash"></span></a></span>
-                                                </td>
-                                                <td class="hidden-xs" data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <i class="fa fa-star icon-state-warning"></i>
-                                                </td>
-                                                <td class="hidden-xs" data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <?php echo $row->inbox_name; ?>
-                                                </td>
-                                                <td data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <?php echo $row->inbox_subject; ?>
-                                                </td>
-                                                <td data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                </td>
-                                                <td data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <?php echo date('d M Y H:i:s', strtotime($row->inbox_created_at)); ?>
-                                                </td>
-                                            </tr>
-                                        <?php else : ?>
-                                            <tr class="read">
-                                                <td class="hidden-xs">
-                                                    <span><a href="javascript:void(0);" class="btn-delete" data-inbox_id="<?php echo $row->inbox_id; ?>"><span class="icon icon-trash"></span></a></span>
-                                                </td>
-                                                <td class="hidden-xs" data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <i class="fa fa-star"></i>
-                                                </td>
-                                                <td class="hidden-xs" data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <?php echo $row->inbox_name; ?>
-                                                </td>
-                                                <td data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <?php echo $row->inbox_subject; ?>
-                                                </td>
-                                                <td data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                </td>
-                                                <td data-inbox_id="<?php echo $row->inbox_id; ?>">
-                                                    <?php echo date('d M Y H:i:s', strtotime($row->inbox_created_at)); ?>
-                                                </td>
-                                            </tr>
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    </form>
                 </div><!-- Row -->
             </div><!-- Main Wrapper -->
             <div class="page-footer">
@@ -341,32 +325,6 @@
             </div>
         </div><!-- Page Inner -->
     </main><!-- Page Content -->
-    <div class="cd-overlay"></div>
-
-    <!--DELETE RECORD MODAL-->
-    <form action="<?php echo site_url('backend/inbox/delete'); ?>" method="post">
-        <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Delete Message</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="alert alert-info">
-                            Anda yakin mau menghapus message ini?
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="hidden" name="id" required>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-
 
     <!-- Javascripts -->
     <script src="<?php echo base_url() . 'assets/plugins/jquery/jquery-2.1.4.min.js' ?>"></script>
@@ -386,20 +344,45 @@
     <script src="<?php echo base_url() . 'assets/plugins/datatables/js/jquery.datatables.min.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/js/modern.min.js' ?>"></script>
     <script src="<?php echo base_url() . 'assets/plugins/toastr/jquery.toast.min.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/plugins/summernote-master/summernote.min.js' ?>"></script>
+
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.mailbox-content table tr td').not(":first-child").on('click', function(e) {
-                e.stopPropagation();
-                e.preventDefault();
-                var inbox_id = $(this).data('inbox_id');
+            $('#summernote1').summernote({
+                height: 300,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['view', ["fullscreen", "codeview", "help"]],
+                ]
 
-                window.location = "<?php echo site_url('backend/inbox/read/'); ?>" + inbox_id;
             });
+            $('#summernote2').summernote({
+                height: 300,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['view', ["fullscreen", "codeview", "help"]],
+                ]
 
-            $('.btn-delete').on('click', function() {
-                var inbox_id = $(this).data('inbox_id');
-                $('#DeleteModal').modal('show');
-                $('[name="id"]').val(inbox_id);
+            });
+            $('#summernote3').summernote({
+                height: 300,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['view', ["fullscreen", "codeview", "help"]],
+                ]
+
             });
         });
     </script>
@@ -408,24 +391,12 @@
         <script type="text/javascript">
             $.toast({
                 heading: 'Success',
-                text: "Message Deleted.",
+                text: "Profile Information Saved!",
                 showHideTransition: 'slide',
                 icon: 'success',
                 hideAfter: false,
                 position: 'bottom-right',
                 bgColor: '#7EC857'
-            });
-        </script>
-    <?php elseif ($this->session->flashdata('msg') == 'info') : ?>
-        <script type="text/javascript">
-            $.toast({
-                heading: 'Info',
-                text: "Not Found",
-                showHideTransition: 'slide',
-                icon: 'info',
-                hideAfter: false,
-                position: 'bottom-right',
-                bgColor: '#00C9E6'
             });
         </script>
     <?php else : ?>

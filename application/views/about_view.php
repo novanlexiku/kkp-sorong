@@ -4,7 +4,7 @@
 <head>
 
 	<!-- Page Title -->
-	<title>About</title>
+	<title>Sambutan</title>
 
 	<!-- Page header -->
 	<meta charset="utf-8" />
@@ -51,11 +51,11 @@
 			<!-- SECTION ABOUT
 				================================================== 	-->
 			<section class="page-section small-section">
-				<div class="shadow-title shadow-gray unselectable parallax-1">About</div>
+				<div class="shadow-title shadow-gray unselectable parallax-1">Sambutan</div>
 				<div class="container relative">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 mb-10 mb-sm-40 text-center">
-							<h2 class="font-face1 section-heading fw800 mt-0 text-center">About</h2>
+							<h2 class="font-face1 section-heading fw800 mt-0 text-center">Sambutan</h2>
 						</div>
 					</div>
 					<div class="row">
