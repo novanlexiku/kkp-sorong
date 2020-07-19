@@ -305,7 +305,7 @@
                                                 <?php } ?>
                                             </div>
 
-                                            <a href="<?php echo base_url('manage_gallery'); ?>" class="btn btn-secondary">Back</a>
+                                            <a href="<?php echo base_url('backend/manage_gallery'); ?>" class="btn btn-secondary">Back</a>
                                             <input type="hidden" name="id" value="<?php echo !empty($image['id']) ? $image['id'] : ''; ?>">
                                             <input type="submit" name="imgSubmit" class="btn btn-success" value="SUBMIT">
                                         </form>
