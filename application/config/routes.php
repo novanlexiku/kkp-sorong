@@ -62,6 +62,7 @@ $route['administrator'] = 'backend/login';
 $route['visimisi'] = 'about/visimisi';
 $route['struktur'] = 'about/strukturorganisasi';
 $route['wilker'] = 'about/wilker';
+$route['foto'] = 'gallery';
 
 $route['logout'] = 'backend/login/logout';
 

@@ -213,20 +213,20 @@
                             <li><a href="<?php echo site_url('backend/category'); ?>">Category</a></li>
                             <li><a href="<?php echo site_url('backend/tag'); ?>">Tag</a></li>
                             <li><a href="<?php echo site_url('backend/inbox'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
-                            <p>Inbox</p>
-                        </a></li>
-                    <li><a href="<?php echo site_url('backend/comment'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span>
-                            <p>Comments</p>
-                        </a></li>
-                    <li><a href="<?php echo site_url('backend/subscriber'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span>
-                            <p>Subscribers</p>
-                        </a></li>
-                    <li><a href="<?php echo site_url('backend/testimonial'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span>
-                            <p>Testimonials</p>
-                        </a></li>
+                                    <p>Inbox</p>
+                                </a></li>
+                            <li><a href="<?php echo site_url('backend/comment'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span>
+                                    <p>Comments</p>
+                                </a></li>
+                            <li><a href="<?php echo site_url('backend/subscriber'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span>
+                                    <p>Subscribers</p>
+                                </a></li>
+                            <li><a href="<?php echo site_url('backend/testimonial'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span>
+                                    <p>Testimonials</p>
+                                </a></li>
                         </ul>
                     </li>
-                    
+
                     <?php if ($this->session->userdata('access') == '1') : ?>
                         <li><a href="<?php echo site_url('backend/kuesioner'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
                                 <p>SIJABLAY</p>
@@ -241,6 +241,7 @@
                                 <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
                                 <li class="active"><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
                                 <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
                                 <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
                             </ul>
