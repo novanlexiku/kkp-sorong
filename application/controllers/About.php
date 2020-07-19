@@ -38,4 +38,28 @@ class About extends CI_Controller
 		$data['footer'] = $this->load->view('footer', '', TRUE);
 		$this->load->view('visi_view', $data);
 	}
+
+	function strukturorganisasi()
+	{
+		$site_info = $this->db->get('tbl_site', 1)->row();
+		$profile = $this->db->get('tbl_profile', 1)->row();
+		$data['profile_img'] = $profile->profile_image_struktur;
+
+		$v['logo'] =  $site_info->site_logo_header;
+		$data['icon'] = $site_info->site_favicon;
+		$data['header'] = $this->load->view('header', $v, TRUE);
+		$data['footer'] = $this->load->view('footer', '', TRUE);
+		$this->load->view('struktur_view', $data);
+	}
+
+	function wilker()
+	{
+		$site_info = $this->db->get('tbl_site', 1)->row();
+
+		$v['logo'] =  $site_info->site_logo_header;
+		$data['icon'] = $site_info->site_favicon;
+		$data['header'] = $this->load->view('header', $v, TRUE);
+		$data['footer'] = $this->load->view('footer', '', TRUE);
+		$this->load->view('wilker_view', $data);
+	}
 }

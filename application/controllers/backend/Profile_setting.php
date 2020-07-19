@@ -20,6 +20,7 @@ class Profile_setting extends CI_Controller
         $data = $this->setting_model->get_profile_data()->row();
         $x['profile_id'] = $data->profile_id;
         $x['profile_img'] = $data->profile_image;
+        $x['profile_img2'] = $data->profile_image_struktur;
         $x['profile_visi'] = $data->profile_visi;
         $x['profile_misi'] = $data->profile_misi;
         $x['profile_nilai'] = $data->profile_nilai;
@@ -38,16 +39,20 @@ class Profile_setting extends CI_Controller
         $config['encrypt_name'] = FALSE;
 
         $this->upload->initialize($config);
-        if (!empty($_FILES['img_profile']['name'])) {
+        if (!empty($_FILES['img_profile']['name'] || $_FILES['img_struktur']['name'])) {
             if ($this->upload->do_upload('img_profile')) {
                 $img_profile = $this->upload->data();
                 $image = $img_profile['file_name'];
             }
-            $this->setting_model->update_information_profile($profile_id, $visi, $misi, $nilai, $image);
+            if ($this->upload->do_upload('img_struktur')) {
+                $img_struktur = $this->upload->data();
+                $image2 = $img_struktur['file_name'];
+            }
+            $this->setting_model->update_information_profile($profile_id, $visi, $misi, $nilai, $image, $image2);
             $this->session->set_flashdata('msg', 'success');
             redirect('backend/profile_setting');
         } else {
-            $this->setting_model->update_information_profile_noimg($profile_id, $visi, $misi, $nilai,);
+            $this->setting_model->update_information_profile_noimg($profile_id, $visi, $misi, $nilai);
             $this->session->set_flashdata('msg', 'success');
             redirect('backend/profile_setting');
         }

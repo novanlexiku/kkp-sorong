@@ -76,9 +76,10 @@ class Setting_model extends CI_Model
 		return $query;
 	}
 
-	function update_information_profile($profile_id, $visi, $misi, $nilai, $image)
+	function update_information_profile($profile_id, $visi, $misi, $nilai, $image, $image2)
 	{
 		$this->db->set('profile_image', $image);
+		$this->db->set('profile_image_struktur', $image2);
 		$this->db->set('profile_visi', $visi);
 		$this->db->set('profile_misi', $misi);
 		$this->db->set('profile_nilai', $nilai);

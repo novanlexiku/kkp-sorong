@@ -60,6 +60,9 @@ $route['tag/(:any)/(:num)'] = 'tag/detail/$1/$2';
 $route['search'] = 'result/search/';
 $route['administrator'] = 'backend/login';
 $route['visimisi'] = 'about/visimisi';
+$route['struktur'] = 'about/strukturorganisasi';
+$route['wilker'] = 'about/wilker';
+
 $route['logout'] = 'backend/login/logout';
 
 $route['sijablay-dokumen-kesehatan-kapal'] = 'sijablay/kesehatankapal';

@@ -277,11 +277,20 @@
                                 <div class="panel-body">
 
                                     <div class="form-group">
-                                        <label for="input1" class="col-sm-2 control-label">Image</label>
+                                        <label for="input1" class="col-sm-2 control-label">Image Visi & Misi</label>
                                         <div class="col-sm-10">
                                             <input type="file" name="img_profile" class="form-control" id="input1">
                                             <p class="help-block">Image Heading harus beresolusi 456 x 470 Pixels.</p>
                                             <img src="<?php echo base_url() . 'theme/images/' . $profile_img; ?>" width="300" class="thumbnail">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="input1" class="col-sm-2 control-label">Image Struktur Organisasi</label>
+                                        <div class="col-sm-10">
+                                            <input type="file" name="img_struktur" class="form-control" id="input1">
+                                            <p class="help-block">Image Heading harus beresolusi 456 x 470 Pixels.</p>
+                                            <img src="<?php echo base_url() . 'theme/images/' . $profile_img2; ?>" width="300" class="thumbnail">
                                         </div>
                                     </div>
 
@@ -349,7 +358,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#summernote1').summernote({
-                height: 300,
+                height: 200,
                 toolbar: [
                     ['style', ['style']],
                     ['font', ['bold', 'italic', 'underline', 'clear']],
@@ -361,7 +370,7 @@
 
             });
             $('#summernote2').summernote({
-                height: 300,
+                height: 200,
                 toolbar: [
                     ['style', ['style']],
                     ['font', ['bold', 'italic', 'underline', 'clear']],
@@ -373,7 +382,7 @@
 
             });
             $('#summernote3').summernote({
-                height: 300,
+                height: 200,
                 toolbar: [
                     ['style', ['style']],
                     ['font', ['bold', 'italic', 'underline', 'clear']],
