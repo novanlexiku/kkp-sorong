@@ -175,7 +175,7 @@
                                         <?php if ($row['user_level'] == '1') : ?>
                                             <small>Administrator</small>
                                         <?php else : ?>
-                                            <small>Author</small>
+                                            <small>Petugas</small>
                                         <?php endif; ?>
                                     </span>
                                 </div>
@@ -190,7 +190,7 @@
                                         <?php if ($row['user_level'] == '1') : ?>
                                             <small>Administrator</small>
                                         <?php else : ?>
-                                            <small>Author</small>
+                                            <small>Petugas</small>
                                         <?php endif; ?>
                                     </span>
                                 </div>
@@ -240,6 +240,7 @@
                                 <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
                                 <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
                                 <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
                                 <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
                             </ul>

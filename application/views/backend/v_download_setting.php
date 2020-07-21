@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Gallery Images Management</title>
+    <title>File Download Management</title>
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="UTF-8">
@@ -243,7 +243,8 @@
                                 <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
                                 <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
                                 <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
-                                <li class="active"><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li class="active"><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
                                 <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
                             </ul>
@@ -260,7 +261,7 @@
         </div><!-- Page Sidebar -->
         <div class="page-inner">
             <div class="page-title">
-                <h3>Gallery Images Management</h3>
+                <h3>File Download Management</h3>
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb">
                         <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
@@ -276,40 +277,64 @@
 
                             <div class="panel-body">
 
-                                <h1><?php echo $title; ?></h1>
-                                <hr>
-
                                 <!-- Display status message -->
-                                <?php if (!empty($error_msg)) { ?>
+                                <?php if (!empty($success_msg)) { ?>
+                                    <div class="col-xs-12">
+                                        <div class="alert alert-success"><?php echo $success_msg; ?></div>
+                                    </div>
+                                <?php } elseif (!empty($error_msg)) { ?>
                                     <div class="col-xs-12">
                                         <div class="alert alert-danger"><?php echo $error_msg; ?></div>
                                     </div>
                                 <?php } ?>
 
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <form method="post" action="" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label>Title:</label>
-                                                <input type="text" name="title" class="form-control" placeholder="Enter title" value="<?php echo !empty($image['title']) ? $image['title'] : ''; ?>">
-                                                <?php echo form_error('title', '<p class="help-block text-danger">', '</p>'); ?>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Images:</label>
-                                                <input type="file" name="image" class="form-control" multiple>
-                                                <?php echo form_error('image', '<p class="help-block text-danger">', '</p>'); ?>
-                                                <?php if (!empty($image['file_name'])) { ?>
-                                                    <div class="img-box">
-                                                        <img src="<?php echo base_url('uploads/images/' . $image['file_name']); ?>">
-                                                    </div>
-                                                <?php } ?>
-                                            </div>
-
-                                            <a href="<?php echo base_url('backend/manage_gallery'); ?>" class="btn btn-secondary">Back</a>
-                                            <input type="hidden" name="id" value="<?php echo !empty($image['id']) ? $image['id'] : ''; ?>">
-                                            <input type="submit" name="imgSubmit" class="btn btn-success" value="SUBMIT">
-                                        </form>
+                                    <div class="col-md-12 head">
+                                        <h5><?php echo $title; ?></h5>
+                                        <!-- Add link -->
+                                        <div class="float-right">
+                                            <a href="<?php echo base_url('backend/manage_download/add'); ?>" class="btn btn-success"><i class="plus"></i> Upload File</a>
+                                        </div>
                                     </div>
+
+                                    <!-- Data list table -->
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th width="5%">#</th>
+                                                <th width="40%">Title</th>
+                                                <th width="19%">Created</th>
+                                                <th width="8%">Status</th>
+                                                <th width="18%">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if (!empty($download)) {
+                                                $i = 0;
+                                                foreach ($download as $row) {
+                                                    $i++;
+                                                    $image = !empty($row['file_name']) ? '<img width="150" src="' . base_url() . 'uploads/files/' . $row['file_name'] . '" alt="" />' : '';
+                                                    $statusLink = ($row['status'] == 1) ? site_url('backend/manage_download/block/' . $row['id']) : site_url('backend/manage_download/unblock/' . $row['id']);
+                                                    $statusTooltip = ($row['status'] == 1) ? 'Click to Inactive' : 'Click to Active';
+                                            ?>
+                                                    <tr>
+                                                        <td><?php echo $i; ?></td>
+                                                        <td><?php echo $row['title']; ?></td>
+                                                        <td><?php echo $row['created']; ?></td>
+                                                        <td><a href="<?php echo $statusLink; ?>" title="<?php echo $statusTooltip; ?>"><span class="badge <?php echo ($row['status'] == 1) ? 'badge-success' : 'badge-danger'; ?>"><?php echo ($row['status'] == 1) ? 'Active' : 'Inactive'; ?></span></a></td>
+                                                        <td>
+                                                            <a href="<?php echo base_url('uploads/files/' . $row['file_name']); ?>" class="btn btn-primary">download</a>
+                                                            <a href="<?php echo base_url('backend/manage_download/delete/' . $row['id']); ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete data?')?true:false;">delete</a>
+                                                        </td>
+                                                    </tr>
+                                                <?php }
+                                            } else { ?>
+                                                <tr>
+                                                    <td colspan="6">No file(s) found...</td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
                                 </div>
 
 

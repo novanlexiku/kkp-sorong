@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Gallery Images Management</title>
+    <title>File Download Management</title>
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="UTF-8">
@@ -243,7 +243,8 @@
                                 <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
                                 <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
                                 <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
-                                <li class="active"><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li class="active"><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
                                 <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
                             </ul>
@@ -260,7 +261,7 @@
         </div><!-- Page Sidebar -->
         <div class="page-inner">
             <div class="page-title">
-                <h3>Gallery Images Management</h3>
+                <h3>File Download Management</h3>
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb">
                         <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
@@ -300,12 +301,12 @@
                                                 <?php echo form_error('image', '<p class="help-block text-danger">', '</p>'); ?>
                                                 <?php if (!empty($image['file_name'])) { ?>
                                                     <div class="img-box">
-                                                        <img src="<?php echo base_url('uploads/images/' . $image['file_name']); ?>">
+                                                        <img src="<?php echo base_url('uploads/files/' . $image['file_name']); ?>" hidden>
                                                     </div>
                                                 <?php } ?>
                                             </div>
 
-                                            <a href="<?php echo base_url('backend/manage_gallery'); ?>" class="btn btn-secondary">Back</a>
+                                            <a href="<?php echo base_url('backend/manage_download'); ?>" class="btn btn-secondary">Back</a>
                                             <input type="hidden" name="id" value="<?php echo !empty($image['id']) ? $image['id'] : ''; ?>">
                                             <input type="submit" name="imgSubmit" class="btn btn-success" value="SUBMIT">
                                         </form>

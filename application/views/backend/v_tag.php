@@ -174,7 +174,7 @@
                                         <?php if ($row['user_level'] == '1') : ?>
                                             <small>Administrator</small>
                                         <?php else : ?>
-                                            <small>Author</small>
+                                            <small>Petugas</small>
                                         <?php endif; ?>
                                     </span>
                                 </div>
@@ -189,7 +189,7 @@
                                         <?php if ($row['user_level'] == '1') : ?>
                                             <small>Administrator</small>
                                         <?php else : ?>
-                                            <small>Author</small>
+                                            <small>Petugas</small>
                                         <?php endif; ?>
                                     </span>
                                 </div>
