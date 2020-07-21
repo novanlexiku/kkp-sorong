@@ -63,6 +63,7 @@ $route['visimisi'] = 'about/visimisi';
 $route['struktur'] = 'about/strukturorganisasi';
 $route['wilker'] = 'about/wilker';
 $route['foto'] = 'gallery';
+$route['vaksinasi'] = 'vaksin';
 
 $route['logout'] = 'backend/login/logout';
 
