@@ -377,7 +377,7 @@
                                     <select class="form-control" name="level" required>
                                         <option value="">No Selected</option>
                                         <option value="1">Administrator</option>
-                                        <option value="2">Author</option>
+                                        <option value="2">Petugas</option>
                                     </select>
                                 </div>
                             </div>
@@ -430,10 +430,10 @@
                                         <select class="form-control" name="level" required>
                                             <?php if ($row->user_level == '1') : ?>
                                                 <option value="1" selected>Administrator</option>
-                                                <option value="2">Author</option>
+                                                <option value="2">Petugas</option>
                                             <?php else : ?>
                                                 <option value="1">Administrator</option>
-                                                <option value="2" selected>Author</option>
+                                                <option value="2" selected>Petugas</option>
                                             <?php endif; ?>
                                         </select>
                                     </div>
