@@ -239,7 +239,7 @@
                                 <p>Users</p>
                             </a></li>
                         <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
-                                <p>Settings</p><span class="arrow"></span>
+                                <p>Pengaturan</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
@@ -247,6 +247,13 @@
                                 <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
                                 <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Kategori</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/penyakit'); ?>">Penyakit</a></li>
                             </ul>
                         </li>
                     <?php else : ?>
