@@ -14,6 +14,8 @@ class Navbar extends CI_Controller{
 
 	function index(){
 		$x['data'] = $this->navbar_model->get_navbar();
+		$x['title'] = 'Navbar Halaman Depan';
+		$this->load->view('backend/nav/header',$x);
 		$this->load->view('backend/v_navbar',$x);
 	}
 

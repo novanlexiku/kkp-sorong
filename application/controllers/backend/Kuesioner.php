@@ -133,7 +133,7 @@ class Kuesioner extends CI_Controller
         $data['kuesioner3p2_setuju'] = $this->kuesioner_model->get_setuju_kuesioner3p2();
         $data['kuesioner3p2_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesioner3p2();
         $data['kuesioner3p2_sangattidaksetuju'] = $this->kuesioner_model->get_sangattidaksetuju_kuesioner3p2();
-        
+
         $data['kuesioner4p1_sangatsetuju'] = $this->kuesioner_model->get_sangatsetuju_kuesioner4p1();
         $data['kuesioner4p1_setuju'] = $this->kuesioner_model->get_setuju_kuesioner4p1();
         $data['kuesioner4p1_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesioner4p1();
@@ -174,8 +174,10 @@ class Kuesioner extends CI_Controller
         $data['kuesioner10p1_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesioner10p1();
         $data['kuesioner10p1_sangattidaksetuju'] = $this->kuesioner_model->get_sangattidaksetuju_kuesioner10p1();
 
-        
+
         $data['data'] = $this->kuesioner_model->get_all_kuesioner($offset, $limit);
+        $data['title'] = 'SIJABLAY';
+        $this->load->view('backend/nav/header', $data);
         $this->load->view('backend/v_kuesioner', $data);
     }
 

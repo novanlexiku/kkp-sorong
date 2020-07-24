@@ -51,6 +51,8 @@ class Inbox extends CI_Controller{
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
 		$data['data'] = $this->inbox_model->get_all_inbox($offset,$limit);
+		$data['title'] = 'Inbox';
+		$this->load->view('backend/nav/header',$data);
 		$this->load->view('backend/v_inbox',$data);
 	}
 

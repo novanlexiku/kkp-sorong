@@ -38,6 +38,7 @@ class Manage_download extends CI_Controller
         $data['title'] = 'Files Archive';
 
         // Load the list page view 
+        $this->load->view('backend/nav/header',$data);
         $this->load->view('backend/v_download_setting', $data);
     }
 
@@ -52,6 +53,7 @@ class Manage_download extends CI_Controller
             $data['title'] = $data['image']['title'];
 
             // Load the details page view 
+            $this->load->view('backend/nav/header',$data);
             $this->load->view('backend/v_download_view', $data);
         } else {
             redirect($this->controller);
@@ -120,6 +122,7 @@ class Manage_download extends CI_Controller
         $data['action'] = 'Upload';
 
         // Load the add page view 
+        $this->load->view('backend/nav/header',$data);
         $this->load->view('backend/v_download_add', $data);
     }
 
@@ -193,6 +196,7 @@ class Manage_download extends CI_Controller
         $data['action'] = 'Edit';
 
         // Load the edit page view 
+        $this->load->view('backend/nav/header',$data);
         $this->load->view('backend/v_download_add', $data);
     }
 

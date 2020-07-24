@@ -51,6 +51,8 @@ class Comment extends CI_Controller{
 		$data['data'] = $this->comment_model->get_all_comment($offset,$limit);
 		$data['total_rows']=$count->num_rows();
 		$data['total_unpublish'] = $this->db->get_where('tbl_comment', array('comment_status' => '0'))->num_rows();
+		$data['title'] = 'Komentar';
+		$this->load->view('backend/nav/header',$data);
 		$this->load->view('backend/v_comment',$data);
 	}
 

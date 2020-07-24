@@ -26,6 +26,7 @@ class Penyakit extends CI_Controller
         $data['title'] = 'Daftar Penyakit';
 
         // Load the list page view 
+        $this->load->view('backend/nav/header',$data);
         $this->load->view('backend/v_penyakit', $data);
     }
     function save()

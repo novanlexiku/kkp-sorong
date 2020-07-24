@@ -38,6 +38,7 @@ class Manage_gallery extends CI_Controller
         $data['title'] = 'Images Archive';
 
         // Load the list page view 
+        $this->load->view('backend/nav/header',$data);
         $this->load->view('backend/v_gallery_setting', $data);
     }
 
@@ -52,6 +53,7 @@ class Manage_gallery extends CI_Controller
             $data['title'] = $data['image']['title'];
 
             // Load the details page view 
+            $this->load->view('backend/nav/header',$data);
             $this->load->view('backend/v_gallery_view', $data);
         } else {
             redirect($this->controller);
@@ -119,6 +121,7 @@ class Manage_gallery extends CI_Controller
         $data['action'] = 'Upload';
 
         // Load the add page view 
+        $this->load->view('backend/nav/header',$data);
         $this->load->view('backend/v_gallery_add', $data);
     }
 
@@ -192,6 +195,7 @@ class Manage_gallery extends CI_Controller
         $data['action'] = 'Edit';
 
         // Load the edit page view 
+        $this->load->view('backend/nav/header',$data);
         $this->load->view('backend/v_gallery_add', $data);
     }
 

@@ -24,6 +24,8 @@ class Profile_setting extends CI_Controller
         $x['profile_visi'] = $data->profile_visi;
         $x['profile_misi'] = $data->profile_misi;
         $x['profile_nilai'] = $data->profile_nilai;
+        $x['title'] = 'Pengaturan Profil';
+        $this->load->view('backend/nav/header',$x);
         $this->load->view('backend/v_profile_setting', $x);
     }
 

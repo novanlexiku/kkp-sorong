@@ -14,6 +14,8 @@ class Subscriber extends CI_Controller{
 
 	function index(){
 		$x['data'] = $this->subscribe_model->get_subscribers();
+		$x['title'] = 'Subscriber';
+		$this->load->view('backend/nav/header',$x);
 		$this->load->view('backend/v_subscriber',$x);
 	}
 
