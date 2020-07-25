@@ -34,6 +34,7 @@ class Laporan_klw extends CI_Controller
     {
         $data = array();
         $data['title'] = 'Laporan KLW';
+        $data['laporan'] = $this->laporan_klw_model->get_all_laporan_klw_1();
         $data['penyakit'] = $this->penyakit_model->get_all_penyakit();
 
         // Load the list page view 
@@ -55,5 +56,16 @@ class Laporan_klw extends CI_Controller
         $this->laporan_klw_model->add_new_row($pid, $tgl, $abk, $tkbm, $penumpang, $pp, $kkp, $sh, $umum);
         $this->session->set_flashdata('msg', 'success');
         redirect('backend/laporan_klw/klw1');
+    }
+
+
+    function cetak_laporan_klw_1()
+    {
+        $tgl2 = $this->input->post('tgl2');
+        $tgl3 = $this->input->post('tgl3');
+        $x['penyakit1'] = $this->laporan_klw_model->get_laporan_klw1_kat1($tgl2, $tgl3);
+        $x['penyakit2'] = $this->laporan_klw_model->get_laporan_klw1_kat2($tgl2, $tgl3);
+
+        $this->load->view('backend/laporan_klw/cetak_laporan_klw_1', $x);
     }
 }
