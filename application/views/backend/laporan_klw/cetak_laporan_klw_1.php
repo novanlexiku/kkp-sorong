@@ -1,7 +1,7 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
 
 <head>
-    <title>Laporan Kendaraan Perlintasan</title>
+    <title>LAPORAN KUNJUNGAN PASIEN DAN JENIS PENYAKIT YANG DIDERITA PADA KLINIK KKP</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
     <link href="<?php echo base_url() . 'assets/plugins/bootstrap/css/bootstrap.min.css' ?>" rel="stylesheet" type="text/css" />

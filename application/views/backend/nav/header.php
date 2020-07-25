@@ -254,6 +254,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/penyakit'); ?>">Penyakit</a></li>
+                                <li><a href="<?php echo site_url('backend/wilker'); ?>">Wilayah Kerja</a></li>
                             </ul>
                         </li>
                     <?php else : ?>
