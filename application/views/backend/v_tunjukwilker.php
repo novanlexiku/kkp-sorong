@@ -6,7 +6,7 @@
                 <div class="panel panel-white">
 
                     <div class="panel-body">
-                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Add New</button>
+                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Add New User</button>
 
                         <table id="mytable" class="display table" style="width: 100%; ">
                             <thead>
@@ -14,7 +14,8 @@
                                     <th>No</th>
                                     <th>Photo</th>
                                     <th>Name</th>
-                                    <th>Content</th>
+                                    <th>Level</th>
+                                    <th>Wilayah Kerja</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -27,22 +28,31 @@
                                     <tr>
                                         <td style="vertical-align: middle;"><?php echo $no; ?></td>
                                         <td style="vertical-align: middle;">
-                                            <?php if (empty($row->testimonial_image)) : ?>
+                                            <?php if (empty($row->user_photo)) : ?>
                                                 <img class="img-circle" width="50" src="<?php echo base_url() . 'assets/images/user_blank.png'; ?>">
                                             <?php else : ?>
-                                                <img class="img-circle" width="50" src="<?php echo base_url() . 'assets/images/' . $row->testimonial_image; ?>">
+                                                <img class="img-circle" width="50" src="<?php echo base_url() . 'assets/images/' . $row->user_photo; ?>">
                                             <?php endif; ?>
                                         </td>
-                                        <td style="vertical-align: middle;"><?php echo $row->testimonial_name; ?></td>
-                                        <td style="vertical-align: middle;"><?php echo $row->testimonial_content; ?></td>
+                                        <td style="vertical-align: middle;"><?php echo $row->user_name; ?></td>
+                                        <td style="vertical-align: middle;">
+                                            <?php
+                                            if ($row->user_level == '1') {
+                                                echo "Administrator";
+                                            } else {
+                                                echo "Petugas";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td style="vertical-align: middle;"><?php echo $row->wilker_nama; ?></td>
                                         <td style="vertical-align: middle;">
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                     Action <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#ModalEdit<?php echo $row->testimonial_id; ?>"><span class="icon-pencil"></span> Edit</a></li>
-                                                    <li><a href="javascript:void(0);" class="delete" data-userid="<?php echo $row->testimonial_id; ?>"><span class="icon-trash"></span> Delete</a></li>
+                                                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#ModalEdit<?php echo $row->user_id; ?>"><span class="icon-pencil"></span> Edit</a></li>
+                                                    <li><a href="javascript:void(0);" class="delete" data-userid="<?php echo $row->user_id; ?>"><span class="icon-trash"></span> Delete</a></li>
                                                 </ul>
                                             </div>
                                         </td>
@@ -66,20 +76,20 @@
 <div class="cd-overlay"></div>
 
 <!-- Modal -->
-<form id="add-row-form" action="<?php echo base_url() . 'backend/testimonial/insert' ?>" method="post" enctype="multipart/form-data">
+<form id="add-row-form" action="<?php echo base_url() . 'backend/users/insert_wilker' ?>" method="post" enctype="multipart/form-data">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Add Testimonial</h4>
+                    <h4 class="modal-title" id="myModalLabel">Add New User</h4>
                 </div>
                 <div class="modal-body">
 
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <input type="file" name="filefoto" class="dropify" data-height="180">
+                                <input type="file" name="filefoto" class="dropify" data-height="220">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -87,9 +97,29 @@
                                 <input type="text" name="nama" class="form-control" placeholder="Name" required>
                             </div>
                             <div class="form-group">
-                                <textarea name="content" class="form-control" rows="6" placeholder="Content" required></textarea>
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
                             </div>
-
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="level" required>
+                                    <option value="2">Petugas</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="wilker" required>
+                                    <option value="">No Selected</option>
+                                    <?php
+                                    foreach ($wilker->result() as $row) :
+                                    ?>
+                                        <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -107,36 +137,54 @@
 foreach ($data->result() as $row) :
 ?>
     <!-- Modal -->
-    <form id="add-row-form" action="<?php echo base_url() . 'backend/testimonial/update' ?>" method="post" enctype="multipart/form-data">
-        <div class="modal fade" id="ModalEdit<?php echo $row->testimonial_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form id="add-row-form" action="<?php echo base_url() . 'backend/users/update_wilker' ?>" method="post" enctype="multipart/form-data">
+        <div class="modal fade" id="ModalEdit<?php echo $row->user_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Testimonial</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit User</h4>
                     </div>
                     <div class="modal-body">
 
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="file" name="filefoto" class="dropify" data-height="180" data-default-file="<?php echo base_url() . 'assets/images/' . $row->testimonial_image; ?>">
+                                    <input type="file" name="filefoto" class="dropify" data-height="220" data-default-file="<?php echo base_url() . 'assets/images/' . $row->user_photo; ?>">
                                 </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="nama" value="<?php echo $row->testimonial_name; ?>" class="form-control" placeholder="Name" required>
+                                    <input type="text" name="nama" value="<?php echo $row->user_name; ?>" class="form-control" placeholder="Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="content" class="form-control" rows="6" placeholder="Content" required><?php echo $row->testimonial_content; ?></textarea>
+                                    <select class="form-control" name="level" required>
+                                        <?php if ($row->user_level == '1') : ?>
+                                            <option value="2">Petugas</option>
+                                        <?php else : ?>
+                                            <option value="2" selected>Petugas</option>
+                                        <?php endif; ?>
+                                    </select>
                                 </div>
-
+                            <?php endforeach; ?>
+                            <div class="form-group">
+                                <select class="form-control" name="wilker" required>
+                                    <option value="">No Selected</option>
+                                    <?php
+                                    foreach ($wilker->result() as $row) :
+                                    ?>
+                                        <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                             </div>
                         </div>
-
+                        <?php
+                        foreach ($data->result() as $row) :
+                        ?>
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="testimonial_id" value="<?php echo $row->testimonial_id; ?>" required>
+                        <input type="hidden" name="user_id" value="<?php echo $row->user_id; ?>" required>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-success">Update</button>
                     </div>
@@ -147,18 +195,18 @@ foreach ($data->result() as $row) :
 <?php endforeach; ?>
 
 <!-- Modal hapus-->
-<form id="add-row-form" action="<?php echo base_url() . 'backend/testimonial/delete' ?>" method="post" enctype="multipart/form-data">
+<form id="add-row-form" action="<?php echo base_url() . 'backend/users/delete' ?>" method="post" enctype="multipart/form-data">
     <div class="modal fade" id="ModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Delete Testimonial</h4>
+                    <h4 class="modal-title" id="myModalLabel">Delete User</h4>
                 </div>
                 <div class="modal-body">
-                    <strong>Anda yakin mau menghapus testimonial ini?</strong>
+                    <strong>Anda yakin mau menghapus user ini?</strong>
                     <div class="form-group">
-                        <input type="hidden" id="txt_kode" name="kode" class="form-control" required>
+                        <input type="hidden" id="txt_kode" name="kode" class="form-control" placeholder="Name" required>
                     </div>
 
                 </div>
@@ -228,6 +276,18 @@ foreach ($data->result() as $row) :
             bgColor: '#FF4859'
         });
     </script>
+<?php elseif ($this->session->flashdata('msg') == 'error-email') : ?>
+    <script type="text/javascript">
+        $.toast({
+            heading: 'Error',
+            text: "Email already taken.",
+            showHideTransition: 'slide',
+            icon: 'error',
+            hideAfter: false,
+            position: 'bottom-right',
+            bgColor: '#FF4859'
+        });
+    </script>
 <?php elseif ($this->session->flashdata('msg') == 'error-img') : ?>
     <script type="text/javascript">
         $.toast({
@@ -244,7 +304,7 @@ foreach ($data->result() as $row) :
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: "New Testimonial Saved!",
+            text: "New User Saved!",
             showHideTransition: 'slide',
             icon: 'success',
             hideAfter: false,
@@ -256,7 +316,7 @@ foreach ($data->result() as $row) :
     <script type="text/javascript">
         $.toast({
             heading: 'Info',
-            text: "Testimonial updated!",
+            text: "User updated!",
             showHideTransition: 'slide',
             icon: 'info',
             hideAfter: false,
@@ -268,7 +328,7 @@ foreach ($data->result() as $row) :
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: "Testimonial Deleted!.",
+            text: "User Deleted!.",
             showHideTransition: 'slide',
             icon: 'success',
             hideAfter: false,

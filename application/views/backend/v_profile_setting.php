@@ -70,7 +70,7 @@
             </form>
         </div><!-- Row -->
     </div><!-- Main Wrapper -->
-    <div class="page-footer text-right">
+    <div class="page-footer text-center">
         <p class="no-s"><?php echo date('Y'); ?> &copy; Powered by KKP-Sorong.</p>
     </div>
 </div><!-- Page Inner -->

@@ -18,7 +18,7 @@
                         <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Add New Row</button>
 
                         <div class="table-responsive">
-                            <table id="data-table" class="display table" style="width: 100%; cellspacing: 0;">
+                            <table id="data-table" class="display table" style="width: 100%; ">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -52,7 +52,7 @@
             </div>
         </div><!-- Row -->
     </div><!-- Main Wrapper -->
-    <div class="page-footer text-right">
+    <div class="page-footer text-center">
         <p class="no-s"><?php echo date('Y'); ?> &copy; Powered by KKP-Sorong.</p>
     </div>
 </div><!-- Page Inner -->

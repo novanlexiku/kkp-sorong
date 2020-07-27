@@ -9,6 +9,7 @@ class Wilker extends CI_Controller
 
         // Load image model 
         $this->load->model('backend/wilker_model');
+        $this->load->model('backend/users_model');
         $this->load->helper('form');
         $this->load->library('form_validation');
 
@@ -23,6 +24,7 @@ class Wilker extends CI_Controller
 
 
         $data['data'] = $this->wilker_model->get_all_wilker();
+        $data['user'] = $this->users_model->get_users_wilker();
         $data['title'] = 'Daftar Wilayah Kerja';
 
         // Load the list page view 
