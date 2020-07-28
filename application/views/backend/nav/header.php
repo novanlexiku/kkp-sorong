@@ -205,30 +205,31 @@
                     <li><a href="<?php echo site_url('backend/dashboard'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-home"></span>
                             <p>Dashboard</p>
                         </a></li>
-                    <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span>
-                            <p>Post</p><span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="<?php echo site_url('backend/post/add_new'); ?>">Add New</a></li>
-                            <li><a href="<?php echo site_url('backend/post'); ?>">Post List</a></li>
-                            <li><a href="<?php echo site_url('backend/category'); ?>">Category</a></li>
-                            <li><a href="<?php echo site_url('backend/tag'); ?>">Tag</a></li>
-                            <li><a href="<?php echo site_url('backend/inbox'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
-                                    <p>Inbox</p>
-                                </a></li>
-                            <li><a href="<?php echo site_url('backend/comment'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span>
-                                    <p>Comments</p>
-                                </a></li>
-                            <li><a href="<?php echo site_url('backend/subscriber'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span>
-                                    <p>Subscribers</p>
-                                </a></li>
-                            <li><a href="<?php echo site_url('backend/testimonial'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span>
-                                    <p>Testimonials</p>
-                                </a></li>
-                        </ul>
-                    </li>
+
 
                     <?php if ($this->session->userdata('access') == '1') : ?>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span>
+                                <p>Post</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/post/add_new'); ?>">Add New</a></li>
+                                <li><a href="<?php echo site_url('backend/post'); ?>">Post List</a></li>
+                                <li><a href="<?php echo site_url('backend/category'); ?>">Category</a></li>
+                                <li><a href="<?php echo site_url('backend/tag'); ?>">Tag</a></li>
+                                <li><a href="<?php echo site_url('backend/inbox'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
+                                        <p>Inbox</p>
+                                    </a></li>
+                                <li><a href="<?php echo site_url('backend/comment'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span>
+                                        <p>Comments</p>
+                                    </a></li>
+                                <li><a href="<?php echo site_url('backend/subscriber'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span>
+                                        <p>Subscribers</p>
+                                    </a></li>
+                                <li><a href="<?php echo site_url('backend/testimonial'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span>
+                                        <p>Testimonials</p>
+                                    </a></li>
+                            </ul>
+                        </li>
                         <li><a href="<?php echo site_url('backend/kuesioner'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
                                 <p>SIJABLAY</p>
                             </a></li>
