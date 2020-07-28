@@ -4,7 +4,14 @@ class Laporan_klw_model extends CI_Model
 
     function get_all_laporan_klw_1()
     {
-        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum,l.laporan_wilker, u.user_id, u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p, tbl_user u, tbl_wilker w WHERE l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = u.user_id and u.user_wilker = w.wilker_id");
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum,l.laporan_wilker, u.user_id, u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p, tbl_user u, tbl_wilker w WHERE l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id");
+        return $hsl;
+    }
+
+    function get_all_laporan_klw_1_petugas()
+    {
+        $wilker = $this->session->userdata('wilker');
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum,l.laporan_wilker, u.user_id, u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p, tbl_user u, tbl_wilker w WHERE l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
         return $hsl;
     }
 
@@ -25,14 +32,19 @@ class Laporan_klw_model extends CI_Model
         );
         $this->db->insert('laporan_klw_1', $data);
     }
-    function get_laporan_klw1_kat1($tgl2, $tgl3)
-    {
-        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,p.penyakit_kategori,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum FROM laporan_klw_1 l, tbl_penyakit p WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_penyakit_id = p.penyakit_id and p.penyakit_kategori=1");
+
+    function get_laporan_klw1_all($wilker){
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%M') AS laporan_tanggal_bulan,DATE_FORMAT(laporan_tanggal,'%Y') AS laporan_tanggal_tahun,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,p.penyakit_kategori,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum, l.laporan_wilker, w.wilker_id, w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p, tbl_wilker w WHERE l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
         return $hsl;
     }
-    function get_laporan_klw1_kat2($tgl2, $tgl3)
+    function get_laporan_klw1_kat1($tgl2, $tgl3, $wilker)
     {
-        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,p.penyakit_kategori,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum FROM laporan_klw_1 l, tbl_penyakit p WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_penyakit_id = p.penyakit_id and p.penyakit_kategori=2");
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,p.penyakit_kategori,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum, l.laporan_wilker, w.wilker_id, w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = w.wilker_id and p.penyakit_kategori=1 and l.laporan_wilker='$wilker'");
+        return $hsl;
+    }
+    function get_laporan_klw1_kat2($tgl2, $tgl3, $wilker)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,p.penyakit_kategori,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum, l.laporan_wilker, w.wilker_id, w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = w.wilker_id and p.penyakit_kategori=2 and l.laporan_wilker='$wilker'");
         return $hsl;
     }
     function get_abk($tanggal)

@@ -15,7 +15,10 @@
 
                 <div class="panel panel-white">
                     <div class="panel-body">
-                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Data</button>
+                        <?php if ($this->session->userdata('wilker') != '1') : ?>
+                            <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Data</button>
+                        <?php else : ?>
+                        <?php endif; ?>
                         <div class="table-responsive">
                             <table id="data-table" class="display table" style="width: 100%; ">
                                 <thead>
@@ -38,26 +41,49 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $no = 0;
-                                    foreach ($laporan->result() as $row) {
-                                        $no++;
+                                    <?php if ($this->session->userdata('wilker') != '1') : ?>
+                                        <?php
+                                        $no = 0;
+                                        foreach ($laporan2->result() as $row) {
+                                            $no++;
 
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->penyakit_nama; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_abk; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_tkbm; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_penumpang; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_pp; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_kkp; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_sh; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_umum; ?></td>
-                                            <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $no; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->penyakit_nama; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_abk; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tkbm; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_penumpang; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_pp; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_kkp; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sh; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_umum; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
 
-                                        </tr>
-                                    <?php } ?>
+                                            </tr>
+                                        <?php } ?>
+                                    <?php else : ?>
+                                        <?php
+                                        $no = 0;
+                                        foreach ($laporan->result() as $row) {
+                                            $no++;
+
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $no; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->penyakit_nama; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_abk; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tkbm; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_penumpang; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_pp; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_kkp; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sh; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_umum; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
+
+                                            </tr>
+                                        <?php } ?>
+                                    <?php endif; ?>
                                 </tbody>
 
                             </table>
@@ -76,6 +102,15 @@
                                 </div>
                                 <div class="col-md-3">
                                     <input type='text' name="tgl3" class="form-control datepicker3" placeholder="Tahun" required />
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-control" name="wilker" required>
+                                        <?php
+                                        foreach ($wilker->result() as $row) :
+                                        ?>
+                                            <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                                 <div class="col-md-3">
                                     <button type="submit" class="btn btn-success m-b-sm">Tampilkan Data</button>

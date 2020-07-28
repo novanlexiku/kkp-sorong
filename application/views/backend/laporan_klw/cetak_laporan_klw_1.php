@@ -17,7 +17,9 @@
     <td><img src="<?php// echo base_url().'assets/img/kop_surat.png'?>"/></td>
 </tr>-->
         </table>
-
+        <?php
+        $b = $laporan->row_array();
+        ?>
         <table border="0" align="center" style="width:800px; border:none;margin-top:5px;margin-bottom:0px;">
             <tr>
                 <td colspan="2" style="width:800px;paddin-left:20px;">
@@ -28,17 +30,17 @@
             </tr>
             <tr>
                 <th style="text-align:left;width:100px;">WILAYAH KERJA</th>
-                <td style="text-align:left;">: ini wilker</td>
+                <td style="text-align:left;">: <?php echo $b['wilker_nama']; ?></td>
 
             </tr>
             <tr>
                 <th style="text-align:left;">Bulan</th>
-                <td style="text-align:left;">: </td>
+                <td style="text-align:left;">: <?php echo $b['laporan_tanggal_bulan']; ?></td>
 
             </tr>
             <tr>
                 <th colspan="0" style="text-align:left;width:200px;">Tahun</th>
-                <td colspan="11" style="text-align:left;width:200px;">: </td>
+                <td colspan="11" style="text-align:left;width:200px;">: <?php echo $b['laporan_tanggal_tahun']; ?></td>
             </tr>
             <tr>
                 <td><br /><br /><br /></td>
