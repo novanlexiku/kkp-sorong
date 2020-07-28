@@ -4,11 +4,11 @@ class Laporan_klw_model extends CI_Model
 
     function get_all_laporan_klw_1()
     {
-        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum FROM laporan_klw_1 l, tbl_penyakit p WHERE l.laporan_penyakit_id = p.penyakit_id");
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum,l.laporan_wilker, u.user_id, u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p, tbl_user u, tbl_wilker w WHERE l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = u.user_id and u.user_wilker = w.wilker_id");
         return $hsl;
     }
 
-    function add_new_row($pid, $tgl, $abk, $tkbm, $penumpang, $pp, $kkp, $sh, $umum)
+    function add_new_row($pid, $tgl, $abk, $tkbm, $penumpang, $pp, $kkp, $sh, $umum, $wilker)
     {
         $data = array(
             'laporan_penyakit_id' => $pid,
@@ -19,7 +19,8 @@ class Laporan_klw_model extends CI_Model
             'laporan_kkp' => $kkp,
             'laporan_sh' => $sh,
             'laporan_umum' => $umum,
-            'laporan_tanggal' => $tgl
+            'laporan_tanggal' => $tgl,
+            'laporan_wilker' => $wilker
 
         );
         $this->db->insert('laporan_klw_1', $data);

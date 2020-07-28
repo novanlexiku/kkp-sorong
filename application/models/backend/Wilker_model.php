@@ -4,8 +4,8 @@ class Wilker_model extends CI_Model
 
     function get_all_wilker()
     {
-        $result = $this->db->get('tbl_wilker');
-        return $result;
+        $hsl = $this->db->query("SELECT * from tbl_wilker where wilker_id > 1");
+        return $hsl;
     }
 
     function add_new_row($nama)

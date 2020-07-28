@@ -112,7 +112,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control" name="wilker" required>
-                                    <option value="">No Selected</option>
+                                    <option value="1">Bukan Koordinator</option>
                                     <?php
                                     foreach ($wilker->result() as $row) :
                                     ?>
@@ -171,7 +171,7 @@ foreach ($data->result() as $row) :
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" name="wilker" required>
-                                        <option value="">No Selected</option>
+                                        <option value="1">Bukan Koordinator</option>
                                         <?php
                                         foreach ($wilker->result() as $row) :
                                         ?>

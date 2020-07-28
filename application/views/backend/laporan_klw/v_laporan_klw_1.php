@@ -135,7 +135,7 @@
                         <input type="number" name="sh" class="form-control" placeholder="StackHolder" required>
                     </div>
                     <div class="form-group">
-                        <input type="number" name="umum" class="form-control" placeholder="UMUM" required>
+                        <input type="number" name="umum" class="form-control" placeholder="Umum" required>
                     </div>
                 </div>
                 <div class="modal-footer">

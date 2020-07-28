@@ -259,15 +259,24 @@
                                 <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk WilKer</a></li>
                             </ul>
                         </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Laporan KLW</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan</a></li>
+                            </ul>
+                        </li>
+
                     <?php else : ?>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Laporan KLW</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan</a></li>
+                            </ul>
+                        </li>
                     <?php endif; ?>
-                    <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
-                            <p>Laporan KLW</p><span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan</a></li>
-                        </ul>
-                    </li>
+
                     <li><a href="<?php echo site_url('logout'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-logout"></span>
                             <p>Log Out</p>
                         </a></li>

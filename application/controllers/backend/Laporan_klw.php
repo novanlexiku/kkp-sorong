@@ -53,7 +53,8 @@ class Laporan_klw extends CI_Controller
         $kkp = $this->input->post('kkp');
         $sh = $this->input->post('sh');
         $umum = $this->input->post('umum');
-        $this->laporan_klw_model->add_new_row($pid, $tgl, $abk, $tkbm, $penumpang, $pp, $kkp, $sh, $umum);
+        $wilker =  $this->session->userdata('id');
+        $this->laporan_klw_model->add_new_row($pid, $tgl, $abk, $tkbm, $penumpang, $pp, $kkp, $sh, $umum, $wilker);
         $this->session->set_flashdata('msg', 'success');
         redirect('backend/laporan_klw/klw1');
     }
