@@ -6,7 +6,7 @@
                 <div class="panel panel-white">
 
                     <div class="panel-body">
-                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Add New User</button>
+                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Koordinator</button>
 
                         <table id="mytable" class="display table" style="width: 100%; ">
                             <thead>
@@ -146,7 +146,7 @@ foreach ($data->result() as $row) :
                         <h4 class="modal-title" id="myModalLabel">Edit User</h4>
                     </div>
                     <div class="modal-body">
-
+                        <input type="hidden" name="user_id" value="<?php echo $row->user_id; ?>" required>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -158,6 +158,9 @@ foreach ($data->result() as $row) :
                                     <input type="text" name="nama" value="<?php echo $row->user_name; ?>" class="form-control" placeholder="Name" required>
                                 </div>
                                 <div class="form-group">
+                                    <input type="hidden" name="email" value="<?php echo $row->user_email; ?>" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
                                     <select class="form-control" name="level" required>
                                         <?php if ($row->user_level == '1') : ?>
                                             <option value="2">Petugas</option>
@@ -166,25 +169,21 @@ foreach ($data->result() as $row) :
                                         <?php endif; ?>
                                     </select>
                                 </div>
-                            <?php endforeach; ?>
-                            <div class="form-group">
-                                <select class="form-control" name="wilker" required>
-                                    <option value="">No Selected</option>
-                                    <?php
-                                    foreach ($wilker->result() as $row) :
-                                    ?>
-                                        <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="wilker" required>
+                                        <option value="">No Selected</option>
+                                        <?php
+                                        foreach ($wilker->result() as $row) :
+                                        ?>
+                                            <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <?php
-                        foreach ($data->result() as $row) :
-                        ?>
+
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="user_id" value="<?php echo $row->user_id; ?>" required>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-success">Update</button>
                     </div>
@@ -195,7 +194,7 @@ foreach ($data->result() as $row) :
 <?php endforeach; ?>
 
 <!-- Modal hapus-->
-<form id="add-row-form" action="<?php echo base_url() . 'backend/users/delete' ?>" method="post" enctype="multipart/form-data">
+<form id="add-row-form" action="<?php echo base_url() . 'backend/users/delete_wilker' ?>" method="post" enctype="multipart/form-data">
     <div class="modal fade" id="ModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

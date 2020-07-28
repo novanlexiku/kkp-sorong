@@ -120,6 +120,9 @@
                                     <option value="2">Petugas</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <input type="hidden" name="wilker" value="99" class="form-control">
+                            </div>
                         </div>
                     </div>
 
@@ -176,6 +179,9 @@ foreach ($data->result() as $row) :
                                             <option value="2" selected>Petugas</option>
                                         <?php endif; ?>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" name="wilker" value="99" class="form-control">
                                 </div>
                             </div>
                         </div>

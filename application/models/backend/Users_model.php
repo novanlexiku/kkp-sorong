@@ -20,27 +20,27 @@ class Users_model extends CI_Model
 		return $hsl;
 	}
 
-	function update_user_nopass($userid, $nama, $email, $level, $gambar)
+	function update_user_nopass($userid, $nama, $email, $level, $gambar, $wilker)
 	{
-		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_level='$level',user_photo='$gambar' WHERE user_id='$userid'");
+		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_level='$level',user_photo='$gambar', user_wilker='$wilker' WHERE user_id='$userid'");
 		return $hsl;
 	}
 
-	function update_user_nopassimg($userid, $nama, $email, $level)
+	function update_user_nopassimg($userid, $nama, $email, $level, $wilker)
 	{
-		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_level='$level' WHERE user_id='$userid'");
+		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_level='$level', user_wilker='$wilker' WHERE user_id='$userid'");
 		return $hsl;
 	}
 
-	function update_user($userid, $nama, $email, $pass, $level, $gambar)
+	function update_user($userid, $nama, $email, $pass, $level, $gambar, $wilker)
 	{
-		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_password=MD5('$pass'),user_level='$level',user_photo='$gambar' WHERE user_id='$userid'");
+		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_password=MD5('$pass'),user_level='$level',user_photo='$gambar', user_wilker='$wilker' WHERE user_id='$userid'");
 		return $hsl;
 	}
 
-	function update_user_noimg($userid, $nama, $email, $pass, $level)
+	function update_user_noimg($userid, $nama, $email, $pass, $level, $wilker)
 	{
-		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_password=MD5('$pass'),user_level='$level' WHERE user_id='$userid'");
+		$hsl = $this->db->query("UPDATE tbl_user SET user_name='$nama',user_email='$email',user_password=MD5('$pass'),user_level='$level', user_wilker='$wilker' WHERE user_id='$userid'");
 		return $hsl;
 	}
 
