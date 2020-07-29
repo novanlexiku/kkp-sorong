@@ -83,6 +83,7 @@
             <tbody>
                 <?php
                 $no = 0;
+                $total = 0;
                 foreach ($penyakit1->result_array() as $i) {
                     $no++;
                     $penyakit = $i['penyakit_nama'];
@@ -93,11 +94,14 @@
                     $kkp = $i['laporan_kkp'];
                     $sh = $i['laporan_sh'];
                     $umum = $i['laporan_umum'];
-                    $jumlah1 = $abk + $tkbm + $penumpang + $pp + $kkp + $sh + $umum;
+                    $jumlah = array($abk, $tkbm, $penumpang, $pp, $kkp, $sh, $umum);
+                    foreach ($jumlah as $key) {
+                        $total += $key;
+                    }
                 ?>
                     <tr>
                         <th scope="row"><?php echo $no; ?></th>
-                        <td style="text-align:center;"><?php echo $penyakit; ?></td>
+                        <td style="text-align:left;"><?php echo $penyakit; ?></td>
                         <td style="text-align:center;"><?php echo $abk; ?></td>
                         <td style="text-align:center;"><?php echo $tkbm; ?></td>
                         <td style="text-align:center;"><?php echo $penumpang; ?></td>
@@ -105,9 +109,22 @@
                         <td style="text-align:center;"><?php echo $kkp; ?></td>
                         <td style="text-align:center;"><?php echo $sh; ?></td>
                         <td style="text-align:center;"><?php echo $umum; ?></td>
-                        <td style="text-align:center;"><?php echo $jumlah1; ?></td>
+                        <td style="text-align:center;"><?php echo array_sum($jumlah); ?></td>
                     </tr>
                 <?php } ?>
+
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col" style="text-align: center;">JUMLAH</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col" style="text-align: center;"><?php echo $total; ?></th>
+                </tr>
                 <tr>
                     <th scope="col"></th>
                     <th scope="col" style="text-align: left;">B. PENYAKIT TIDAK MENULAR</th>
@@ -122,6 +139,7 @@
                 </tr>
                 <?php
                 $no = 0;
+                $total = 0;
                 foreach ($penyakit2->result_array() as $i) {
                     $no++;
                     $penyakit = $i['penyakit_nama'];
@@ -132,11 +150,14 @@
                     $kkp = $i['laporan_kkp'];
                     $sh = $i['laporan_sh'];
                     $umum = $i['laporan_umum'];
-                    $jumlah1 = $abk + $tkbm + $penumpang + $pp + $kkp + $sh + $umum;
+                    $jumlah = array($abk, $tkbm, $penumpang, $pp, $kkp, $sh, $umum);
+                    foreach ($jumlah as $key) {
+                        $total += $key;
+                    }
                 ?>
                     <tr>
                         <th scope="row"><?php echo $no; ?></th>
-                        <td style="text-align:center;"><?php echo $penyakit; ?></td>
+                        <td style="text-align:left;"><?php echo $penyakit; ?></td>
                         <td style="text-align:center;"><?php echo $abk; ?></td>
                         <td style="text-align:center;"><?php echo $tkbm; ?></td>
                         <td style="text-align:center;"><?php echo $penumpang; ?></td>
@@ -144,9 +165,21 @@
                         <td style="text-align:center;"><?php echo $kkp; ?></td>
                         <td style="text-align:center;"><?php echo $sh; ?></td>
                         <td style="text-align:center;"><?php echo $umum; ?></td>
-                        <td style="text-align:center;"><?php echo $jumlah1; ?></td>
+                        <td style="text-align:center;"><?php echo array_sum($jumlah); ?></td>
                     </tr>
                 <?php } ?>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col" style="text-align: center;">JUMLAH</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col" style="text-align: center;"><?php echo $total; ?></th>
+                </tr>
             </tbody>
         </table>
 
