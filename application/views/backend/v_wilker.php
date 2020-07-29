@@ -23,6 +23,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
+                                        <th>Alamat</th>
                                         <th style="text-align: center;">Action</th>
                                     </tr>
                                 </thead>
@@ -35,6 +36,7 @@
                                         <tr>
                                             <td><?php echo $no; ?></td>
                                             <td><?php echo $row->wilker_nama; ?></td>
+                                            <td><?php echo $row->wilker_alamat; ?></td>
                                             <td style="text-align: center;">
                                                 <a href="javascript:void(0);" class="btn btn-xs btn-edit" data-toggle="modal" data-target="#EditModal<?php echo $row->wilker_id; ?>"><span class="icon-pencil"></span></a>
                                                 <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->wilker_id; ?>"><span class="fa fa-trash"></span></a>
@@ -69,7 +71,9 @@
                     <div class="form-group">
                         <input type="text" name="nama" class="form-control" placeholder="Nama Wilayah Kerja" required>
                     </div>
-
+                    <div class="form-group">
+                        <input type="text" name="alamat" class="form-control" placeholder="Alamat Wilayah Kerja">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -79,32 +83,37 @@
         </div>
     </div>
 </form>
-
-<!--EDIT RECORD MODAL-->
-<form action="<?php echo site_url('backend/wilker/edit'); ?>" method="post">
-    <div class="modal fade" id="EditModal<?php echo $row->wilker_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Edit Wilayah Kerja</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" name="nama" value="<?php echo $row->wilker_nama; ?>" class="form-control" placeholder="Nama Wilayah Kerja" required>
+<?php
+foreach ($data->result() as $row) :
+?>
+    <!--EDIT RECORD MODAL-->
+    <form action="<?php echo site_url('backend/wilker/edit'); ?>" method="post">
+        <div class="modal fade" id="EditModal<?php echo $row->wilker_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Wilayah Kerja</h4>
                     </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" name="nama" value="<?php echo $row->wilker_nama; ?>" class="form-control" placeholder="Nama Wilayah Kerja" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="alamat" value="<?php echo $row->wilker_alamat; ?>" class="form-control" placeholder="Alamat Wilayah Kerja">
+                        </div>
 
-                </div>
-                <div class="modal-footer">
-                    <input type="hidden" name="kode" value="<?php echo $row->wilker_id; ?>" required>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success">Edit</button>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="kode" value="<?php echo $row->wilker_id; ?>" required>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success">Edit</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
-
+    </form>
+<?php endforeach; ?>
 <!--DELETE RECORD MODAL-->
 <form action="<?php echo site_url('backend/wilker/delete'); ?>" method="post">
     <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

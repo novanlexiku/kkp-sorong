@@ -21,8 +21,6 @@ class Wilker extends CI_Controller
     {
         $data = array();
 
-
-
         $data['data'] = $this->wilker_model->get_all_wilker();
         $data['user'] = $this->users_model->get_users_wilker();
         $data['title'] = 'Daftar Wilayah Kerja';
@@ -34,7 +32,8 @@ class Wilker extends CI_Controller
     function save()
     {
         $nama = $this->input->post('nama');
-        $this->wilker_model->add_new_row($nama);
+        $alamat = $this->input->post('alamat');
+        $this->wilker_model->add_new_row($nama, $alamat);
         $this->session->set_flashdata('msg', 'success');
         redirect('backend/wilker');
     }
@@ -43,7 +42,9 @@ class Wilker extends CI_Controller
     {
         $id   = $this->input->post('kode', TRUE);
         $nama = $this->input->post('nama');
-        $this->wilker_model->edit_row($id, $nama);
+        $alamat = $this->input->post('alamat');
+
+        $this->wilker_model->edit_row($id, $nama, $alamat);
         $this->session->set_flashdata('msg', 'info');
         redirect('backend/wilker');
     }
