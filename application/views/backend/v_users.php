@@ -6,7 +6,7 @@
                 <div class="panel panel-white">
 
                     <div class="panel-body">
-                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Add New User</button>
+                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Pengguna</button>
 
                         <table id="mytable" class="display table" style="width: 100%; ">
                             <thead>
@@ -102,6 +102,9 @@
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
+                                <input type="text" name="nip" class="form-control" placeholder="NIP" required>
+                            </div>
+                            <div class="form-group">
                                 <input type="text" name="nama" class="form-control" placeholder="Name" required>
                             </div>
                             <div class="form-group">
@@ -158,6 +161,9 @@ foreach ($data->result() as $row) :
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
+                                    <input type="text" name="nip" value="<?php echo $row->user_nip; ?>" class="form-control" placeholder="NIP" required>
+                                </div>
+                                <div class="form-group">
                                     <input type="text" name="nama" value="<?php echo $row->user_name; ?>" class="form-control" placeholder="Name" required>
                                 </div>
                                 <div class="form-group">
@@ -181,7 +187,7 @@ foreach ($data->result() as $row) :
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" name="wilker" value="99" class="form-control">
+                                    <input type="hidden" name="wilker" value="<?php echo $row->user_wilker; ?>" class="form-control">
                                 </div>
                             </div>
                         </div>

@@ -36,6 +36,7 @@ class Users extends CI_Controller
 
 	function insert()
 	{
+		$nip = htmlspecialchars($this->input->post('nip', TRUE), ENT_QUOTES);
 		$nama = htmlspecialchars($this->input->post('nama', TRUE), ENT_QUOTES);
 		$email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
 		$pass = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
@@ -70,7 +71,7 @@ class Users extends CI_Controller
 						$this->image_lib->resize();
 
 						$gambar = $gbr['file_name'];
-						$this->users_model->insert_user($nama, $email, $pass, $level, $gambar, $wilker);
+						$this->users_model->insert_user($nip, $nama, $email, $pass, $level, $gambar, $wilker);
 						echo $this->session->set_flashdata('msg', 'success');
 						redirect('backend/users');
 					} else {
@@ -78,7 +79,7 @@ class Users extends CI_Controller
 						redirect('backend/users');
 					}
 				} else {
-					$this->users_model->insert_user_noimg($nama, $email, $pass, $level, $wilker);
+					$this->users_model->insert_user_noimg($nip, $nama, $email, $pass, $level, $wilker);
 					echo $this->session->set_flashdata('msg', 'success');
 					redirect('backend/users');
 				}
@@ -91,6 +92,7 @@ class Users extends CI_Controller
 
 	function insert_wilker()
 	{
+		$nip = htmlspecialchars($this->input->post('nip', TRUE), ENT_QUOTES);
 		$nama = htmlspecialchars($this->input->post('nama', TRUE), ENT_QUOTES);
 		$email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
 		$pass = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
@@ -125,7 +127,7 @@ class Users extends CI_Controller
 						$this->image_lib->resize();
 
 						$gambar = $gbr['file_name'];
-						$this->users_model->insert_user($nama, $email, $pass, $level, $wilker, $gambar);
+						$this->users_model->insert_user($nip, $nama, $email, $pass, $level, $wilker, $gambar);
 						echo $this->session->set_flashdata('msg', 'success');
 						redirect('backend/users/tunjuk_wilker');
 					} else {
@@ -133,7 +135,7 @@ class Users extends CI_Controller
 						redirect('backend/users/tunjuk_wilker');
 					}
 				} else {
-					$this->users_model->insert_user_noimg($nama, $email, $pass, $level, $wilker);
+					$this->users_model->insert_user_noimg($nip, $nama, $email, $pass, $level, $wilker);
 					echo $this->session->set_flashdata('msg', 'success');
 					redirect('backend/users/tunjuk_wilker');
 				}
@@ -147,6 +149,7 @@ class Users extends CI_Controller
 	function update()
 	{
 		$userid = $this->input->post('user_id', TRUE);
+		$nip = htmlspecialchars($this->input->post('nip', TRUE), ENT_QUOTES);
 		$nama = htmlspecialchars($this->input->post('nama', TRUE), ENT_QUOTES);
 		$email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
 		$pass = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
@@ -184,7 +187,7 @@ class Users extends CI_Controller
 							$this->image_lib->resize();
 
 							$gambar = $gbr['file_name'];
-							$this->users_model->update_user_nopass($userid, $nama, $email, $level, $gambar, $wilker);
+							$this->users_model->update_user_nopass($userid, $nip, $nama, $email, $level, $gambar, $wilker);
 							echo $this->session->set_flashdata('msg', 'info');
 							redirect('backend/users');
 						} else {
@@ -192,7 +195,7 @@ class Users extends CI_Controller
 							redirect('backend/users');
 						}
 					} else {
-						$this->users_model->update_user_nopassimg($userid, $nama, $email, $level, $wilker);
+						$this->users_model->update_user_nopassimg($userid, $nip, $nama, $email, $level, $wilker);
 						echo $this->session->set_flashdata('msg', 'info');
 						redirect('backend/users');
 					}
@@ -214,7 +217,7 @@ class Users extends CI_Controller
 								$this->image_lib->resize();
 
 								$gambar = $gbr['file_name'];
-								$this->users_model->update_user($userid, $nama, $email, $pass, $level, $gambar, $wilker);
+								$this->users_model->update_user($userid, $nip, $nama, $email, $pass, $level, $gambar, $wilker);
 								echo $this->session->set_flashdata('msg', 'info');
 								redirect('backend/users');
 							} else {
@@ -222,7 +225,7 @@ class Users extends CI_Controller
 								redirect('backend/users');
 							}
 						} else {
-							$this->users_model->update_user_noimg($userid, $nama, $email, $pass, $level, $wilker);
+							$this->users_model->update_user_noimg($userid, $nip, $nama, $email, $pass, $level, $wilker);
 							echo $this->session->set_flashdata('msg', 'info');
 							redirect('backend/users');
 						}
@@ -250,7 +253,7 @@ class Users extends CI_Controller
 						$this->image_lib->resize();
 
 						$gambar = $gbr['file_name'];
-						$this->users_model->update_user_nopass($userid, $nama, $email, $level, $gambar, $wilker);
+						$this->users_model->update_user_nopass($userid, $nip, $nama, $email, $level, $gambar, $wilker);
 						echo $this->session->set_flashdata('msg', 'info');
 						redirect('backend/users');
 					} else {
@@ -258,7 +261,7 @@ class Users extends CI_Controller
 						redirect('backend/users');
 					}
 				} else {
-					$this->users_model->update_user_nopassimg($userid, $nama, $email, $level, $wilker);
+					$this->users_model->update_user_nopassimg($userid, $nip, $nama, $email, $level, $wilker);
 					echo $this->session->set_flashdata('msg', 'info');
 					redirect('backend/users');
 				}
@@ -280,7 +283,7 @@ class Users extends CI_Controller
 							$this->image_lib->resize();
 
 							$gambar = $gbr['file_name'];
-							$this->users_model->update_user($userid, $nama, $email, $pass, $level, $gambar, $wilker);
+							$this->users_model->update_user($userid, $nip, $nama, $email, $pass, $level, $gambar, $wilker);
 							echo $this->session->set_flashdata('msg', 'info');
 							redirect('backend/users');
 						} else {
@@ -288,7 +291,7 @@ class Users extends CI_Controller
 							redirect('backend/users');
 						}
 					} else {
-						$this->users_model->update_user_noimg($userid, $nama, $email, $pass, $level, $wilker);
+						$this->users_model->update_user_noimg($userid, $nip, $nama, $email, $pass, $level, $wilker);
 						echo $this->session->set_flashdata('msg', 'info');
 						redirect('backend/users');
 					}
@@ -303,6 +306,7 @@ class Users extends CI_Controller
 	function update_wilker()
 	{
 		$userid = $this->input->post('user_id', TRUE);
+		$nip = htmlspecialchars($this->input->post('nip', TRUE), ENT_QUOTES);
 		$nama = htmlspecialchars($this->input->post('nama', TRUE), ENT_QUOTES);
 		$email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
 		$pass = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
@@ -341,7 +345,7 @@ class Users extends CI_Controller
 							$this->image_lib->resize();
 
 							$gambar = $gbr['file_name'];
-							$this->users_model->update_user_nopass($userid, $nama, $email, $level, $gambar, $wilker);
+							$this->users_model->update_user_nopass($userid, $nip, $nama, $email, $level, $gambar, $wilker);
 							echo $this->session->set_flashdata('msg', 'info');
 							redirect('backend/users/tunjuk_wilker');
 						} else {
@@ -349,7 +353,7 @@ class Users extends CI_Controller
 							redirect('backend/users/tunjuk_wilker');
 						}
 					} else {
-						$this->users_model->update_user_nopassimg($userid, $nama, $email, $level, $wilker);
+						$this->users_model->update_user_nopassimg($userid, $nip, $nama, $email, $level, $wilker);
 						echo $this->session->set_flashdata('msg', 'info');
 						redirect('backend/users/tunjuk_wilker');
 					}
@@ -371,7 +375,7 @@ class Users extends CI_Controller
 								$this->image_lib->resize();
 
 								$gambar = $gbr['file_name'];
-								$this->users_model->update_user($userid, $nama, $email, $pass, $level, $gambar, $wilker);
+								$this->users_model->update_user($userid, $nip, $nama, $email, $pass, $level, $gambar, $wilker);
 								echo $this->session->set_flashdata('msg', 'info');
 								redirect('backend/users/tunjuk_wilker');
 							} else {
@@ -379,7 +383,7 @@ class Users extends CI_Controller
 								redirect('backend/users/tunjuk_wilker');
 							}
 						} else {
-							$this->users_model->update_user_noimg($userid, $nama, $email, $pass, $level, $wilker);
+							$this->users_model->update_user_noimg($userid, $nip, $nama, $email, $pass, $level, $wilker);
 							echo $this->session->set_flashdata('msg', 'info');
 							redirect('backend/users/tunjuk_wilker');
 						}
@@ -407,7 +411,7 @@ class Users extends CI_Controller
 						$this->image_lib->resize();
 
 						$gambar = $gbr['file_name'];
-						$this->users_model->update_user_nopass($userid, $nama, $email, $level, $gambar, $wilker);
+						$this->users_model->update_user_nopass($userid, $nip, $nama, $email, $level, $gambar, $wilker);
 						echo $this->session->set_flashdata('msg', 'info');
 						redirect('backend/users/tunjuk_wilker');
 					} else {
@@ -415,7 +419,7 @@ class Users extends CI_Controller
 						redirect('backend/users/tunjuk_wilker');
 					}
 				} else {
-					$this->users_model->update_user_nopassimg($userid, $nama, $email, $level, $wilker);
+					$this->users_model->update_user_nopassimg($userid, $nip, $nama, $email, $level, $wilker);
 					echo $this->session->set_flashdata('msg', 'info');
 					redirect('backend/users/tunjuk_wilker');
 				}
@@ -437,7 +441,7 @@ class Users extends CI_Controller
 							$this->image_lib->resize();
 
 							$gambar = $gbr['file_name'];
-							$this->users_model->update_user($userid, $nama, $email, $pass, $level, $gambar, $wilker);
+							$this->users_model->update_user($userid, $nip, $nama, $email, $pass, $level, $gambar, $wilker);
 							echo $this->session->set_flashdata('msg', 'info');
 							redirect('backend/users/tunjuk_wilker');
 						} else {
@@ -445,7 +449,7 @@ class Users extends CI_Controller
 							redirect('backend/users/tunjuk_wilker');
 						}
 					} else {
-						$this->users_model->update_user_noimg($userid, $nama, $email, $pass, $level, $wilker);
+						$this->users_model->update_user_noimg($userid, $nip, $nama, $email, $pass, $level, $wilker);
 						echo $this->session->set_flashdata('msg', 'info');
 						redirect('backend/users/tunjuk_wilker');
 					}

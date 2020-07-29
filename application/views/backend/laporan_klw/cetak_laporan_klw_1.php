@@ -155,9 +155,17 @@
             <tr>
                 <td></td>
         </table>
-        <table align="center" style="width:800px; border:none;margin-top:5px;margin-bottom:20px;">
+        <table align="center" style="width:700px; border:none;margin-top:5px;margin-bottom:20px;">
+            <?php
+            $b = $laporan->row_array();
+            ?>
             <tr>
-                <td align="right">Lokasi, </td>
+                <td align="center">Mengetahui</td>
+                <td align="center"><?php echo $b['wilker_nama']; ?>,<?php echo date("d-m-Y"); ?></td>
+            </tr>
+            <tr>
+                <td align="center">Koordinator Wilayah</td>
+                <td align="center">Pembuat Laporan</td>
             </tr>
             <tr>
                 <td align="right"></td>
@@ -167,11 +175,17 @@
                 <td><br /><br /><br /><br /></td>
             </tr>
             <tr>
-                <td align="right">( Nama )</td>
+                <td align="center">( <?php echo $b['user_name']; ?> )</td>
+                <td align="center">( <?php echo $this->session->userdata('name'); ?> )</td>
+            </tr>
+            <tr>
+                <td align="center">( NIP:<?php echo $b['user_nip']; ?> )</td>
+                <td align="center">( NIP:<?php echo $this->session->userdata('nip'); ?> )</td>
             </tr>
             <tr>
                 <td align="center"></td>
             </tr>
+
         </table>
         <table align="center" style="width:800px; border:none;margin-top:5px;margin-bottom:20px;">
             <tr>

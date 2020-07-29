@@ -180,6 +180,7 @@
                                         <?php else : ?>
                                             <small>Petugas</small>
                                         <?php endif; ?>
+                                        <p><small>NIP : <?php echo $this->session->userdata('nip'); ?></small></p>
                                     </span>
                                 </div>
                             </a>

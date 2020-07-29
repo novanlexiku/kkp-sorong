@@ -94,6 +94,9 @@
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
+                                <input type="text" name="nip" class="form-control" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
                                 <input type="text" name="nama" class="form-control" placeholder="Name" required>
                             </div>
                             <div class="form-group">
@@ -154,6 +157,9 @@ foreach ($data->result() as $row) :
                                 </div>
                             </div>
                             <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" name="nip" value="<?php echo $row->user_nip; ?>" class="form-control" placeholder="NIP" required>
+                                </div>
                                 <div class="form-group">
                                     <input type="text" name="nama" value="<?php echo $row->user_name; ?>" class="form-control" placeholder="Name" required>
                                 </div>

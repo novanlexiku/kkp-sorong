@@ -29,18 +29,22 @@ class Login extends CI_Controller
 				if ($x['user_level'] == '1') { //Administrator
 					$this->session->set_userdata('access', '1');
 					$id = $x['user_id'];
+					$nip = $x['user_nip'];
 					$name = $x['user_name'];
 					$wilker = $x['user_wilker'];
 					$this->session->set_userdata('id', $id);
+					$this->session->set_userdata('nip', $nip);
 					$this->session->set_userdata('name', $name);
 					$this->session->set_userdata('wilker', $wilker);
 					redirect('backend/dashboard');
 				} else { //Others User 
 					$this->session->set_userdata('access', '2');
 					$id = $x['user_id'];
+					$nip = $x['user_nip'];
 					$name = $x['user_name'];
 					$wilker = $x['user_wilker'];
 					$this->session->set_userdata('id', $id);
+					$this->session->set_userdata('nip', $nip);
 					$this->session->set_userdata('name', $name);
 					$this->session->set_userdata('wilker', $wilker);
 					redirect('backend/dashboard');
