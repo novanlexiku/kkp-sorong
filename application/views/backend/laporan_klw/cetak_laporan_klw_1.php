@@ -34,16 +34,17 @@
 
             </tr>
             <tr>
-                <th style="text-align:left;">Bulan</th>
+                <th style="text-align:left;">BULAN</th>
                 <td style="text-align:left;">: <?php echo $b['laporan_tanggal_bulan']; ?></td>
 
             </tr>
             <tr>
-                <th colspan="0" style="text-align:left;width:200px;">Tahun</th>
+                <th colspan="0" style="text-align:left;width:200px;">TAHUN</th>
                 <td colspan="11" style="text-align:left;width:200px;">: <?php echo $b['laporan_tanggal_tahun']; ?></td>
             </tr>
             <tr>
                 <td><br /><br /><br /></td>
+                <td colspan="11" style="text-align: right;">UKLW-1</td>
             </tr>
         </table>
 

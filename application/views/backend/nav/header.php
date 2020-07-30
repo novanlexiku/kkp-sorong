@@ -265,6 +265,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan UKLW 1</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw2'); ?>">Laporan UKLW 2</a></li>
                             </ul>
                         </li>
 
@@ -274,6 +275,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan UKLW 1</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw2'); ?>">Laporan UKLW 2</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>
