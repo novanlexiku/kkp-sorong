@@ -1,7 +1,10 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
+<?php
+$b = $laporan->row_array();
+?>
 
 <head>
-    <title>LAPORAN KUNJUNGAN PASIEN DAN JENIS PENYAKIT YANG DIDERITA PADA KLINIK KKP</title>
+    <title>LAPORAN KUNJUNGAN PASIEN DAN JENIS PENYAKIT YANG DIDERITA PADA KLINIK KKP Bulan:<?php echo $b['laporan_tanggal_bulan']; ?> Tahun:<?php echo $b['laporan_tanggal_tahun']; ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
     <link href="<?php echo base_url() . 'assets/plugins/bootstrap/css/bootstrap.min.css' ?>" rel="stylesheet" type="text/css" />
@@ -17,9 +20,7 @@
     <td><img src="<?php// echo base_url().'assets/img/kop_surat.png'?>"/></td>
 </tr>-->
         </table>
-        <?php
-        $b = $laporan->row_array();
-        ?>
+
         <table border="0" align="center" style="width:800px; border:none;margin-top:5px;margin-bottom:0px;">
             <tr>
                 <td colspan="2" style="width:800px;paddin-left:20px;">

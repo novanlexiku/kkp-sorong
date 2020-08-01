@@ -4,7 +4,7 @@ $b = $laporan->row_array();
 ?>
 
 <head>
-    <title>LAPORAN PENERBITAN SERTIFIKAT KESEHATAN BAGI MASYARAKAT Bulan:<?php echo $b['laporan_tanggal_bulan']; ?> Tahun:<?php echo $b['laporan_tanggal_tahun']; ?></title>
+    <title>LAPORAN PENERBITAN ICV Bulan:<?php echo $b['laporan_tanggal_bulan']; ?> Tahun:<?php echo $b['laporan_tanggal_tahun']; ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
     <link href="<?php echo base_url() . 'assets/plugins/bootstrap/css/bootstrap.min.css' ?>" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@ $b = $laporan->row_array();
             <tr>
                 <td colspan="2" style="width:800px;paddin-left:20px;">
                     <center>
-                        <h4>LAPORAN PENERBITAN SERTIFIKAT KESEHATAN BAGI MASYARAKAT</h4>
+                        <h4>LAPORAN PENERBITAN ICV</h4>
                     </center><br />
                 </td>
             </tr>
@@ -45,7 +45,7 @@ $b = $laporan->row_array();
             </tr>
             <tr>
                 <td><br /><br /><br /></td>
-                <td colspan="11" style="text-align: right;">UKLW-2</td>
+                <td colspan="11" style="text-align: right;">UKLW-3</td>
             </tr>
         </table>
 
@@ -59,22 +59,26 @@ $b = $laporan->row_array();
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
+                    <th scope="col" colspan="3" class="text-center">Status</th>
+                    <th scope="col" colspan="2" class="text-center">Jenis Vaksinasi</th>
                     <th scope="col"></th>
-                    <th scope="col" colspan="2" class="text-center">Hasil Pemeriksaan</th>
                     <th scope="col"></th>
                 </tr>
                 <tr>
                     <th>No</th>
                     <th style="text-align:center;" scope="col">Tanggal</th>
-                    <th style="text-align:center;" scope="col">Barcode</th>
+                    <th style="text-align:center;" scope="col">Seri ICV</th>
                     <th style="text-align:center;" scope="col">Nama</th>
                     <th style="text-align:center;" scope="col">Sex</th>
                     <th style="text-align:center;" scope="col">Umur</th>
                     <th style="text-align:center;" scope="col">Alamat</th>
-                    <th style="text-align:center;" scope="col">Pekerjaan</th>
-                    <th style="text-align:center;" scope="col">Sehat</th>
-                    <th style="text-align:center;" scope="col">Carrier</th>
-                    <th style="text-align:center;" scope="col">Tujuan</th>
+                    <th style="text-align:center;" scope="col">ABK</th>
+                    <th style="text-align:center;" scope="col">TKI/TKW</th>
+                    <th style="text-align:center;" scope="col">Umum</th>
+                    <th style="text-align:center;" scope="col">Meningitis</th>
+                    <th style="text-align:center;" scope="col">YF</th>
+                    <th style="text-align:center;" scope="col">Negara Tujuan</th>
+                    <th style="text-align:center;" scope="col">Keperluan Vaksinasi</th>
                 </tr>
             </thead>
             <tbody>
@@ -88,7 +92,7 @@ $b = $laporan->row_array();
                     <tr>
                         <td><?php echo $no; ?></td>
                         <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
-                        <td style="text-align:center;"><?php echo $row->laporan_barcode; ?></td>
+                        <td style="text-align:center;"><?php echo $row->laporan_seri; ?></td>
                         <td style="text-align:center;"><?php echo $row->laporan_nama; ?></td>
                         <td style="text-align:center;">
                             <?php if ($row->laporan_sex == 'laki') {
@@ -98,15 +102,27 @@ $b = $laporan->row_array();
                             } ?></td>
                         <td style="text-align:center;"><?php echo $row->laporan_umur; ?></td>
                         <td style="text-align:center;"><?php echo $row->laporan_alamat; ?></td>
-                        <td style="text-align:center;"><?php echo $row->laporan_pekerjaan; ?></td>
                         <td style="text-align:center;">
-                            <?php if ($row->laporan_hasil == 'sehat') {
+                            <?php if ($row->laporan_status == 'abk') {
                                 echo '&radic;'; ?>
                             <?php } ?> </td>
                         <td style="text-align:center;">
-                            <?php if ($row->laporan_hasil == 'carier') {
+                            <?php if ($row->laporan_status == 'tki') {
                                 echo '&radic;'; ?>
                             <?php } ?> </td>
+                        <td style="text-align:center;">
+                            <?php if ($row->laporan_status == 'umum') {
+                                echo '&radic;'; ?>
+                            <?php } ?> </td>
+                        <td style="text-align:center;">
+                            <?php if ($row->laporan_vaksin == 'meni') {
+                                echo '&radic;'; ?>
+                            <?php } ?> </td>
+                        <td style="text-align:center;">
+                            <?php if ($row->laporan_vaksin == 'yf') {
+                                echo '&radic;'; ?>
+                            <?php } ?> </td>
+                        <td style="text-align:center;"><?php echo $row->laporan_negara; ?></td>
                         <td style="text-align:center;"><?php echo $row->laporan_tujuan; ?></td>
                     </tr>
                 <?php } ?>
@@ -115,6 +131,9 @@ $b = $laporan->row_array();
                     <th scope="col"></th>
                     <th scope="col" style="text-align: center;">JUMLAH</th>
                     <th scope="col" style="text-align: center;"><?php echo $total; ?> Orang</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>

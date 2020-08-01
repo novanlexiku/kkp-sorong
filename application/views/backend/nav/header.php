@@ -257,7 +257,7 @@
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/penyakit'); ?>">Penyakit</a></li>
                                 <li><a href="<?php echo site_url('backend/wilker'); ?>">Wilayah Kerja</a></li>
-                                <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk WilKer</a></li>
+                                <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk Koordinator</a></li>
                             </ul>
                         </li>
                         <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
@@ -266,6 +266,7 @@
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan UKLW 1</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw2'); ?>">Laporan UKLW 2</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw3'); ?>">Laporan UKLW 3</a></li>
                             </ul>
                         </li>
 
@@ -276,6 +277,7 @@
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan UKLW 1</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw2'); ?>">Laporan UKLW 2</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw3'); ?>">Laporan UKLW 3</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>

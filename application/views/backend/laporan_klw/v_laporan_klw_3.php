@@ -1,11 +1,11 @@
 <div class="page-inner">
     <div class="page-title">
-        <h3>Laporan Penerbitan Sertifikat Kesehatan</h3>
+        <h3>Laporan Penerbitan ICV</h3>
         <div class="page-breadcrumb">
             <ol class="breadcrumb">
                 <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
                 <li><a href="#">Laporan KLW</a></li>
-                <li class="active">KLW 2</li>
+                <li class="active">KLW 3</li>
             </ol>
         </div>
     </div>
@@ -30,22 +30,26 @@
                                         <th scope="col"></th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
+                                        <th scope="col" colspan="3" class="text-center">Status</th>
+                                        <th scope="col" colspan="2" class="text-center">Jenis Vaksinasi</th>
                                         <th scope="col"></th>
-                                        <th scope="col" colspan="2" class="text-center">Hasil Pemeriksaan</th>
                                         <th scope="col"></th>
                                     </tr>
                                     <tr>
                                         <th>No</th>
                                         <th style="text-align:center;" scope="col">Tanggal</th>
-                                        <th style="text-align:center;" scope="col">Barcode</th>
+                                        <th style="text-align:center;" scope="col">Seri ICV</th>
                                         <th style="text-align:center;" scope="col">Nama</th>
                                         <th style="text-align:center;" scope="col">Sex</th>
                                         <th style="text-align:center;" scope="col">Umur</th>
                                         <th style="text-align:center;" scope="col">Alamat</th>
-                                        <th style="text-align:center;" scope="col">Pekerjaan</th>
-                                        <th style="text-align:center;" scope="col">Sehat</th>
-                                        <th style="text-align:center;" scope="col">Carrier</th>
-                                        <th style="text-align:center;" scope="col">Tujuan</th>
+                                        <th style="text-align:center;" scope="col">ABK</th>
+                                        <th style="text-align:center;" scope="col">TKI/TKW</th>
+                                        <th style="text-align:center;" scope="col">Umum</th>
+                                        <th style="text-align:center;" scope="col">Meningitis</th>
+                                        <th style="text-align:center;" scope="col">YF</th>
+                                        <th style="text-align:center;" scope="col">Negara Tujuan</th>
+                                        <th style="text-align:center;" scope="col">Keperluan Vaksinasi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,7 +63,7 @@
                                             <tr>
                                                 <td><?php echo $no; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_barcode; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_seri; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_nama; ?></td>
                                                 <td style="text-align:center;">
                                                     <?php if ($row->laporan_sex == 'laki') {
@@ -69,15 +73,27 @@
                                                     } ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_umur; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_alamat; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_pekerjaan; ?></td>
                                                 <td style="text-align:center;">
-                                                    <?php if ($row->laporan_hasil == 'sehat') {
+                                                    <?php if ($row->laporan_status == 'abk') {
                                                         echo '&radic;'; ?>
                                                     <?php } ?> </td>
                                                 <td style="text-align:center;">
-                                                    <?php if ($row->laporan_hasil == 'carier') {
+                                                    <?php if ($row->laporan_status == 'tki') {
                                                         echo '&radic;'; ?>
                                                     <?php } ?> </td>
+                                                <td style="text-align:center;">
+                                                    <?php if ($row->laporan_status == 'umum') {
+                                                        echo '&radic;'; ?>
+                                                    <?php } ?> </td>
+                                                <td style="text-align:center;">
+                                                    <?php if ($row->laporan_vaksin == 'meni') {
+                                                        echo '&radic;'; ?>
+                                                    <?php } ?> </td>
+                                                <td style="text-align:center;">
+                                                    <?php if ($row->laporan_vaksin == 'yf') {
+                                                        echo '&radic;'; ?>
+                                                    <?php } ?> </td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_negara; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_tujuan; ?></td>
                                             </tr>
                                         <?php } ?>
@@ -91,20 +107,37 @@
                                             <tr>
                                                 <td><?php echo $no; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_barcode; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_seri; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_nama; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_sex; ?></td>
+                                                <td style="text-align:center;">
+                                                    <?php if ($row->laporan_sex == 'laki') {
+                                                        echo 'Laki-Laki'; ?>
+                                                    <?php } else {
+                                                        echo 'Perempuan';
+                                                    } ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_umur; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_alamat; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_pekerjaan; ?></td>
                                                 <td style="text-align:center;">
-                                                    <?php if ($row->laporan_hasil == 'sehat') {
-                                                        echo '&radic;' ?>
+                                                    <?php if ($row->laporan_status == 'abk') {
+                                                        echo '&radic;'; ?>
                                                     <?php } ?> </td>
                                                 <td style="text-align:center;">
-                                                    <?php if ($row->laporan_hasil == 'carier') {
-                                                        echo '&radic;' ?>
+                                                    <?php if ($row->laporan_status == 'tki') {
+                                                        echo '&radic;'; ?>
                                                     <?php } ?> </td>
+                                                <td style="text-align:center;">
+                                                    <?php if ($row->laporan_status == 'umum') {
+                                                        echo '&radic;'; ?>
+                                                    <?php } ?> </td>
+                                                <td style="text-align:center;">
+                                                    <?php if ($row->laporan_vaksin == 'meni') {
+                                                        echo '&radic;'; ?>
+                                                    <?php } ?> </td>
+                                                <td style="text-align:center;">
+                                                    <?php if ($row->laporan_vaksin == 'yf') {
+                                                        echo '&radic;'; ?>
+                                                    <?php } ?> </td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_negara; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_tujuan; ?></td>
                                             </tr>
                                         <?php } ?>
@@ -120,7 +153,7 @@
 
                 <div class="panel panel-white">
                     <div class="panel-body">
-                        <form action="<?php echo site_url('backend/laporan_klw/cetak_laporan_klw_2'); ?>" method="post" target="_blank">
+                        <form action="<?php echo site_url('backend/laporan_klw/cetak_laporan_klw_3'); ?>" method="post" target="_blank">
                             <div class="row">
                                 <div class="col-md-3">
                                     <input type='text' name="tgl2" class="form-control datepicker2" placeholder="Bulan" required />
@@ -156,18 +189,18 @@
 </main><!-- Page Content -->
 
 <!--ADD RECORD MODAL-->
-<form action="<?php echo site_url('backend/laporan_klw/save_klw2'); ?>" method="post">
+<form action="<?php echo site_url('backend/laporan_klw/save_klw3'); ?>" method="post">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Data Laporan Penerbitan Sertifikat Kesehatan Baru</h4>
+                    <h4 class="modal-title" id="myModalLabel">Data Penerbitan ICV Baru</h4>
                 </div>
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <input type='text' name="barcode" class="form-control" value="" placeholder="Barcode" required />
+                        <input type='text' name="seri" class="form-control" value="" placeholder="No Seri ICV" required />
                     </div>
                     <div class="form-group">
                         <input type="text" name="nama" class="form-control" placeholder="Nama" required>
@@ -185,15 +218,22 @@
                         <input type="text" name="alamat" class="form-control" placeholder="Alamat" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="pekerjaan" class="form-control" placeholder="Pekerjaan" required>
+                        <select class="form-control" name="status" required>
+                            <option value="umum">Umum</option>
+                            <option value="abk">ABK</option>
+                            <option value="tki">TKI/TKW</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <input type="radio" id="customRadioInline1" name="hasil" value="sehat" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline1">Sehat</label>
+                        <input type="radio" id="customRadioInline1" name="vaksin" value="meni" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">Meningitis</label>
                     </div>
                     <div class="form-group">
-                        <input type="radio" id="customRadioInline2" name="hasil" value="carier" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline2">Carier</label>
+                        <input type="radio" id="customRadioInline2" name="vaksin" value="yf" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">YF</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="negara" class="form-control" placeholder="Negara Tujuan" required>
                     </div>
                     <div class="form-group">
                         <textarea name="tujuan" class="form-control" placeholder="Tujuan" id="exampleFormControlTextarea1" rows="3" required></textarea>
@@ -278,7 +318,7 @@
     <script type="text/javascript">
         $.toast({
             heading: 'Info',
-            text: "Penyakit Diperbarui!",
+            text: "Laporan Diperbarui!",
             showHideTransition: 'slide',
             icon: 'info',
             hideAfter: false,
@@ -290,7 +330,7 @@
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: "Penyakit Dihapus!.",
+            text: "Laporan Dihapus!.",
             showHideTransition: 'slide',
             icon: 'success',
             hideAfter: false,
