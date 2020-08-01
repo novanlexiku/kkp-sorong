@@ -1,11 +1,11 @@
 <div class="page-inner">
     <div class="page-title">
-        <h3>Laporan Penerbitan Surat Keterangan Sehat untuk Terbang</h3>
+        <h3>Laporan Penerbitan Sertifikat P3K dan Obat di Kapal</h3>
         <div class="page-breadcrumb">
             <ol class="breadcrumb">
                 <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
                 <li><a href="#">Laporan KLW</a></li>
-                <li class="active">KLW 5</li>
+                <li class="active">KLW 6</li>
             </ol>
         </div>
     </div>
@@ -23,29 +23,17 @@
                             <table id="data-table" class="display table" style="width: 100%; ">
                                 <thead>
                                     <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col" colspan="2" class="text-center">Diagnosa</th>
-                                    </tr>
-                                    <tr>
                                         <th>No</th>
                                         <th style="text-align:center;" scope="col">Tanggal</th>
                                         <th style="text-align:center;" scope="col">Barcode</th>
-                                        <th style="text-align:center;" scope="col">Nama</th>
-                                        <th style="text-align:center;" scope="col">Klasifikasi</th>
-                                        <th style="text-align:center;" scope="col">Sex</th>
-                                        <th style="text-align:center;" scope="col">Kebangsaan</th>
-                                        <th style="text-align:center;" scope="col">Alamat Keberangkatan/Asal</th>
-                                        <th style="text-align:center;" scope="col">Alamat Tujuan</th>
-                                        <th style="text-align:center;" scope="col">Menular</th>
-                                        <th style="text-align:center;" scope="col">Tidak Menular</th>
+                                        <th style="text-align:center;" scope="col">Nama Kapal</th>
+                                        <th style="text-align:center;" scope="col">Volume</th>
+                                        <th style="text-align:center;" scope="col">Datang Dari</th>
+                                        <th style="text-align:center;" scope="col">Sertifikat P3K Lama</th>
+                                        <th style="text-align:center;" scope="col">Keberangkatan</th>
+                                        <th style="text-align:center;" scope="col">Posisi Kapal</th>
+                                        <th style="text-align:center;" scope="col">Petugas Pemeriksa</th>
+                                        <th style="text-align:center;" scope="col">Agen Pelayaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -61,34 +49,13 @@
                                                 <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_barcode; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_nama; ?></td>
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_kelas == 'bumil') {
-                                                        echo 'Ibu Hamil'; ?>
-                                                    <?php } elseif ($row->laporan_kelas == 'bayi') {
-                                                        echo 'Bayi';
-                                                    } elseif ($row->laporan_kelas == 'orkit') {
-                                                        echo 'Orang Sakit';
-                                                    } elseif ($row->laporan_kelas == 'lansia') {
-                                                        echo 'Lanjut Usia';
-                                                    } ?> </td>
-
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_sex == 'laki') {
-                                                        echo 'Laki-Laki'; ?>
-                                                    <?php } else {
-                                                        echo 'Perempuan';
-                                                    } ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_wn; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_volume; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_asal; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_tujuan; ?></td>
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_diagnosa == 'menular') {
-                                                        echo '&radic;'; ?>
-                                                    <?php } ?> </td>
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_diagnosa == 'tidak_menular') {
-                                                        echo '&radic;'; ?>
-                                                    <?php } ?> </td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tgllama; ?> <?php echo $row->laporan_pellama; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tglbaru; ?> <?php echo $row->laporan_pelbaru; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_posisi; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_petugas; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_agen; ?></td>
                                             </tr>
                                         <?php } ?>
                                     <?php else : ?>
@@ -103,34 +70,13 @@
                                                 <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_barcode; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_nama; ?></td>
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_kelas == 'bumil') {
-                                                        echo 'Ibu Hamil'; ?>
-                                                    <?php } elseif ($row->laporan_kelas == 'bayi') {
-                                                        echo 'Bayi';
-                                                    } elseif ($row->laporan_kelas == 'orkit') {
-                                                        echo 'Orang Sakit';
-                                                    } elseif ($row->laporan_kelas == 'lansia') {
-                                                        echo 'Lanjut Usia';
-                                                    } ?> </td>
-
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_sex == 'laki') {
-                                                        echo 'Laki-Laki'; ?>
-                                                    <?php } else {
-                                                        echo 'Perempuan';
-                                                    } ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_wn; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_volume; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_asal; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_tujuan; ?></td>
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_diagnosa == 'menular') {
-                                                        echo '&radic;'; ?>
-                                                    <?php } ?> </td>
-                                                <td style="text-align:center;">
-                                                    <?php if ($row->laporan_diagnosa == 'tidak_menular') {
-                                                        echo '&radic;'; ?>
-                                                    <?php } ?> </td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tgllama; ?> <?php echo $row->laporan_pellama; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_tglbaru; ?> <?php echo $row->laporan_pelbaru; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_posisi; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_petugas; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_agen; ?></td>
                                             </tr>
                                         <?php } ?>
                                     <?php endif; ?>
@@ -145,7 +91,7 @@
 
                 <div class="panel panel-white">
                     <div class="panel-body">
-                        <form action="<?php echo site_url('backend/laporan_klw/cetak_laporan_klw_5'); ?>" method="post" target="_blank">
+                        <form action="<?php echo site_url('backend/laporan_klw/cetak_laporan_klw_6'); ?>" method="post" target="_blank">
                             <div class="row">
                                 <div class="col-md-3">
                                     <input type='text' name="tgl2" class="form-control datepicker2" placeholder="Bulan" required />
@@ -181,13 +127,13 @@
 </main><!-- Page Content -->
 
 <!--ADD RECORD MODAL-->
-<form action="<?php echo site_url('backend/laporan_klw/save_klw5'); ?>" method="post">
+<form action="<?php echo site_url('backend/laporan_klw/save_klw6'); ?>" method="post">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Data Penerbitan Surat Keterangan Sehat untuk Terbang Baru</h4>
+                    <h4 class="modal-title" id="myModalLabel">Data Penerbitan Sertifikat P3K dan Obat di Kapal Baru</h4>
                 </div>
                 <div class="modal-body">
 
@@ -195,40 +141,37 @@
                         <input type='text' name="barcode" class="form-control" value="" placeholder="Kode Barcode" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" name="nama" class="form-control" placeholder="Nama" required>
+                        <input type="text" name="nama" class="form-control" placeholder="Nama Kapal" required>
                     </div>
                     <div class="form-group">
-                        <select class="form-control" name="kelas" required>
-                            <option value="bumil">Ibu Hamil</option>
-                            <option value="bayi">Bayi</option>
-                            <option value="orkit">Orkit</option>
-                            <option value="lansia">Lansia</option>
-                        </select>
+                        <input type="number" name="volume" class="form-control" placeholder="Volume" required>
                     </div>
                     <div class="form-group">
-                        <select class="form-control" name="sex" required>
-                            <option value="laki">Laki-Laki</option>
-                            <option value="perempuan">Perempuan</option>
-                        </select>
+                        <input type="text" name="asal" class="form-control" placeholder="Datang Dari" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="wn" class="form-control" placeholder="Kebangsaan" required>
+                        <input type='text' name="tgl_lama" class="form-control datepicker" placeholder="Tanggal Lama" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" name="asal" class="form-control" placeholder="Alamat Keberangkatan/Asal" required>
+                        <input type="text" name="pel_lama" class="form-control" placeholder="Pelabuhan Lama" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="tujuan" class="form-control" placeholder="Alamat Tujuan" required>
+                        <input type='text' name="tgl_baru" class="form-control datepicker" placeholder="Tanggal Keberangkatan" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="pel_baru" class="form-control" placeholder="Tujuan Keberangkatan" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="posisi" class="form-control" placeholder="Posisi Kapal" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="petugas" class="form-control" placeholder="Petugas Pemeriksa" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="agen" class="form-control" placeholder="Agen Pelayaran" required>
                     </div>
 
-                    <div class="form-group">
-                        <input type="radio" id="customRadioInline1" name="diagnosa" value="menular" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline1">Menular</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" id="customRadioInline2" name="diagnosa" value="tidak_menular" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline2">Tidak Menular</label>
-                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

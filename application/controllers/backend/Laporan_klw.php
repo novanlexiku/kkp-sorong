@@ -97,6 +97,19 @@ class Laporan_klw extends CI_Controller
         $this->load->view('backend/laporan_klw/v_laporan_klw_5', $data);
     }
 
+    function klw6()
+    {
+        $data = array();
+        $data['title'] = 'Laporan KLW';
+        $data['laporan'] = $this->laporan_klw_model->get_all_laporan_klw_6();
+        $data['laporan2'] = $this->laporan_klw_model->get_all_laporan_klw_6_petugas();
+        $data['wilker'] = $this->wilker_model->get_all_wilker();
+
+        // Load the list page view 
+        $this->load->view('backend/nav/header', $data);
+        $this->load->view('backend/laporan_klw/v_laporan_klw_6', $data);
+    }
+
     function save_klw1()
     {
         $pid = $this->input->post('penyakit');
@@ -182,6 +195,26 @@ class Laporan_klw extends CI_Controller
         redirect('backend/laporan_klw/klw5');
     }
 
+    function save_klw6()
+    {
+        $tgl = date('y-m-d');
+        $barcode = $this->input->post('barcode');
+        $nama = $this->input->post('nama');
+        $vol = $this->input->post('volume');
+        $asal = $this->input->post('asal');
+        $tgl_lama = $this->input->post('tgl_lama');
+        $pel_lama = $this->input->post('pel_lama');
+        $tgl_baru = $this->input->post('tgl_baru');
+        $pel_baru = $this->input->post('pel_baru');
+        $posisi = $this->input->post('posisi');
+        $petugas = $this->input->post('petugas');
+        $agen = $this->input->post('agen');
+        $wilker =  $this->session->userdata('wilker');
+        $this->laporan_klw_model->add_new_row6($tgl, $barcode, $nama, $vol, $asal, $tgl_lama, $pel_lama, $tgl_baru, $pel_baru, $posisi, $petugas, $agen, $wilker);
+        $this->session->set_flashdata('msg', 'success');
+        redirect('backend/laporan_klw/klw6');
+    }
+
 
     function cetak_laporan_klw_1()
     {
@@ -237,5 +270,16 @@ class Laporan_klw extends CI_Controller
         $x['laporan2'] = $this->laporan_klw_model->get_laporan_klw5($tgl2, $tgl3, $wilker);
 
         $this->load->view('backend/laporan_klw/cetak_laporan_klw_5', $x);
+    }
+
+    function cetak_laporan_klw_6()
+    {
+        $tgl2 = $this->input->post('tgl2');
+        $tgl3 = $this->input->post('tgl3');
+        $wilker = $this->input->post('wilker');
+        $x['laporan'] = $this->laporan_klw_model->get_laporan_klw6_all($wilker);
+        $x['laporan2'] = $this->laporan_klw_model->get_laporan_klw6($tgl2, $tgl3, $wilker);
+
+        $this->load->view('backend/laporan_klw/cetak_laporan_klw_6', $x);
     }
 }
