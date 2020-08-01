@@ -84,6 +84,19 @@ class Laporan_klw extends CI_Controller
         $this->load->view('backend/laporan_klw/v_laporan_klw_4', $data);
     }
 
+    function klw5()
+    {
+        $data = array();
+        $data['title'] = 'Laporan KLW';
+        $data['laporan'] = $this->laporan_klw_model->get_all_laporan_klw_5();
+        $data['laporan2'] = $this->laporan_klw_model->get_all_laporan_klw_5_petugas();
+        $data['wilker'] = $this->wilker_model->get_all_wilker();
+
+        // Load the list page view 
+        $this->load->view('backend/nav/header', $data);
+        $this->load->view('backend/laporan_klw/v_laporan_klw_5', $data);
+    }
+
     function save_klw1()
     {
         $pid = $this->input->post('penyakit');
@@ -152,6 +165,23 @@ class Laporan_klw extends CI_Controller
         redirect('backend/laporan_klw/klw4');
     }
 
+    function save_klw5()
+    {
+        $tgl = date('y-m-d');
+        $barcode = $this->input->post('barcode');
+        $nama = $this->input->post('nama');
+        $kelas = $this->input->post('kelas');
+        $sex = $this->input->post('sex');
+        $wn = $this->input->post('wn');
+        $asal = $this->input->post('asal');
+        $tujuan = $this->input->post('tujuan');
+        $diagnosa = $this->input->post('diagnosa');
+        $wilker =  $this->session->userdata('wilker');
+        $this->laporan_klw_model->add_new_row5($tgl, $barcode, $nama, $kelas, $sex, $wn, $asal, $tujuan, $diagnosa, $wilker);
+        $this->session->set_flashdata('msg', 'success');
+        redirect('backend/laporan_klw/klw5');
+    }
+
 
     function cetak_laporan_klw_1()
     {
@@ -196,5 +226,16 @@ class Laporan_klw extends CI_Controller
         $x['laporan2'] = $this->laporan_klw_model->get_laporan_klw4($tgl2, $tgl3, $wilker);
 
         $this->load->view('backend/laporan_klw/cetak_laporan_klw_4', $x);
+    }
+
+    function cetak_laporan_klw_5()
+    {
+        $tgl2 = $this->input->post('tgl2');
+        $tgl3 = $this->input->post('tgl3');
+        $wilker = $this->input->post('wilker');
+        $x['laporan'] = $this->laporan_klw_model->get_laporan_klw5_all($wilker);
+        $x['laporan2'] = $this->laporan_klw_model->get_laporan_klw5($tgl2, $tgl3, $wilker);
+
+        $this->load->view('backend/laporan_klw/cetak_laporan_klw_5', $x);
     }
 }

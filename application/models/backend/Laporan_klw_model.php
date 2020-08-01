@@ -25,6 +25,12 @@ class Laporan_klw_model extends CI_Model
         return $hsl;
     }
 
+    function get_all_laporan_klw_5()
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_barcode,l.laporan_nama,l.laporan_kelas,l.laporan_sex,l.laporan_wn,l.laporan_asal,l.laporan_tujuan,l.laporan_diagnosa,l.laporan_wilker, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_5 l, tbl_user u, tbl_wilker w WHERE l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id");
+        return $hsl;
+    }
+
     function get_all_laporan_klw_1_petugas()
     {
         $wilker = $this->session->userdata('wilker');
@@ -49,6 +55,13 @@ class Laporan_klw_model extends CI_Model
     {
         $wilker = $this->session->userdata('wilker');
         $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_barcode,l.laporan_nama,l.laporan_sex,l.laporan_wn,l.laporan_asal,l.laporan_tujuan,l.laporan_diagnosa,l.laporan_wilker, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_4 l, tbl_user u, tbl_wilker w WHERE l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
+        return $hsl;
+    }
+
+    function get_all_laporan_klw_5_petugas()
+    {
+        $wilker = $this->session->userdata('wilker');
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_barcode,l.laporan_nama,l.laporan_kelas,l.laporan_sex,l.laporan_wn,l.laporan_asal,l.laporan_tujuan,l.laporan_diagnosa,l.laporan_wilker, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_5 l, tbl_user u, tbl_wilker w WHERE l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
         return $hsl;
     }
 
@@ -123,6 +136,24 @@ class Laporan_klw_model extends CI_Model
         $this->db->insert('laporan_klw_4', $data);
     }
 
+    function add_new_row5($tgl, $barcode, $nama, $kelas, $sex, $wn, $asal, $tujuan, $diagnosa, $wilker)
+    {
+        $data = array(
+            'laporan_tanggal' => $tgl,
+            'laporan_barcode' => $barcode,
+            'laporan_nama' => $nama,
+            'laporan_kelas' => $kelas,
+            'laporan_sex' => $sex,
+            'laporan_wn' => $wn,
+            'laporan_asal' => $asal,
+            'laporan_tujuan' => $tujuan,
+            'laporan_diagnosa' => $diagnosa,
+            'laporan_wilker' => $wilker
+
+        );
+        $this->db->insert('laporan_klw_5', $data);
+    }
+
     function get_laporan_klw1_all($wilker)
     {
         $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,DATE_FORMAT(laporan_tanggal,'%M') AS laporan_tanggal_bulan,DATE_FORMAT(laporan_tanggal,'%Y') AS laporan_tanggal_tahun,l.laporan_id,l.laporan_penyakit_id,p.penyakit_id,p.penyakit_nama,p.penyakit_kategori,l.laporan_abk,l.laporan_tkbm,l.laporan_penumpang,l.laporan_pp,l.laporan_kkp,l.laporan_sh,l.laporan_umum, l.laporan_wilker,u.user_id,u.user_nip,u.user_name, w.wilker_id, w.wilker_nama FROM laporan_klw_1 l, tbl_penyakit p,tbl_user u, tbl_wilker w WHERE l.laporan_penyakit_id = p.penyakit_id and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
@@ -172,6 +203,18 @@ class Laporan_klw_model extends CI_Model
     function get_laporan_klw4($tgl2, $tgl3, $wilker)
     {
         $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_barcode,l.laporan_nama,l.laporan_sex,l.laporan_wn,l.laporan_asal,l.laporan_tujuan,l.laporan_diagnosa,l.laporan_wilker, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_4 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
+        return $hsl;
+    }
+
+    function get_laporan_klw5_all($wilker)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,DATE_FORMAT(laporan_tanggal,'%M') AS laporan_tanggal_bulan,DATE_FORMAT(laporan_tanggal,'%Y') AS laporan_tanggal_tahun,l.laporan_barcode,l.laporan_nama,l.laporan_kelas,l.laporan_sex,l.laporan_wn,l.laporan_asal,l.laporan_tujuan,l.laporan_diagnosa,l.laporan_wilker, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_5 l, tbl_user u, tbl_wilker w WHERE l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
+        return $hsl;
+    }
+
+    function get_laporan_klw5($tgl2, $tgl3, $wilker)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_barcode,l.laporan_nama,l.laporan_kelas,l.laporan_sex,l.laporan_wn,l.laporan_asal,l.laporan_tujuan,l.laporan_diagnosa,l.laporan_wilker, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_klw_5 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
         return $hsl;
     }
 
