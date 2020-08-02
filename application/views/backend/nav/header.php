@@ -270,6 +270,7 @@
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw4'); ?>">Laporan UKLW 4</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw5'); ?>">Laporan UKLW 5</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw6'); ?>">Laporan UKLW 6</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw7'); ?>">Laporan UKLW 7</a></li>
                             </ul>
                         </li>
 
@@ -284,6 +285,7 @@
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw4'); ?>">Laporan UKLW 4</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw5'); ?>">Laporan UKLW 5</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw6'); ?>">Laporan UKLW 6</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw7'); ?>">Laporan UKLW 7</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>
