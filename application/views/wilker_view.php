@@ -70,59 +70,21 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Wilayah</th>
-                                            <th scope="col">Tempat Kedudukan</th>
                                             <th scope="col">Alamat</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Pelabuhan Laut Sorong</td>
-                                            <td>Kota Sorong</td>
-                                            <td>Jl. Jend. Sudirman Lorg. Marcopolo No.1 </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Pelabuhan Rakyat</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Bandar Udara DEO</td>
-                                            <td>Kota Sorong</td>
-                                            <td>Komplek Bandara DEO</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Pelabuhan Arar</td>
-                                            <td>Kab. Sorong</td>
-                                            <td>Jl. Gayus Usuli Klaigit Aimas</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Pelabuhan Khusus Sele</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">6</th>
-                                            <td>Pelabuhan Waisasi Raja Ampat</td>
-                                            <td>Waisai Raja Ampat</td>
-                                            <td>Jl. Bayangkara Waisai Raja Ampat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Pelabuhan Fak-Fak</td>
-                                            <td>Kota Fak-Fak</td>
-                                            <td>Jl. Dr. Samratulangi Fak Fak</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">8</th>
-                                            <td>Pelabuhan Kaimana</td>
-                                            <td>Kota Kaimana</td>
-                                            <td>Jl. Diponegoro Kec. Kaimana</td>
-                                        </tr>
+                                        <?php
+                                        $no = 0;
+                                        foreach ($data->result() as $row) :
+                                            $no++;
+                                        ?>
+                                            <tr>
+                                                <th scope="row"><?php echo $no; ?></th>
+                                                <td><?php echo $row->wilker_nama; ?></td>
+                                                <td><?php echo $row->wilker_alamat; ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
 

@@ -1,11 +1,11 @@
 <div class="page-inner">
     <div class="page-title">
-        <h3>Laporan Kunjungan Pasien dan Jenis Penyakit yang Diderita pada Klinik KKP</h3>
+        <h3>Laporan Penerbitan Dokumen Kesehatan Kapal/Pesawat</h3>
         <div class="page-breadcrumb">
             <ol class="breadcrumb">
                 <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
-                <li><a href="#">Laporan KLW</a></li>
-                <li class="active">KLW 1</li>
+                <li><a href="#">Laporan PKSE</a></li>
+                <li class="active">PKSE 3</li>
             </ol>
         </div>
     </div>
@@ -24,15 +24,16 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th style="text-align:center;" scope="col">Jenis Penyakit</th>
-                                        <th style="text-align:center;" scope="col">ABK</th>
-                                        <th style="text-align:center;" scope="col">TKBM</th>
-                                        <th style="text-align:center;" scope="col">Penumpang</th>
-                                        <th style="text-align:center;" scope="col">Pengantar/Penjemput</th>
-                                        <th style="text-align:center;" scope="col">KKP</th>
-                                        <th style="text-align:center;" scope="col">Stackholder</th>
-                                        <th style="text-align:center;" scope="col">Umum</th>
                                         <th style="text-align:center;" scope="col">Tanggal</th>
+                                        <th style="text-align:center;" scope="col">Wilayah Kerja</th>
+                                        <th style="text-align:center;" scope="col">CoP</th>
+                                        <th style="text-align:center;" scope="col">PHQC</th>
+                                        <th style="text-align:center;" scope="col">Health Book</th>
+                                        <th style="text-align:center;" scope="col">SSCEC</th>
+                                        <th style="text-align:center;" scope="col">SSCC</th>
+                                        <th style="text-align:center;" scope="col">OME SSCEC/SSCC</th>
+                                        <th style="text-align:center;" scope="col">Sailing Permit</th>
+                                        <th style="text-align:center;" scope="col">P3K</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,16 +46,16 @@
                                         ?>
                                             <tr>
                                                 <td><?php echo $no; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->penyakit_nama; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_abk; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_tkbm; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_penumpang; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_pp; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_kkp; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_sh; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_umum; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
-
+                                                <td style="text-align:center;"><?php echo $row->wilker_nama; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_cop; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_phqc; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_hbook; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sscec; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sscc; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_ome; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sail; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_p3k; ?></td>
                                             </tr>
                                         <?php } ?>
                                     <?php else : ?>
@@ -66,16 +67,16 @@
                                         ?>
                                             <tr>
                                                 <td><?php echo $no; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->penyakit_nama; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_abk; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_tkbm; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_penumpang; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_pp; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_kkp; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_sh; ?></td>
-                                                <td style="text-align:center;"><?php echo $row->laporan_umum; ?></td>
                                                 <td style="text-align:center;"><?php echo $row->laporan_tanggal; ?></td>
-
+                                                <td style="text-align:center;"><?php echo $row->wilker_nama; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_cop; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_phqc; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_hbook; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sscec; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sscc; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_ome; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_sail; ?></td>
+                                                <td style="text-align:center;"><?php echo $row->laporan_p3k; ?></td>
                                             </tr>
                                         <?php } ?>
                                     <?php endif; ?>
@@ -90,7 +91,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-white">
                         <div class="panel-body">
-                            <form action="<?php echo site_url('backend/laporan_klw/cetak_laporan_klw_1'); ?>" method="post" target="_blank">
+                            <form action="<?php echo site_url('backend/laporan_pkse/cetak_laporan_pkse_3'); ?>" method="post" target="_blank">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <input type='text' name="tgl2" class="form-control datepicker2" placeholder="Bulan" required />
@@ -98,15 +99,7 @@
                                     <div class="col-md-3">
                                         <input type='text' name="tgl3" class="form-control datepicker3" placeholder="Tahun" required />
                                     </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" name="wilker" required>
-                                            <?php
-                                            foreach ($wilker->result() as $row) :
-                                            ?>
-                                                <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
+
                                     <div class="col-md-3">
                                         <button type="submit" class="btn btn-success m-b-sm">Tampilkan Data</button>
                                     </div>
@@ -118,6 +111,7 @@
                 </div>
             <?php else : ?>
             <?php endif; ?>
+
         </div>
     </div><!-- Row -->
 </div><!-- Main Wrapper -->
@@ -128,47 +122,41 @@
 </main><!-- Page Content -->
 
 <!--ADD RECORD MODAL-->
-<form action="<?php echo site_url('backend/laporan_klw/save_klw1'); ?>" method="post">
+<form action="<?php echo site_url('backend/laporan_pkse/save_pkse3'); ?>" method="post">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Data Kunjungan Pasien dan Jenis Penyakit yang Diderita pada Klinik KKP Baru</h4>
+                    <h5 class="modal-title" id="myModalLabel">Data Laporan Penerbitan Dokumen Kesehatan Kapal/Pesawat Baru</h5>
+                    <hr>
                 </div>
                 <div class="modal-body">
+                    <div class="form-group">
+                        <input type="number" min="0" name="cop" class="form-control" placeholder="CoP" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" name="phqc" class="form-control" placeholder="PHQC" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" name="hb" class="form-control" placeholder="Health Book" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" name="sscec" class="form-control" placeholder="SSCEC" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" name="sscc" class="form-control" placeholder="SSCC" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" name="ome" class="form-control" placeholder="OME SSCEC/SSCC" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" name="sp" class="form-control" placeholder="Sailing Permit" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="0" name="p3k" class="form-control" placeholder="P3K" required>
+                    </div>
 
-                    <div class="form-group">
-                        <select class="form-control" name="penyakit" required>
-                            <?php foreach ($penyakit->result() as $row) : ?>
-                                <option value="<?php echo $row->penyakit_id; ?>"><?php echo $row->penyakit_nama; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type='text' name="tgl" class="form-control datepicker" value="" placeholder="Tanggal" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="abk" class="form-control" placeholder="ABK" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="tkbm" class="form-control" placeholder="TKBM" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="penumpang" class="form-control" placeholder="Penumpang" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="pp" class="form-control" placeholder="Pengantar/Penjemput" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="kkp" class="form-control" placeholder="KKP" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="sh" class="form-control" placeholder="StackHolder" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="umum" class="form-control" placeholder="Umum" required>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

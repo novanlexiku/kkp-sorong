@@ -6,6 +6,8 @@ class About extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Visitor_model', 'visitor_model');
+		$this->load->model('backend/wilker_model');
+
 		$this->visitor_model->count_visitor();
 		$this->load->helper('text');
 		error_reporting(0);
@@ -57,6 +59,7 @@ class About extends CI_Controller
 		$site_info = $this->db->get('tbl_site', 1)->row();
 
 		$v['logo'] =  $site_info->site_logo_header;
+		$data['data'] = $this->wilker_model->get_all_wilker();
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('header', $v, TRUE);
 		$data['footer'] = $this->load->view('footer', '', TRUE);

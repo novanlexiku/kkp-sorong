@@ -137,36 +137,38 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <?php if ($this->session->userdata('wilker') == '1') : ?>
+                <div class="col-md-12">
+                    <div class="panel panel-white">
+                        <div class="panel-body">
+                            <form action="<?php echo site_url('backend/laporan_klw/cetak_laporan_klw_3'); ?>" method="post" target="_blank">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type='text' name="tgl2" class="form-control datepicker2" placeholder="Bulan" required />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type='text' name="tgl3" class="form-control datepicker3" placeholder="Tahun" required />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" name="wilker" required>
+                                            <?php
+                                            foreach ($wilker->result() as $row) :
+                                            ?>
+                                                <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="submit" class="btn btn-success m-b-sm">Tampilkan Data</button>
+                                    </div>
+                                </div>
+                            </form>
 
-                <div class="panel panel-white">
-                    <div class="panel-body">
-                        <form action="<?php echo site_url('backend/laporan_klw/cetak_laporan_klw_3'); ?>" method="post" target="_blank">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <input type='text' name="tgl2" class="form-control datepicker2" placeholder="Bulan" required />
-                                </div>
-                                <div class="col-md-3">
-                                    <input type='text' name="tgl3" class="form-control datepicker3" placeholder="Tahun" required />
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-control" name="wilker" required>
-                                        <?php
-                                        foreach ($wilker->result() as $row) :
-                                        ?>
-                                            <option value="<?php echo $row->wilker_id; ?>"><?php echo $row->wilker_nama; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <button type="submit" class="btn btn-success m-b-sm">Tampilkan Data</button>
-                                </div>
-                            </div>
-                        </form>
-
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php else : ?>
+            <?php endif; ?>
         </div>
     </div><!-- Row -->
 </div><!-- Main Wrapper -->

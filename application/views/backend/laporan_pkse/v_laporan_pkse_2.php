@@ -1,11 +1,11 @@
 <div class="page-inner">
     <div class="page-title">
-        <h3>Laporan Hasil Pemeriksaan Kesehatan Pada Kedatangan Kapal/Pesawat</h3>
+        <h3>Laporan Hasil Pemeriksaan Kesehatan Pada Keberangkatan Kapal/Pesawat</h3>
         <div class="page-breadcrumb">
             <ol class="breadcrumb">
                 <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
                 <li><a href="#">Laporan PKSE</a></li>
-                <li class="active">PKSE 1</li>
+                <li class="active">PKSE 2</li>
             </ol>
         </div>
     </div>
@@ -162,7 +162,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-white">
                         <div class="panel-body">
-                            <form action="<?php echo site_url('backend/laporan_pkse/cetak_laporan_pkse_1'); ?>" method="post" target="_blank">
+                            <form action="<?php echo site_url('backend/laporan_pkse/cetak_laporan_pkse_2'); ?>" method="post" target="_blank">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <input type='text' name="tgl2" class="form-control datepicker2" placeholder="Bulan" required />
@@ -193,13 +193,13 @@
 </main><!-- Page Content -->
 
 <!--ADD RECORD MODAL-->
-<form action="<?php echo site_url('backend/laporan_pkse/save_pkse1'); ?>" method="post">
+<form action="<?php echo site_url('backend/laporan_pkse/save_pkse2'); ?>" method="post">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h5 class="modal-title" id="myModalLabel">Data Laporan Hasil Pemeriksaan Kesehatan Pada Kedatangan Kapal/Pesawat Baru</h5>
+                    <h5 class="modal-title" id="myModalLabel">Data Laporan Hasil Pemeriksaan Kesehatan Pada Keberangkatan Kapal/Pesawat Baru</h5>
                 </div>
                 <div class="modal-body">
                     <h5 class="modal-title" id="myModalLabel">Kapal/Pesawat dari Luar Negeri</h5>
