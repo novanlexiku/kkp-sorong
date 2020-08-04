@@ -275,6 +275,21 @@
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw9'); ?>">Laporan UKLW 9</a></li>
                             </ul>
                         </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Laporan PKSE</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse1'); ?>">Laporan PKSE 1</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse2'); ?>">Laporan PKSE 2</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse3'); ?>">Laporan PKSE 3</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse4'); ?>">Laporan PKSE 4</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse5'); ?>">Laporan PKSE 5</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse6'); ?>">Laporan PKSE 6</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse7'); ?>">Laporan PKSE 7</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse8'); ?>">Laporan PKSE 8</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse9'); ?>">Laporan PKSE 9</a></li>
+                            </ul>
+                        </li>
 
                     <?php else : ?>
                         <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
@@ -290,6 +305,21 @@
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw7'); ?>">Laporan UKLW 7</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw8'); ?>">Laporan UKLW 8</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw9'); ?>">Laporan UKLW 9</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Laporan PKSE</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse1'); ?>">Laporan PKSE 1</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse2'); ?>">Laporan PKSE 2</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse3'); ?>">Laporan PKSE 3</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse4'); ?>">Laporan PKSE 4</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse5'); ?>">Laporan PKSE 5</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse6'); ?>">Laporan PKSE 6</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse7'); ?>">Laporan PKSE 7</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse8'); ?>">Laporan PKSE 8</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse9'); ?>">Laporan PKSE 9</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>

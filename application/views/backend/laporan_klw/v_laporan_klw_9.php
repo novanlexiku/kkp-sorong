@@ -69,7 +69,7 @@
                                     <?php else : ?>
                                         <?php
                                         $no = 0;
-                                        foreach ($laporan2->result() as $row) {
+                                        foreach ($laporan->result() as $row) {
                                             $no++;
                                             $stok_awal = $row->laporan_stokawal;
                                             $stok_tambah = $row->laporan_stoktambahan;
