@@ -52,13 +52,11 @@ $b = $laporan->row_array();
         <table border="1" align="center" style="width:1000px;margin-bottom:20px;">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col" style="text-align:center;" rowspan="2">#</th>
+                    <th scope="col" style="text-align:center;" rowspan="2">Jenis Penyakit</th>
                     <th scope="col" colspan="8" class="text-center">Klasifikasi Pasien/Penderita</th>
                 </tr>
                 <tr>
-                    <th scope="col" style="text-align:center;">#</th>
-                    <th scope="col" style="text-align:center;">Jenis Penyakit</th>
                     <th scope="col" style="text-align:center;">ABK</th>
                     <th scope="col" style="text-align:center;">TKBM</th>
                     <th scope="col" style="text-align:center;">Penumpang</th>
@@ -118,13 +116,7 @@ $b = $laporan->row_array();
                 <tr>
                     <th scope="col"></th>
                     <th scope="col" style="text-align: center;">JUMLAH</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col" colspan="7"></th>
                     <th scope="col" style="text-align: center;"><?php echo $total; ?></th>
                 </tr>
                 <tr>
@@ -173,13 +165,7 @@ $b = $laporan->row_array();
                 <tr>
                     <th scope="col"></th>
                     <th scope="col" style="text-align: center;">JUMLAH</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col" colspan="7"></th>
                     <th scope="col" style="text-align: center;"><?php echo $total; ?></th>
                 </tr>
             </tbody>

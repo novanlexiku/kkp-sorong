@@ -52,32 +52,23 @@ $b = $laporan->row_array();
         <table border="1" align="center" style="width:1000px;margin-bottom:20px;">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th rowspan="2">No</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Tanggal</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Barcode</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Nama Kapal</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Volume</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Datang Dari</th>
                     <th scope="col" colspan="2" class="text-center">Sertifikat P3K Lama</th>
                     <th scope="col" colspan="2" class="text-center">Keberangkatan</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Posisi Kapal</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Petugas Pemeriksa</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Agen Pelayaran</th>
                 </tr>
                 <tr>
-                    <th>No</th>
-                    <th style="text-align:center;" scope="col">Tanggal</th>
-                    <th style="text-align:center;" scope="col">Barcode</th>
-                    <th style="text-align:center;" scope="col">Nama Kapal</th>
-                    <th style="text-align:center;" scope="col">Volume</th>
-                    <th style="text-align:center;" scope="col">Datang Dari</th>
                     <th style="text-align:center;" scope="col">Tanggal</th>
                     <th style="text-align:center;" scope="col">Pelabuhan</th>
                     <th style="text-align:center;" scope="col">Tanggal</th>
                     <th style="text-align:center;" scope="col">Tujuan</th>
-                    <th style="text-align:center;" scope="col">Posisi Kapal</th>
-                    <th style="text-align:center;" scope="col">Petugas Pemeriksa</th>
-                    <th style="text-align:center;" scope="col">Agen Pelayaran</th>
                 </tr>
             </thead>
             <tbody>

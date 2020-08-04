@@ -23,18 +23,6 @@
                             <table id="data-table" class="display table" style="width: 100%; ">
                                 <thead>
                                     <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col" colspan="2" class="text-center">Diagnosa</th>
-                                    </tr>
-                                    <tr>
                                         <th>No</th>
                                         <th style="text-align:center;" scope="col">Tanggal</th>
                                         <th style="text-align:center;" scope="col">Barcode</th>

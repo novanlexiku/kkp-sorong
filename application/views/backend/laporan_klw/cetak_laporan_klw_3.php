@@ -52,33 +52,25 @@ $b = $laporan->row_array();
         <table border="1" align="center" style="width:1000px;margin-bottom:20px;">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th rowspan="2">No</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Tanggal</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Seri ICV</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Nama</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Sex</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Umur</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Alamat</th>
                     <th scope="col" colspan="3" class="text-center">Status</th>
                     <th scope="col" colspan="2" class="text-center">Jenis Vaksinasi</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Negara Tujuan</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Keperluan Vaksinasi</th>
                 </tr>
                 <tr>
-                    <th>No</th>
-                    <th style="text-align:center;" scope="col">Tanggal</th>
-                    <th style="text-align:center;" scope="col">Seri ICV</th>
-                    <th style="text-align:center;" scope="col">Nama</th>
-                    <th style="text-align:center;" scope="col">Sex</th>
-                    <th style="text-align:center;" scope="col">Umur</th>
-                    <th style="text-align:center;" scope="col">Alamat</th>
+
                     <th style="text-align:center;" scope="col">ABK</th>
                     <th style="text-align:center;" scope="col">TKI/TKW</th>
                     <th style="text-align:center;" scope="col">Umum</th>
                     <th style="text-align:center;" scope="col">Meningitis</th>
                     <th style="text-align:center;" scope="col">YF</th>
-                    <th style="text-align:center;" scope="col">Negara Tujuan</th>
-                    <th style="text-align:center;" scope="col">Keperluan Vaksinasi</th>
                 </tr>
             </thead>
             <tbody>

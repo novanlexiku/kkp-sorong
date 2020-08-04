@@ -52,26 +52,19 @@ $b = $laporan->row_array();
         <table border="1" align="center" style="width:1000px;margin-bottom:20px;">
             <thead>
                 <tr>
-                    <th></th>
-                    <th style="text-align:center;" scope="col"></th>
-                    <th style="text-align:center;" scope="col"></th>
-                    <th style="text-align:center;" scope="col"></th>
-                    <th style="text-align:center;" scope="col"></th>
-                    <th style="text-align:center;" scope="col"></th>
+                    <th rowspan="2">No</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Nama Alat</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Satuan</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Stok Awal Bulan</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Penerimaan Bulan Ini</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Sisa Akhir Bulan</th>
                     <th style="text-align:center;" colspan="3" scope="col">Kondisi Alat</th>
-                    <th style="text-align:center;" scope="col"></th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Keterangan</th>
                 </tr>
                 <tr>
-                    <th>No</th>
-                    <th style="text-align:center;" scope="col">Nama Alat</th>
-                    <th style="text-align:center;" scope="col">Satuan</th>
-                    <th style="text-align:center;" scope="col">Stok Awal Bulan</th>
-                    <th style="text-align:center;" scope="col">Penerimaan Bulan Ini</th>
-                    <th style="text-align:center;" scope="col">Sisa Akhir Bulan</th>
                     <th style="text-align:center;" scope="col">Baik</th>
                     <th style="text-align:center;" scope="col">Rusak Ringan</th>
                     <th style="text-align:center;" scope="col">Rusak Berat</th>
-                    <th style="text-align:center;" scope="col">Keterangan</th>
                 </tr>
             </thead>
             <tbody>

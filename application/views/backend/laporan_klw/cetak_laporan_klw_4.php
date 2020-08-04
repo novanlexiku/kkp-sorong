@@ -52,25 +52,18 @@ $b = $laporan->row_array();
         <table border="1" align="center" style="width:1000px;margin-bottom:20px;">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th rowspan="2">No</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Tanggal</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Barcode</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Nama</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Sex</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Kebangsaan</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Alamat Keberangkatan/Asal</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Alamat Tujuan</th>
                     <th scope="col" colspan="2" class="text-center">Diagnosa</th>
                 </tr>
                 <tr>
-                    <th>No</th>
-                    <th style="text-align:center;" scope="col">Tanggal</th>
-                    <th style="text-align:center;" scope="col">Barcode</th>
-                    <th style="text-align:center;" scope="col">Nama</th>
-                    <th style="text-align:center;" scope="col">Sex</th>
-                    <th style="text-align:center;" scope="col">Kebangsaan</th>
-                    <th style="text-align:center;" scope="col">Alamat Keberangkatan/Asal</th>
-                    <th style="text-align:center;" scope="col">Alamat Tujuan</th>
+
                     <th style="text-align:center;" scope="col">Menular</th>
                     <th style="text-align:center;" scope="col">Tidak Menular</th>
                 </tr>

@@ -23,11 +23,6 @@
                             <table id="data-table" class="display table" style="width: 100%; ">
                                 <thead>
                                     <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col" colspan="8" class="text-center">Klasifikasi Pasien/Penderita</th>
-                                    </tr>
-                                    <tr>
                                         <th>No</th>
                                         <th style="text-align:center;" scope="col">Jenis Penyakit</th>
                                         <th style="text-align:center;" scope="col">ABK</th>

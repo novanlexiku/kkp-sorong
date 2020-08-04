@@ -52,29 +52,20 @@ $b = $laporan->row_array();
         <table border="1" align="center" style="width:1000px;margin-bottom:20px;">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th rowspan="2">No</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Tanggal</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Barcode</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Nama</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Sex</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Umur</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Alamat</th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Pekerjaan</th>
                     <th scope="col" colspan="2" class="text-center">Hasil Pemeriksaan</th>
-                    <th scope="col"></th>
+                    <th style="text-align:center;" scope="col" rowspan="2">Tujuan</th>
                 </tr>
                 <tr>
-                    <th>No</th>
-                    <th style="text-align:center;" scope="col">Tanggal</th>
-                    <th style="text-align:center;" scope="col">Barcode</th>
-                    <th style="text-align:center;" scope="col">Nama</th>
-                    <th style="text-align:center;" scope="col">Sex</th>
-                    <th style="text-align:center;" scope="col">Umur</th>
-                    <th style="text-align:center;" scope="col">Alamat</th>
-                    <th style="text-align:center;" scope="col">Pekerjaan</th>
                     <th style="text-align:center;" scope="col">Sehat</th>
                     <th style="text-align:center;" scope="col">Carrier</th>
-                    <th style="text-align:center;" scope="col">Tujuan</th>
                 </tr>
             </thead>
             <tbody>
