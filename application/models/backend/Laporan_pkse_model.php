@@ -67,6 +67,19 @@ class Laporan_pkse_model extends CI_Model
         return $hsl;
     }
 
+    function get_all_laporan_pkse_7()
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5,u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id");
+        return $hsl;
+    }
+
+    function get_all_laporan_pkse_7_petugas()
+    {
+        $wilker = $this->session->userdata('wilker');
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5,u.user_id,u.user_name,u.user_nip, u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker='$wilker'");
+        return $hsl;
+    }
+
     function add_new_row($tgl, $wilker, $ln1, $ln2, $ln3, $ln4, $ln5, $ln6, $dn1, $dn2, $dn3, $dn4, $dn5, $dn6, $ehac)
     {
         $data = array(
@@ -160,6 +173,32 @@ class Laporan_pkse_model extends CI_Model
             'laporan_luar' => $luar,
         );
         $this->db->insert('laporan_pkse_5', $data);
+    }
+
+    function add_new_row7($tgl, $wilker, $satuan, $awal1, $tambah1, $pakai1, $awal2, $tambah2, $pakai2, $awal3, $tambah3, $pakai3, $awal4, $tambah4, $pakai4, $awal5, $tambah5, $pakai5)
+    {
+        $data = array(
+            'laporan_tanggal' => $tgl,
+            'laporan_wilker' => $wilker,
+            'laporan_satuan' => $satuan,
+            'laporan_awal1' => $awal1,
+            'laporan_tambah1' => $tambah1,
+            'laporan_pakai1' => $pakai1,
+            'laporan_awal2' => $awal2,
+            'laporan_tambah2' => $tambah2,
+            'laporan_pakai2' => $pakai2,
+            'laporan_awal3' => $awal3,
+            'laporan_tambah3' => $tambah3,
+            'laporan_pakai3' => $pakai3,
+            'laporan_awal4' => $awal4,
+            'laporan_tambah4' => $tambah4,
+            'laporan_pakai4' => $pakai4,
+            'laporan_awal5' => $awal5,
+            'laporan_tambah5' => $tambah5,
+            'laporan_pakai5' => $pakai5
+
+        );
+        $this->db->insert('laporan_pkse_7', $data);
     }
 
     function get_laporan_pkse1_all()
@@ -1485,6 +1524,60 @@ class Laporan_pkse_model extends CI_Model
     function get_total_p19_wil8($tgl2, $tgl3)
     {
         $hsl = $this->db->query("SELECT SUM(laporan_abk+laporan_tkbm+laporan_penumpang+laporan_pp+laporan_kkp+laporan_sh+laporan_umum) as lain2_wil8 FROM laporan_klw_1 WHERE laporan_penyakit_id=19 and MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and laporan_wilker=9 ");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_all()
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,DATE_FORMAT(laporan_tanggal,'%M') AS laporan_tanggal_bulan,DATE_FORMAT(laporan_tanggal,'%Y') AS laporan_tanggal_tahun,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id ");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil1($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=2");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil2($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=3");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil3($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=4");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil4($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=5");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil5($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=6");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil6($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=7");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil7($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=8");
+        return $hsl;
+    }
+
+    function get_laporan_pkse7_wil8($tgl2, $tgl3)
+    {
+        $hsl = $this->db->query("SELECT l.laporan_id,DATE_FORMAT(laporan_tanggal,'%d %M %Y') AS laporan_tanggal,l.laporan_wilker,l.laporan_satuan,l.laporan_awal1,l.laporan_tambah1,l.laporan_pakai1,l.laporan_awal2,l.laporan_tambah2,l.laporan_pakai2,l.laporan_awal3,l.laporan_tambah3,l.laporan_pakai3,l.laporan_awal4,l.laporan_tambah4,l.laporan_pakai4,l.laporan_awal5,l.laporan_tambah5,l.laporan_pakai5, u.user_id,u.user_name,u.user_nip,u.user_wilker,w.wilker_id,w.wilker_nama FROM laporan_pkse_7 l, tbl_user u, tbl_wilker w WHERE MONTH(laporan_tanggal)='$tgl2' and YEAR(laporan_tanggal)='$tgl3' and l.laporan_wilker = u.user_wilker and u.user_wilker = w.wilker_id and l.laporan_wilker=9");
         return $hsl;
     }
 }

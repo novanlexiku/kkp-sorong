@@ -486,4 +486,62 @@ class Laporan_pkse extends CI_Controller
 
         $this->load->view('backend/laporan_pkse/cetak_laporan_pkse_6', $x);
     }
+
+    function pkse7()
+    {
+        $data = array();
+        $data['title'] = 'Laporan PKSE';
+        $data['laporan'] = $this->laporan_pkse_model->get_all_laporan_pkse_7();
+        $data['laporan2'] = $this->laporan_pkse_model->get_all_laporan_pkse_7_petugas();
+        $data['wilker'] = $this->wilker_model->get_all_wilker();
+
+        // Load the list page view 
+        $this->load->view('backend/nav/header', $data);
+        $this->load->view('backend/laporan_pkse/v_laporan_pkse_7', $data);
+    }
+
+    function save_pkse7()
+    {
+        $tgl = date('y-m-d');
+        $wilker =  $this->session->userdata('wilker');
+        $satuan = $this->input->post('satuan');
+        $awal1 = $this->input->post('awal1');
+        $tambah1 = $this->input->post('tambah1');
+        $pakai1 = $this->input->post('pakai1');
+        $awal2 = $this->input->post('awal2');
+        $tambah2 = $this->input->post('tambah2');
+        $pakai2 = $this->input->post('pakai2');
+        $awal3 = $this->input->post('awal3');
+        $tambah3 = $this->input->post('tambah3');
+        $pakai3 = $this->input->post('pakai3');
+        $awal4 = $this->input->post('awal4');
+        $tambah4 = $this->input->post('tambah4');
+        $pakai4 = $this->input->post('pakai4');
+        $awal5 = $this->input->post('awal5');
+        $tambah5 = $this->input->post('tambah5');
+        $pakai5 = $this->input->post('pakai5');
+
+        $this->laporan_pkse_model->add_new_row7($tgl, $wilker, $satuan, $awal1, $tambah1, $pakai1, $awal2, $tambah2, $pakai2, $awal3, $tambah3, $pakai3, $awal4, $tambah4, $pakai4, $awal5, $tambah5, $pakai5);
+        $this->session->set_flashdata('msg', 'success');
+        redirect('backend/laporan_pkse/pkse7');
+    }
+
+    function cetak_laporan_pkse_7()
+    {
+        $tgl2 = $this->input->post('tgl2');
+        $tgl3 = $this->input->post('tgl3');
+        $x['wilker'] = $this->wilker_model->get_all_wilker();
+        $x['laporan'] = $this->laporan_pkse_model->get_laporan_pkse7_all();
+        $x['pkse1'] = $this->laporan_pkse_model->get_laporan_pkse7_wil1($tgl2, $tgl3);
+        $x['pkse2'] = $this->laporan_pkse_model->get_laporan_pkse7_wil2($tgl2, $tgl3);
+        $x['pkse3'] = $this->laporan_pkse_model->get_laporan_pkse7_wil3($tgl2, $tgl3);
+        $x['pkse4'] = $this->laporan_pkse_model->get_laporan_pkse7_wil4($tgl2, $tgl3);
+        $x['pkse5'] = $this->laporan_pkse_model->get_laporan_pkse7_wil5($tgl2, $tgl3);
+        $x['pkse6'] = $this->laporan_pkse_model->get_laporan_pkse7_wil6($tgl2, $tgl3);
+        $x['pkse7'] = $this->laporan_pkse_model->get_laporan_pkse7_wil7($tgl2, $tgl3);
+        $x['pkse8'] = $this->laporan_pkse_model->get_laporan_pkse7_wil8($tgl2, $tgl3);
+
+
+        $this->load->view('backend/laporan_pkse/cetak_laporan_pkse_7', $x);
+    }
 }
