@@ -4,7 +4,7 @@ $b = $laporan->row_array();
 ?>
 
 <head>
-    <title>LAPORAN HASIL PEMERIKSAAN KESEHATAN PADA KEDATANGAN KAPAL/PESAWAT Bulan:<?php echo $b['laporan_tanggal_bulan']; ?> Tahun:<?php echo $b['laporan_tanggal_tahun']; ?></title>
+    <title>LAPORAN STOK DOKUMEN KESEHATAN KAPAL Bulan:<?php echo $b['laporan_tanggal_bulan']; ?> Tahun:<?php echo $b['laporan_tanggal_tahun']; ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css') ?>" />
     <link href="<?php echo base_url() . 'assets/plugins/bootstrap/css/bootstrap.min.css' ?>" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@ $b = $laporan->row_array();
             <tr>
                 <td colspan="2" style="width:800px;paddin-left:20px;">
                     <center>
-                        <h4>LAPORAN HASIL PEMERIKSAAN KESEHATAN PADA KEDATANGAN KAPAL/PESAWAT</h4>
+                        <h4>LAPORAN STOK DOKUMEN KESEHATAN KAPAL</h4>
                     </center>
                     <center>
                         <h4>KANTOR KESEHATAN PELABUHAN KELAS III SORONG</h4>
