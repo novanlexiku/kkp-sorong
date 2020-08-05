@@ -210,32 +210,23 @@
 
                     <?php if ($this->session->userdata('access') == '1') : ?>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span>
-                                <p>Post</p><span class="arrow"></span>
+                                <p>Post Berita</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="<?php echo site_url('backend/post/add_new'); ?>">Add New</a></li>
+                                <li><a href="<?php echo site_url('backend/post/add_new'); ?>">Tambah</a></li>
                                 <li><a href="<?php echo site_url('backend/post'); ?>">Post List</a></li>
-                                <li><a href="<?php echo site_url('backend/category'); ?>">Category</a></li>
+                                <li><a href="<?php echo site_url('backend/category'); ?>">Kategori</a></li>
                                 <li><a href="<?php echo site_url('backend/tag'); ?>">Tag</a></li>
-                                <li><a href="<?php echo site_url('backend/inbox'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
-                                        <p>Inbox</p>
-                                    </a></li>
-                                <li><a href="<?php echo site_url('backend/comment'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span>
-                                        <p>Comments</p>
-                                    </a></li>
-                                <li><a href="<?php echo site_url('backend/subscriber'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span>
-                                        <p>Subscribers</p>
-                                    </a></li>
-                                <li><a href="<?php echo site_url('backend/testimonial'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span>
-                                        <p>Testimonials</p>
-                                    </a></li>
+                                <li><a href="<?php echo site_url('backend/inbox'); ?>">Inbox</a></li>
+                                <li><a href="<?php echo site_url('backend/comment'); ?>">Komentar</a></li>
+                                <li><a href="<?php echo site_url('backend/subscriber'); ?>">Subscribers</a></li>
                             </ul>
                         </li>
                         <li><a href="<?php echo site_url('backend/kuesioner'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
                                 <p>SIJABLAY</p>
                             </a></li>
                         <li><a href="<?php echo site_url('backend/users'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span>
-                                <p>Users</p>
+                                <p>Pengguna</p>
                             </a></li>
                         <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
                                 <p>Pengaturan</p><span class="arrow"></span>
@@ -247,6 +238,7 @@
                                 <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
                                 <li><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
                                 <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
+                                <li><a href="<?php echo site_url('backend/testimonial'); ?>">Testimonials</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
                             </ul>
                         </li>
@@ -286,8 +278,6 @@
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse5'); ?>">Laporan PKSE 5</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse6'); ?>">Laporan PKSE 6</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse7'); ?>">Laporan PKSE 7</a></li>
-                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse8'); ?>">Laporan PKSE 8</a></li>
-                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse9'); ?>">Laporan PKSE 9</a></li>
                             </ul>
                         </li>
 
@@ -316,10 +306,7 @@
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse3'); ?>">Laporan PKSE 3</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse4'); ?>">Laporan PKSE 4</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse5'); ?>">Laporan PKSE 5</a></li>
-                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse6'); ?>">Laporan PKSE 6</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse7'); ?>">Laporan PKSE 7</a></li>
-                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse8'); ?>">Laporan PKSE 8</a></li>
-                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse9'); ?>">Laporan PKSE 9</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>
