@@ -53,6 +53,7 @@ class Kuesioner extends CI_Controller
         $config['prev_link'] = '<< Prev';
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        $data['total_responden'] = $this->kuesioner_model->get_total_responden();
         $data['kuesionerAp1_sangatsetuju'] = $this->kuesioner_model->get_sangatsetuju_kuesionerAp1();
         $data['kuesionerAp1_setuju'] = $this->kuesioner_model->get_setuju_kuesionerAp1();
         $data['kuesionerAp1_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesionerAp1();
@@ -88,10 +89,7 @@ class Kuesioner extends CI_Controller
         $data['kuesionerGp1_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesionerGp1();
         $data['kuesionerGp1_sangattidaksetuju'] = $this->kuesioner_model->get_sangattidaksetuju_kuesionerGp1();
 
-        $data['kuesionerGp2_sangatsetuju'] = $this->kuesioner_model->get_sangatsetuju_kuesionerGp2();
-        $data['kuesionerGp2_setuju'] = $this->kuesioner_model->get_setuju_kuesionerGp2();
-        $data['kuesionerGp2_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesionerGp2();
-        $data['kuesionerGp2_sangattidaksetuju'] = $this->kuesioner_model->get_sangattidaksetuju_kuesionerGp2();
+       
 
         $data['kuesionerHp1_sangatsetuju'] = $this->kuesioner_model->get_sangatsetuju_kuesionerHp1();
         $data['kuesionerHp1_setuju'] = $this->kuesioner_model->get_setuju_kuesionerHp1();

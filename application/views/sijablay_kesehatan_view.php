@@ -378,7 +378,7 @@
                                                             <div id="collapseG" class="collapse" aria-labelledby="headingG" data-parent="#accordionExample">
                                                                 <div class="card-body">
                                                                     <!-- Start Kuesioner G -->
-                                                                    - Petugas KKP melayani tamu dengan ramah
+                                                                    - Petugas KKP melayani tamu dengan ramah dan Petugas KKP pada saat melayani tamu terlihat rapih dalam berpakaiannya
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio" name="kuesionerGpertanyaan1" id="exampleRadios25" value="4">
                                                                         <label class="form-check-label" for="exampleRadios25">
@@ -403,32 +403,7 @@
                                                                             Sangat Tidak Setuju
                                                                         </label>
                                                                     </div>
-                                                                    <br>
-                                                                    - Petugas KKP pada saat melayani tamu terlihat rapih dalam berpakaiannya
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio" name="kuesionerGpertanyaan2" id="exampleRadios29" value="4">
-                                                                        <label class="form-check-label" for="exampleRadios29">
-                                                                            Sangat Setuju
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio" name="kuesionerGpertanyaan2" id="exampleRadios30" value="3">
-                                                                        <label class="form-check-label" for="exampleRadios30">
-                                                                            Setuju
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio" name="kuesionerGpertanyaan2" id="exampleRadios31" value="2">
-                                                                        <label class="form-check-label" for="exampleRadios31">
-                                                                            Tidak Setuju
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio" name="kuesionerGpertanyaan2" id="exampleRadios32" value="1">
-                                                                        <label class="form-check-label" for="exampleRadios32">
-                                                                            Sangat Tidak Setuju
-                                                                        </label>
-                                                                    </div>
+
                                                                     <!-- End kuesioner G -->
                                                                 </div>
                                                             </div>

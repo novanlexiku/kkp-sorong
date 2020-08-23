@@ -127,7 +127,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -151,7 +150,6 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
@@ -162,7 +160,7 @@ class Sijablay extends CI_Controller
 			$k3p2 = $this->input->post('kuesioner3pertanyaan2');
 
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message1($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k1p1, $k2p1, $k2p2, $k3p1, $k3p2);
+			$this->sijablay_model->save_message1($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k1p1, $k2p1, $k2p2, $k3p1, $k3p2);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-dokumen-kesehatan-kapal');
 		}
@@ -186,7 +184,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -210,7 +207,6 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
@@ -219,7 +215,7 @@ class Sijablay extends CI_Controller
 			$k4p2 = $this->input->post('kuesioner4pertanyaan2');
 
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message2($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k4p1, $k4p2);
+			$this->sijablay_model->save_message2($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k4p1, $k4p2);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-icv-vaksin');
 		}
@@ -243,7 +239,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -267,7 +262,6 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
@@ -275,7 +269,7 @@ class Sijablay extends CI_Controller
 			$k5p1 = $this->input->post('kuesioner5pertanyaan1');
 
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message3($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k5p1);
+			$this->sijablay_model->save_message3($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k5p1);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-poliklinik');
 		}
@@ -299,7 +293,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -323,7 +316,6 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
@@ -331,7 +323,7 @@ class Sijablay extends CI_Controller
 			$k6p1 = $this->input->post('kuesioner6pertanyaan1');
 
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message4($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k6p1);
+			$this->sijablay_model->save_message4($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k6p1);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-ambulance');
 		}
@@ -355,7 +347,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -379,7 +370,6 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
@@ -387,7 +377,7 @@ class Sijablay extends CI_Controller
 			$k7p1 = $this->input->post('kuesioner7pertanyaan1');
 
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message5($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k7p1);
+			$this->sijablay_model->save_message5($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k7p1);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-kesehatan');
 		}
@@ -411,7 +401,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -435,7 +424,6 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
@@ -443,7 +431,7 @@ class Sijablay extends CI_Controller
 			$k8p1 = $this->input->post('kuesioner8pertanyaan1');
 
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message6($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k8p1);
+			$this->sijablay_model->save_message6($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k8p1);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-angkut-jenazah');
 		}
@@ -467,7 +455,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -491,14 +478,13 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
 
 			$k9p1 = $this->input->post('kuesioner9pertanyaan1');
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message7($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k9p1);
+			$this->sijablay_model->save_message7($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k9p1);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-orang-sakit');
 		}
@@ -522,7 +508,6 @@ class Sijablay extends CI_Controller
 		$this->form_validation->set_rules('kuesionerEpertanyaan1', 'kuesionerEpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerFpertanyaan1', 'kuesionerFpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerGpertanyaan1', 'kuesionerGpertanyaan1', 'required');
-		$this->form_validation->set_rules('kuesionerGpertanyaan2', 'kuesionerGpertanyaan2', 'required');
 		$this->form_validation->set_rules('kuesionerHpertanyaan1', 'kuesionerHpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan1', 'kuesionerIpertanyaan1', 'required');
 		$this->form_validation->set_rules('kuesionerIpertanyaan2', 'kuesionerIpertanyaan2', 'required');
@@ -546,14 +531,13 @@ class Sijablay extends CI_Controller
 			$kEp1 = $this->input->post('kuesionerEpertanyaan1', TRUE);
 			$kFp1 = $this->input->post('kuesionerFpertanyaan1', TRUE);
 			$kGp1 = $this->input->post('kuesionerGpertanyaan1', TRUE);
-			$kGp2 = $this->input->post('kuesionerGpertanyaan2', TRUE);
 			$kHp1 = $this->input->post('kuesionerHpertanyaan1', TRUE);
 			$kIp1 = $this->input->post('kuesionerIpertanyaan1', TRUE);
 			$kIp2 = $this->input->post('kuesionerIpertanyaan2', TRUE);
 
 			$k10p1 = $this->input->post('kuesioner10pertanyaan1');
 			// $message=strip_tags(htmlspecialchars($this->input->post('message',TRUE),ENT_QUOTES));
-			$this->sijablay_model->save_message8($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1, $kGp2, $kHp1, $kIp1, $kIp2, $k10p1);
+			$this->sijablay_model->save_message8($name, $email, $jeniskelamin, $usia, $alamat, $nohp, $identitas, $kAp1, $kBp1, $kCp1, $kDp1, $kEp1, $kFp1, $kGp1,  $kHp1, $kIp1, $kIp2, $k10p1);
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Terima kasih telah mengisi kuesioner Sistem Penilaian Berbasis Layanan di Kantor KKP Kelas III Sorong .</div>');
 			redirect('sijablay-klirens');
 		}

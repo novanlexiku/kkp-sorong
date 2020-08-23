@@ -10,11 +10,18 @@ class Kuesioner_model extends CI_Model
         return $query;
     }
 
+    function get_total_responden()
+    {
+        $this->db->select('kuesioner_responden')
+            ->from('tbl_kuesioner');
+        return $this->db->count_all_results();
+    }
+
     // Kuesioner A Pertanyaan 1
 
     function get_sangatsetuju_kuesionerAp1()
     {
-        $this->db->select('*')
+        $this->db->select('kuesioner_A_p1')
             ->from('tbl_kuesioner')
             ->where('kuesioner_A_p1', 4);
         return $this->db->count_all_results();
@@ -22,7 +29,7 @@ class Kuesioner_model extends CI_Model
 
     function get_setuju_kuesionerAp1()
     {
-        $this->db->select('*')
+        $this->db->select('kuesioner_A_p1')
             ->from('tbl_kuesioner')
             ->where('kuesioner_A_p1', 3);
         return $this->db->count_all_results();
@@ -30,7 +37,7 @@ class Kuesioner_model extends CI_Model
 
     function get_tidaksetuju_kuesionerAp1()
     {
-        $this->db->select('*')
+        $this->db->select('kuesioner_A_p1')
             ->from('tbl_kuesioner')
             ->where('kuesioner_A_p1', 2);
         return $this->db->count_all_results();
@@ -38,7 +45,7 @@ class Kuesioner_model extends CI_Model
 
     function get_sangattidaksetuju_kuesionerAp1()
     {
-        $this->db->select('*')
+        $this->db->select('kuesioner_A_p1')
             ->from('tbl_kuesioner')
             ->where('kuesioner_A_p1', 1);
         return $this->db->count_all_results();
@@ -248,39 +255,39 @@ class Kuesioner_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    // Kuesioner G Pertanyaan 2
+    // // Kuesioner G Pertanyaan 2
 
-    function get_sangatsetuju_kuesionerGp2()
-    {
-        $this->db->select('*')
-            ->from('tbl_kuesioner')
-            ->where('kuesioner_G_p2', 4);
-        return $this->db->count_all_results();
-    }
+    // function get_sangatsetuju_kuesionerGp2()
+    // {
+    //     $this->db->select('*')
+    //         ->from('tbl_kuesioner')
+    //         ->where('kuesioner_G_p2', 4);
+    //     return $this->db->count_all_results();
+    // }
 
-    function get_setuju_kuesionerGp2()
-    {
-        $this->db->select('*')
-            ->from('tbl_kuesioner')
-            ->where('kuesioner_G_p2', 3);
-        return $this->db->count_all_results();
-    }
+    // function get_setuju_kuesionerGp2()
+    // {
+    //     $this->db->select('*')
+    //         ->from('tbl_kuesioner')
+    //         ->where('kuesioner_G_p2', 3);
+    //     return $this->db->count_all_results();
+    // }
 
-    function get_tidaksetuju_kuesionerGp2()
-    {
-        $this->db->select('*')
-            ->from('tbl_kuesioner')
-            ->where('kuesioner_G_p2', 2);
-        return $this->db->count_all_results();
-    }
+    // function get_tidaksetuju_kuesionerGp2()
+    // {
+    //     $this->db->select('*')
+    //         ->from('tbl_kuesioner')
+    //         ->where('kuesioner_G_p2', 2);
+    //     return $this->db->count_all_results();
+    // }
 
-    function get_sangattidaksetuju_kuesionerGp2()
-    {
-        $this->db->select('*')
-            ->from('tbl_kuesioner')
-            ->where('kuesioner_G_p2', 1);
-        return $this->db->count_all_results();
-    }
+    // function get_sangattidaksetuju_kuesionerGp2()
+    // {
+    //     $this->db->select('*')
+    //         ->from('tbl_kuesioner')
+    //         ->where('kuesioner_G_p2', 1);
+    //     return $this->db->count_all_results();
+    // }
 
     // Kuesioner H Pertanyaan 1
 
