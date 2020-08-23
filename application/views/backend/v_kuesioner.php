@@ -1,125 +1,181 @@
-<?php
-
-$persentasekuesionerAp1_sangatsetuju = $kuesionerAp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerAp1_setuju = $kuesionerAp1_setuju / $total_responden * 100;
-$persentasekuesionerAp1_tidaksetuju = $kuesionerAp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerAp1_sangattidaksetuju = $kuesionerAp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerBp1_sangatsetuju = $kuesionerBp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerBp1_setuju = $kuesionerBp1_setuju / $total_responden * 100;
-$persentasekuesionerBp1_tidaksetuju = $kuesionerBp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerBp1_sangattidaksetuju = $kuesionerBp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerCp1_sangatsetuju = $kuesionerCp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerCp1_setuju = $kuesionerCp1_setuju / $total_responden * 100;
-$persentasekuesionerCp1_tidaksetuju = $kuesionerCp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerCp1_sangattidaksetuju = $kuesionerCp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerDp1_sangatsetuju = $kuesionerDp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerDp1_setuju = $kuesionerDp1_setuju / $total_responden * 100;
-$persentasekuesionerDp1_tidaksetuju = $kuesionerDp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerDp1_sangattidaksetuju = $kuesionerDp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerEp1_sangatsetuju = $kuesionerEp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerEp1_setuju = $kuesionerEp1_setuju / $total_responden * 100;
-$persentasekuesionerEp1_tidaksetuju = $kuesionerEp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerEp1_sangattidaksetuju = $kuesionerEp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerFp1_sangatsetuju = $kuesionerFp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerFp1_setuju = $kuesionerFp1_setuju / $total_responden * 100;
-$persentasekuesionerFp1_tidaksetuju = $kuesionerFp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerFp1_sangattidaksetuju = $kuesionerFp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerGp1_sangatsetuju = $kuesionerGp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerGp1_setuju = $kuesionerGp1_setuju / $total_responden * 100;
-$persentasekuesionerGp1_tidaksetuju = $kuesionerGp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerGp1_sangattidaksetuju = $kuesionerGp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerHp1_sangatsetuju = $kuesionerHp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerHp1_setuju = $kuesionerHp1_setuju / $total_responden * 100;
-$persentasekuesionerHp1_tidaksetuju = $kuesionerHp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerHp1_sangattidaksetuju = $kuesionerHp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerIp1_sangatsetuju = $kuesionerIp1_sangatsetuju / $total_responden * 100;
-$persentasekuesionerIp1_setuju = $kuesionerIp1_setuju / $total_responden * 100;
-$persentasekuesionerIp1_tidaksetuju = $kuesionerIp1_tidaksetuju / $total_responden * 100;
-$persentasekuesionerIp1_sangattidaksetuju = $kuesionerIp1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesionerIp2_sangatsetuju = $kuesionerIp2_sangatsetuju / $total_responden * 100;
-$persentasekuesionerIp2_setuju = $kuesionerIp2_setuju / $total_responden * 100;
-$persentasekuesionerIp2_tidaksetuju = $kuesionerIp2_tidaksetuju / $total_responden * 100;
-$persentasekuesionerIp2_sangattidaksetuju = $kuesionerIp2_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner1p1_sangatsetuju = $kuesioner1p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner1p1_setuju = $kuesioner1p1_setuju / $total_responden * 100;
-$persentasekuesioner1p1_tidaksetuju = $kuesioner1p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner1p1_sangattidaksetuju = $kuesioner1p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner2p1_sangatsetuju = $kuesioner2p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner2p1_setuju = $kuesioner2p1_setuju / $total_responden * 100;
-$persentasekuesioner2p1_tidaksetuju = $kuesioner2p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner2p1_sangattidaksetuju = $kuesioner2p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner2p2_sangatsetuju = $kuesioner2p2_sangatsetuju / $total_responden * 100;
-$persentasekuesioner2p2_setuju = $kuesioner2p2_setuju / $total_responden * 100;
-$persentasekuesioner2p2_tidaksetuju = $kuesioner2p2_tidaksetuju / $total_responden * 100;
-$persentasekuesioner2p2_sangattidaksetuju = $kuesioner2p2_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner3p1_sangatsetuju = $kuesioner3p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner3p1_setuju = $kuesioner3p1_setuju / $total_responden * 100;
-$persentasekuesioner3p1_tidaksetuju = $kuesioner3p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner3p1_sangattidaksetuju = $kuesioner3p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner3p2_sangatsetuju = $kuesioner3p2_sangatsetuju / $total_responden * 100;
-$persentasekuesioner3p2_setuju = $kuesioner3p2_setuju / $total_responden * 100;
-$persentasekuesioner3p2_tidaksetuju = $kuesioner3p2_tidaksetuju / $total_responden * 100;
-$persentasekuesioner3p2_sangattidaksetuju = $kuesioner3p2_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner4p1_sangatsetuju = $kuesioner4p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner4p1_setuju = $kuesioner4p1_setuju / $total_responden * 100;
-$persentasekuesioner4p1_tidaksetuju = $kuesioner4p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner4p1_sangattidaksetuju = $kuesioner4p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner4p2_sangatsetuju = $kuesioner4p2_sangatsetuju / $total_responden * 100;
-$persentasekuesioner4p2_setuju = $kuesioner4p2_setuju / $total_responden * 100;
-$persentasekuesioner4p2_tidaksetuju = $kuesioner4p2_tidaksetuju / $total_responden * 100;
-$persentasekuesioner4p2_sangattidaksetuju = $kuesioner4p2_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner5p1_sangatsetuju = $kuesioner5p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner5p1_setuju = $kuesioner5p1_setuju / $total_responden * 100;
-$persentasekuesioner5p1_tidaksetuju = $kuesioner5p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner5p1_sangattidaksetuju = $kuesioner5p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner6p1_sangatsetuju = $kuesioner6p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner6p1_setuju = $kuesioner6p1_setuju / $total_responden * 100;
-$persentasekuesioner6p1_tidaksetuju = $kuesioner6p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner6p1_sangattidaksetuju = $kuesioner6p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner7p1_sangatsetuju = $kuesioner7p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner7p1_setuju = $kuesioner7p1_setuju / $total_responden * 100;
-$persentasekuesioner7p1_tidaksetuju = $kuesioner7p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner7p1_sangattidaksetuju = $kuesioner7p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner8p1_sangatsetuju = $kuesioner8p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner8p1_setuju = $kuesioner8p1_setuju / $total_responden * 100;
-$persentasekuesioner8p1_tidaksetuju = $kuesioner8p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner8p1_sangattidaksetuju = $kuesioner8p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner9p1_sangatsetuju = $kuesioner9p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner9p1_setuju = $kuesioner9p1_setuju / $total_responden * 100;
-$persentasekuesioner9p1_tidaksetuju = $kuesioner9p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner9p1_sangattidaksetuju = $kuesioner9p1_sangattidaksetuju / $total_responden * 100;
-
-$persentasekuesioner10p1_sangatsetuju = $kuesioner10p1_sangatsetuju / $total_responden * 100;
-$persentasekuesioner10p1_setuju = $kuesioner10p1_setuju / $total_responden * 100;
-$persentasekuesioner10p1_tidaksetuju = $kuesioner10p1_tidaksetuju / $total_responden * 100;
-$persentasekuesioner10p1_sangattidaksetuju = $kuesioner10p1_sangattidaksetuju / $total_responden * 100;
-
-?>
-
 <div class="page-inner">
+    <div class="page-title">
+        <h3>KUESIONER</h3>
+        <div class="page-breadcrumb">
+            <ol class="breadcrumb">
+                <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
+                <li><a href="#">KUESIONER</a></li>
+                <li class="active">SIJABLAY</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <?php
+
+    $persentasekuesionerAp1_sangatsetuju = $kuesionerAp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerAp1_setuju = $kuesionerAp1_setuju / $total_responden * 100;
+    $persentasekuesionerAp1_tidaksetuju = $kuesionerAp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerAp1_sangattidaksetuju = $kuesionerAp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerBp1_sangatsetuju = $kuesionerBp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerBp1_setuju = $kuesionerBp1_setuju / $total_responden * 100;
+    $persentasekuesionerBp1_tidaksetuju = $kuesionerBp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerBp1_sangattidaksetuju = $kuesionerBp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerCp1_sangatsetuju = $kuesionerCp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerCp1_setuju = $kuesionerCp1_setuju / $total_responden * 100;
+    $persentasekuesionerCp1_tidaksetuju = $kuesionerCp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerCp1_sangattidaksetuju = $kuesionerCp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerDp1_sangatsetuju = $kuesionerDp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerDp1_setuju = $kuesionerDp1_setuju / $total_responden * 100;
+    $persentasekuesionerDp1_tidaksetuju = $kuesionerDp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerDp1_sangattidaksetuju = $kuesionerDp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerEp1_sangatsetuju = $kuesionerEp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerEp1_setuju = $kuesionerEp1_setuju / $total_responden * 100;
+    $persentasekuesionerEp1_tidaksetuju = $kuesionerEp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerEp1_sangattidaksetuju = $kuesionerEp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerFp1_sangatsetuju = $kuesionerFp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerFp1_setuju = $kuesionerFp1_setuju / $total_responden * 100;
+    $persentasekuesionerFp1_tidaksetuju = $kuesionerFp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerFp1_sangattidaksetuju = $kuesionerFp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerGp1_sangatsetuju = $kuesionerGp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerGp1_setuju = $kuesionerGp1_setuju / $total_responden * 100;
+    $persentasekuesionerGp1_tidaksetuju = $kuesionerGp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerGp1_sangattidaksetuju = $kuesionerGp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerHp1_sangatsetuju = $kuesionerHp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerHp1_setuju = $kuesionerHp1_setuju / $total_responden * 100;
+    $persentasekuesionerHp1_tidaksetuju = $kuesionerHp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerHp1_sangattidaksetuju = $kuesionerHp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerIp1_sangatsetuju = $kuesionerIp1_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerIp1_setuju = $kuesionerIp1_setuju / $total_responden * 100;
+    $persentasekuesionerIp1_tidaksetuju = $kuesionerIp1_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerIp1_sangattidaksetuju = $kuesionerIp1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesionerIp2_sangatsetuju = $kuesionerIp2_sangatsetuju / $total_responden * 100;
+    $persentasekuesionerIp2_setuju = $kuesionerIp2_setuju / $total_responden * 100;
+    $persentasekuesionerIp2_tidaksetuju = $kuesionerIp2_tidaksetuju / $total_responden * 100;
+    $persentasekuesionerIp2_sangattidaksetuju = $kuesionerIp2_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner1p1_sangatsetuju = $kuesioner1p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner1p1_setuju = $kuesioner1p1_setuju / $total_responden * 100;
+    $persentasekuesioner1p1_tidaksetuju = $kuesioner1p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner1p1_sangattidaksetuju = $kuesioner1p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner2p1_sangatsetuju = $kuesioner2p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner2p1_setuju = $kuesioner2p1_setuju / $total_responden * 100;
+    $persentasekuesioner2p1_tidaksetuju = $kuesioner2p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner2p1_sangattidaksetuju = $kuesioner2p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner2p2_sangatsetuju = $kuesioner2p2_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner2p2_setuju = $kuesioner2p2_setuju / $total_responden * 100;
+    $persentasekuesioner2p2_tidaksetuju = $kuesioner2p2_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner2p2_sangattidaksetuju = $kuesioner2p2_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner3p1_sangatsetuju = $kuesioner3p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner3p1_setuju = $kuesioner3p1_setuju / $total_responden * 100;
+    $persentasekuesioner3p1_tidaksetuju = $kuesioner3p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner3p1_sangattidaksetuju = $kuesioner3p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner3p2_sangatsetuju = $kuesioner3p2_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner3p2_setuju = $kuesioner3p2_setuju / $total_responden * 100;
+    $persentasekuesioner3p2_tidaksetuju = $kuesioner3p2_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner3p2_sangattidaksetuju = $kuesioner3p2_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner4p1_sangatsetuju = $kuesioner4p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner4p1_setuju = $kuesioner4p1_setuju / $total_responden * 100;
+    $persentasekuesioner4p1_tidaksetuju = $kuesioner4p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner4p1_sangattidaksetuju = $kuesioner4p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner4p2_sangatsetuju = $kuesioner4p2_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner4p2_setuju = $kuesioner4p2_setuju / $total_responden * 100;
+    $persentasekuesioner4p2_tidaksetuju = $kuesioner4p2_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner4p2_sangattidaksetuju = $kuesioner4p2_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner5p1_sangatsetuju = $kuesioner5p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner5p1_setuju = $kuesioner5p1_setuju / $total_responden * 100;
+    $persentasekuesioner5p1_tidaksetuju = $kuesioner5p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner5p1_sangattidaksetuju = $kuesioner5p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner6p1_sangatsetuju = $kuesioner6p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner6p1_setuju = $kuesioner6p1_setuju / $total_responden * 100;
+    $persentasekuesioner6p1_tidaksetuju = $kuesioner6p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner6p1_sangattidaksetuju = $kuesioner6p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner7p1_sangatsetuju = $kuesioner7p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner7p1_setuju = $kuesioner7p1_setuju / $total_responden * 100;
+    $persentasekuesioner7p1_tidaksetuju = $kuesioner7p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner7p1_sangattidaksetuju = $kuesioner7p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner8p1_sangatsetuju = $kuesioner8p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner8p1_setuju = $kuesioner8p1_setuju / $total_responden * 100;
+    $persentasekuesioner8p1_tidaksetuju = $kuesioner8p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner8p1_sangattidaksetuju = $kuesioner8p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner9p1_sangatsetuju = $kuesioner9p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner9p1_setuju = $kuesioner9p1_setuju / $total_responden * 100;
+    $persentasekuesioner9p1_tidaksetuju = $kuesioner9p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner9p1_sangattidaksetuju = $kuesioner9p1_sangattidaksetuju / $total_responden * 100;
+
+    $persentasekuesioner10p1_sangatsetuju = $kuesioner10p1_sangatsetuju / $total_responden * 100;
+    $persentasekuesioner10p1_setuju = $kuesioner10p1_setuju / $total_responden * 100;
+    $persentasekuesioner10p1_tidaksetuju = $kuesioner10p1_tidaksetuju / $total_responden * 100;
+    $persentasekuesioner10p1_sangattidaksetuju = $kuesioner10p1_sangattidaksetuju / $total_responden * 100;
+
+    ?>
+
     <div id="main-wrapper">
         <div class="row">
+            <div class="col-md-12">
+
+                <div class="panel panel-white">
+                    <div class="panel-body">
+
+                        <div class="table-responsive">
+                            <table id="data-table" class="display table" style="width: 100%; ">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Usia</th>
+                                        <th>Alamat</th>
+                                        <th>No.Handphone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 0;
+                                    foreach ($data->result() as $row) :
+                                        $no++;
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $no; ?></td>
+                                            <td><?php echo $row->kuesioner_name; ?></td>
+                                            <td><?php echo $row->kuesioner_email; ?></td>
+                                            <td><?php echo $row->kuesioner_jenis_kelamin; ?></td>
+                                            <td><?php echo $row->kuesioner_usia; ?>th</td>
+                                            <td><?php echo $row->kuesioner_alamat; ?></td>
+                                            <td><?php echo $row->kuesioner_nohp; ?></td>
+
+
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-6 col-md-6">
                 <div class="panel info-box panel-white">
                     <div class="panel-body">

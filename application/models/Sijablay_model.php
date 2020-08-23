@@ -8,7 +8,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
@@ -39,7 +39,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
@@ -68,7 +68,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
@@ -96,7 +96,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
@@ -124,7 +124,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
@@ -152,7 +152,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
@@ -180,7 +180,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
@@ -207,7 +207,7 @@ class Sijablay_model extends CI_Model
 		$data = array(
 			'kuesioner_name' => $name,
 			'kuesioner_email' => $email,
-			'kuesioner_jenis-kelamin' => $jeniskelamin,
+			'kuesioner_jenis_kelamin' => $jeniskelamin,
 			'kuesioner_usia' => $usia,
 			'kuesioner_alamat' => $alamat,
 			'kuesioner_nohp' => $nohp,
