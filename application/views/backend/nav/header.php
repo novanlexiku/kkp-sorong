@@ -207,8 +207,7 @@
                             <p>Dashboard</p>
                         </a></li>
 
-
-                    <?php if ($this->session->userdata('access') == '1') : ?>
+                    <?php if ($this->session->userdata('access') == '99') : ?>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span>
                                 <p>Post Berita</p><span class="arrow"></span>
                             </a>
@@ -249,6 +248,73 @@
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/penyakit'); ?>">Penyakit</a></li>
                                 <li><a href="<?php echo site_url('backend/wilker'); ?>">Wilayah Kerja</a></li>
+                                <li><a href="<?php echo site_url('backend/jabatan'); ?>">Jabatan</a></li>
+                                <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk Koordinator</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Laporan KLW</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw1'); ?>">Laporan UKLW 1</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw2'); ?>">Laporan UKLW 2</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw3'); ?>">Laporan UKLW 3</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw4'); ?>">Laporan UKLW 4</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw5'); ?>">Laporan UKLW 5</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw6'); ?>">Laporan UKLW 6</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw7'); ?>">Laporan UKLW 7</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw8'); ?>">Laporan UKLW 8</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_klw/klw9'); ?>">Laporan UKLW 9</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Laporan PKSE</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse1'); ?>">Laporan PKSE 1</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse2'); ?>">Laporan PKSE 2</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse3'); ?>">Laporan PKSE 3</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse4'); ?>">Laporan PKSE 4</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse5'); ?>">Laporan PKSE 5</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse6'); ?>">Laporan PKSE 6</a></li>
+                                <li><a href="<?php echo site_url('backend/laporan_pkse/pkse7'); ?>">Laporan PKSE 7</a></li>
+                            </ul>
+                        </li>
+                    <?php elseif ($this->session->userdata('access') == '1') : ?>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span>
+                                <p>Post Berita</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/post/add_new'); ?>">Tambah</a></li>
+                                <li><a href="<?php echo site_url('backend/post'); ?>">Post List</a></li>
+                                <li><a href="<?php echo site_url('backend/category'); ?>">Kategori</a></li>
+                                <li><a href="<?php echo site_url('backend/tag'); ?>">Tag</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<?php echo site_url('backend/kuesioner'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span>
+                                <p>SIJABLAY</p>
+                            </a></li>
+                        <li><a href="<?php echo site_url('backend/users'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span>
+                                <p>Pengguna</p>
+                            </a></li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Pengaturan</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
+                                <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
+                                <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
+                                <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
+                                <li><a href="<?php echo site_url('backend/testimonial'); ?>">Testimonials</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Kategori</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk Koordinator</a></li>
                             </ul>
                         </li>

@@ -5,7 +5,7 @@
             <ol class="breadcrumb">
                 <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
                 <li><a href="#">Kategori</a></li>
-                <li class="active">Penyakit</li>
+                <li class="active">Jabatan</li>
             </ol>
         </div>
     </div>
@@ -15,7 +15,7 @@
 
                 <div class="panel panel-white">
                     <div class="panel-body">
-                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Penyakit</button>
+                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Jabatan</button>
 
                         <div class="table-responsive">
                             <table id="data-table" class="display table" style="width: 100%; ">
@@ -23,7 +23,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Kategori</th>
+                                        <th>Level Jabatan</th>
                                         <th style="text-align: center;">Action</th>
                                     </tr>
                                 </thead>
@@ -35,19 +35,10 @@
                                     ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $row->penyakit_nama; ?></td>
-                                            <td>
-                                                <?php
-                                                if ($row->penyakit_kategori == '1') {
-                                                    echo "Penyakit Menular";
-                                                } else {
-                                                    echo "Penyakit Tidak Menular";
-                                                }
-                                                ?>
-                                            </td>
+                                            <td><?php echo $row->jabatan_nama; ?></td>
+                                            <td><?php echo $row->jabatan_level; ?></td>
                                             <td style="text-align: center;">
-                                                <a href="javascript:void(0);" class="btn btn-xs btn-edit" data-toggle="modal" data-target="#EditModal<?php echo $row->penyakit_id; ?>"><span class="icon-pencil"></span></a>
-                                                <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->penyakit_id; ?>"><span class="fa fa-trash"></span></a>
+                                                <a href="javascript:void(0);" class="btn btn-xs btn-edit" data-toggle="modal" data-target="#EditModal<?php echo $row->jabatan_level; ?>"><span class="icon-pencil"></span></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -67,24 +58,20 @@
 </main><!-- Page Content -->
 
 <!--ADD RECORD MODAL-->
-<form action="<?php echo site_url('backend/penyakit/save'); ?>" method="post">
+<form action="<?php echo site_url('backend/jabatan/save'); ?>" method="post">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Penyakit Baru</h4>
+                    <h4 class="modal-title" id="myModalLabel">Jabatan Baru</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" name="nama" class="form-control" placeholder="Nama Penyakit" required>
+                        <input type="text" name="nama" class="form-control" placeholder="Nama Jabatan" required>
                     </div>
                     <div class="form-group">
-                        <select class="form-control" name="kategori" required>
-                            <option value="">No Selected</option>
-                            <option value="1">Penyakit Menular</option>
-                            <option value="2">Penyakit Tidak Menular</option>
-                        </select>
+                        <input type="text" name="level" class="form-control" placeholder="Level Jabatan" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -97,32 +84,22 @@
 </form>
 
 <!--EDIT RECORD MODAL-->
-<form action="<?php echo site_url('backend/penyakit/edit'); ?>" method="post">
-    <div class="modal fade" id="EditModal<?php echo $row->penyakit_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<form action="<?php echo site_url('backend/jabatan/edit'); ?>" method="post">
+    <div class="modal fade" id="EditModal<?php echo $row->jabatan_level; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Edit Penyakit</h4>
+                    <h4 class="modal-title" id="myModalLabel">Edit Jabatan</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" name="nama" value="<?php echo $row->penyakit_nama; ?>" class="form-control" placeholder="Nama Penyakit" required>
+                        <input type="text" name="nama" value="<?php echo $row->jabatan_nama; ?>" class="form-control" placeholder="Nama Jabatan" required>
                     </div>
-                    <div class="form-group">
-                        <select class="form-control" name="kategori" required>
-                            <?php if ($row->penyakit_kategori == '1') : ?>
-                                <option value="1" selected>Penyakit Menular</option>
-                                <option value="2">Penyakit Tidak Menular</option>
-                            <?php else : ?>
-                                <option value="1">Penyakit Menular</option>
-                                <option value="2" selected>Penyakit Tidak Menular</option>
-                            <?php endif; ?>
-                        </select>
-                    </div>
+
                 </div>
                 <div class="modal-footer">
-                    <input type="hidden" name="kode" value="<?php echo $row->penyakit_id; ?>" required>
+                    <input type="hidden" name="level" value="<?php echo $row->jabatan_level; ?>" required>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-success">Edit</button>
                 </div>
@@ -131,29 +108,7 @@
     </div>
 </form>
 
-<!--DELETE RECORD MODAL-->
-<form action="<?php echo site_url('backend/penyakit/delete'); ?>" method="post">
-    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Hapus Penyakit</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-info">
-                        Anda yakin mau menghapus data ini?
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="hidden" name="id" required>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
+
 
 <!-- Javascripts -->
 <script src="<?php echo base_url() . 'assets/plugins/jquery/jquery-2.1.4.min.js' ?>"></script>
@@ -177,12 +132,7 @@
     $(document).ready(function() {
         $('#data-table').dataTable();
 
-        //Delete Record
-        $('.btn-delete').on('click', function() {
-            var id = $(this).data('id');
-            $('[name="id"]').val(id);
-            $('#DeleteModal').modal('show');
-        });
+
 
     });
 </script>
@@ -192,7 +142,7 @@
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: "Penyakit Tersimpan!",
+            text: "Jabatan Tersimpan!",
             showHideTransition: 'slide',
             icon: 'success',
             hideAfter: false,
@@ -204,7 +154,7 @@
     <script type="text/javascript">
         $.toast({
             heading: 'Info',
-            text: "Penyakit Diperbarui!",
+            text: "Jabatan Diperbarui!",
             showHideTransition: 'slide',
             icon: 'info',
             hideAfter: false,
@@ -216,7 +166,7 @@
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: "Penyakit Dihapus!.",
+            text: "Jabatan Dihapus!.",
             showHideTransition: 'slide',
             icon: 'success',
             hideAfter: false,

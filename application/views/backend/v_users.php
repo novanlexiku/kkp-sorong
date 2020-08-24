@@ -41,7 +41,9 @@
                                         <td style="vertical-align: middle;"><?php echo $row->user_password; ?></td>
                                         <td style="vertical-align: middle;">
                                             <?php
-                                            if ($row->user_level == '1') {
+                                            if ($row->user_level == '99') {
+                                                echo "Super Administrator";
+                                            } elseif ($row->user_level == '1') {
                                                 echo "Administrator";
                                             } else {
                                                 echo "Petugas";
@@ -118,9 +120,11 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control" name="level" required>
-                                    <option value="">No Selected</option>
-                                    <option value="1">Administrator</option>
-                                    <option value="2">Petugas</option>
+                                    <?php
+                                    foreach ($jabatan->result() as $row) :
+                                    ?>
+                                        <option value="<?php echo $row->jabatan_level; ?>"><?php echo $row->jabatan_nama; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -176,25 +180,25 @@ foreach ($data->result() as $row) :
                                     <input type="password" name="password2" class="form-control" placeholder="Confirm Password">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" name="level" required>
-                                        <?php if ($row->user_level == '1') : ?>
-                                            <option value="1" selected>Administrator</option>
-                                            <option value="2">Petugas</option>
-                                        <?php else : ?>
-                                            <option value="1">Administrator</option>
-                                            <option value="2" selected>Petugas</option>
-                                        <?php endif; ?>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <input type="hidden" name="wilker" value="<?php echo $row->user_wilker; ?>" class="form-control">
                                 </div>
+                                <input type="hidden" name="user_id" value="<?php echo $row->user_id; ?>" required>
+
+                                <div class="form-group">
+                                    <select class="form-control" name="level" required>
+                                        <?php
+                                        foreach ($jabatan->result() as $row) :
+                                        ?>
+                                            <option value="<?php echo $row->jabatan_level; ?>"><?php echo $row->jabatan_nama; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+
                             </div>
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="user_id" value="<?php echo $row->user_id; ?>" required>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-success">Update</button>
                     </div>

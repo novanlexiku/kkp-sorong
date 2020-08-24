@@ -36,6 +36,7 @@
                                         </td>
                                         <td style="vertical-align: middle;"><?php echo $row->user_name; ?></td>
                                         <td style="vertical-align: middle;">
+
                                             <?php
                                             if ($row->user_level == '1') {
                                                 echo "Administrator";
@@ -110,7 +111,11 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control" name="level" required>
-                                    <option value="2">Petugas</option>
+                                    <?php
+                                    foreach ($jabatan->result() as $row) :
+                                    ?>
+                                        <option value="<?php echo $row->jabatan_level; ?>"><?php echo $row->jabatan_nama; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -168,11 +173,11 @@ foreach ($data->result() as $row) :
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" name="level" required>
-                                        <?php if ($row->user_level == '1') : ?>
-                                            <option value="2">Petugas</option>
-                                        <?php else : ?>
-                                            <option value="2" selected>Petugas</option>
-                                        <?php endif; ?>
+                                        <?php
+                                        foreach ($jabatan->result() as $row) :
+                                        ?>
+                                            <option value="<?php echo $row->jabatan_level; ?>"><?php echo $row->jabatan_nama; ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="form-group">

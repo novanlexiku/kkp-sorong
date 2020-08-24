@@ -11,6 +11,7 @@ class Users extends CI_Controller
 		};
 		$this->load->model('backend/Users_model', 'users_model');
 		$this->load->model('backend/Wilker_model', 'wilker_model');
+		$this->load->model('backend/Jabatan_model', 'jabatan_model');
 		$this->load->library('upload');
 		$this->load->helper('text');
 	}
@@ -18,6 +19,8 @@ class Users extends CI_Controller
 	function index()
 	{
 		$x['data'] = $this->users_model->get_users();
+		$x['wilker'] = $this->wilker_model->get_all_wilker();
+		$x['jabatan'] = $this->jabatan_model->get_all_jabatan2();
 		$x['title'] = 'Pengguna';
 		$this->load->view('backend/nav/header', $x);
 		$this->load->view('backend/v_users', $x);
@@ -28,6 +31,7 @@ class Users extends CI_Controller
 	{
 		$x['data'] = $this->users_model->get_users_wilker();
 		$x['wilker'] = $this->wilker_model->get_all_wilker();
+		$x['jabatan'] = $this->jabatan_model->get_all_jabatan2();
 		$x['title'] = 'Tunjuk Wilker';
 		$this->load->view('backend/nav/header', $x);
 		$this->load->view('backend/v_tunjukwilker', $x);

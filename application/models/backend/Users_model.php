@@ -4,7 +4,7 @@ class Users_model extends CI_Model
 
 	function get_users()
 	{
-		$hsl = $this->db->query("SELECT * FROM tbl_user");
+		$hsl = $this->db->query("SELECT * FROM tbl_user where user_level<99");
 		return $hsl;
 	}
 
@@ -70,7 +70,7 @@ class Users_model extends CI_Model
 
 	function get_users_wilker()
 	{
-		$hsl = $this->db->query("SELECT u.user_id,u.user_nip,u.user_name,u.user_email,u.user_level,u.user_photo,u.user_wilker,w.wilker_id,w.wilker_nama FROM tbl_user u, tbl_wilker w where u.user_wilker = w.wilker_id and u.user_level>1");
+		$hsl = $this->db->query("SELECT u.user_id,u.user_nip,u.user_name,u.user_email,u.user_level,u.user_photo,u.user_wilker,w.wilker_id,w.wilker_nama FROM tbl_user u, tbl_wilker w where u.user_wilker = w.wilker_id and u.user_level>1 and u.user_level<99");
 		return $hsl;
 	}
 }
