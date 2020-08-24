@@ -833,6 +833,12 @@
         });
     });
 </script>
+<script>
+    $(document).ready(function() {
+        $('#data-table').dataTable();
+
+    });
+</script>
 <!--Toast Message-->
 <?php if ($this->session->flashdata('msg') == 'success') : ?>
     <script type="text/javascript">
