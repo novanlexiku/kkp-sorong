@@ -175,7 +175,9 @@
                                 </div>
                                 <div class="sidebar-profile-details">
                                     <span><?php echo $this->session->userdata('name'); ?><br>
-                                        <?php if ($row['user_level'] == '1') : ?>
+                                        <?php if ($row['user_level'] == '99') : ?>
+                                            <small>Super Admin</small>
+                                        <?php elseif ($row['user_level'] == '1') : ?>
                                             <small>Administrator</small>
                                         <?php else : ?>
                                             <small>Petugas</small>
@@ -191,7 +193,9 @@
                                 </div>
                                 <div class="sidebar-profile-details">
                                     <span><?php echo $this->session->userdata('name'); ?><br>
-                                        <?php if ($row['user_level'] == '1') : ?>
+                                        <?php if ($row['user_level'] == '99') : ?>
+                                            <small>Super Admin</small>
+                                        <?php elseif ($row['user_level'] == '1') : ?>
                                             <small>Administrator</small>
                                         <?php else : ?>
                                             <small>Petugas</small>
