@@ -53,6 +53,7 @@ class Kuesioner extends CI_Controller
         $config['prev_link'] = '<< Prev';
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        $data['total_responden'] = $this->kuesioner_model->get_total_responden();
         $data['total_responden1'] = $this->kuesioner_model->get_total_responden_1();
         $data['total_responden2_1'] = $this->kuesioner_model->get_total_responden_2_1();
         $data['total_responden2_2'] = $this->kuesioner_model->get_total_responden_2_2();
@@ -66,10 +67,6 @@ class Kuesioner extends CI_Controller
         $data['total_responden8'] = $this->kuesioner_model->get_total_responden_8();
         $data['total_responden9'] = $this->kuesioner_model->get_total_responden_9();
         $data['total_responden10'] = $this->kuesioner_model->get_total_responden_10();
-
-
-
-
 
         $data['kuesionerAp1_sangatsetuju'] = $this->kuesioner_model->get_sangatsetuju_kuesionerAp1();
         $data['kuesionerAp1_setuju'] = $this->kuesioner_model->get_setuju_kuesionerAp1();
