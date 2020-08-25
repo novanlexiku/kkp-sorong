@@ -66,7 +66,7 @@ $route['foto'] = 'gallery';
 $route['vaksinasi'] = 'vaksin';
 
 $route['logout'] = 'backend/login/logout';
-
+$route['sijablay-umum'] = 'sijablay/umum';
 $route['sijablay-dokumen-kesehatan-kapal'] = 'sijablay/kesehatankapal';
 $route['sijablay-icv-vaksin'] = 'sijablay/icv';
 $route['sijablay-poliklinik'] = 'sijablay/poliklinik';

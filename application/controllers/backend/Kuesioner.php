@@ -53,7 +53,24 @@ class Kuesioner extends CI_Controller
         $config['prev_link'] = '<< Prev';
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
-        $data['total_responden'] = $this->kuesioner_model->get_total_responden();
+        $data['total_responden1'] = $this->kuesioner_model->get_total_responden_1();
+        $data['total_responden2_1'] = $this->kuesioner_model->get_total_responden_2_1();
+        $data['total_responden2_2'] = $this->kuesioner_model->get_total_responden_2_2();
+        $data['total_responden3_1'] = $this->kuesioner_model->get_total_responden_3_1();
+        $data['total_responden3_2'] = $this->kuesioner_model->get_total_responden_3_2();
+        $data['total_responden4_1'] = $this->kuesioner_model->get_total_responden_4_1();
+        $data['total_responden4_2'] = $this->kuesioner_model->get_total_responden_4_2();
+        $data['total_responden5'] = $this->kuesioner_model->get_total_responden_5();
+        $data['total_responden6'] = $this->kuesioner_model->get_total_responden_6();
+        $data['total_responden7'] = $this->kuesioner_model->get_total_responden_7();
+        $data['total_responden8'] = $this->kuesioner_model->get_total_responden_8();
+        $data['total_responden9'] = $this->kuesioner_model->get_total_responden_9();
+        $data['total_responden10'] = $this->kuesioner_model->get_total_responden_10();
+
+
+
+
+
         $data['kuesionerAp1_sangatsetuju'] = $this->kuesioner_model->get_sangatsetuju_kuesionerAp1();
         $data['kuesionerAp1_setuju'] = $this->kuesioner_model->get_setuju_kuesionerAp1();
         $data['kuesionerAp1_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesionerAp1();
@@ -89,7 +106,7 @@ class Kuesioner extends CI_Controller
         $data['kuesionerGp1_tidaksetuju'] = $this->kuesioner_model->get_tidaksetuju_kuesionerGp1();
         $data['kuesionerGp1_sangattidaksetuju'] = $this->kuesioner_model->get_sangattidaksetuju_kuesionerGp1();
 
-       
+
 
         $data['kuesionerHp1_sangatsetuju'] = $this->kuesioner_model->get_sangatsetuju_kuesionerHp1();
         $data['kuesionerHp1_setuju'] = $this->kuesioner_model->get_setuju_kuesionerHp1();

@@ -391,12 +391,27 @@ class Kuesioner_model extends CI_Model
         return $this->db->count_all_results();
     }
 
+
+
+
+    // KUESIONER PELAYANAN //
+
+
+
     // Kuesioner 1 Pertanyaan 1
+
+    function get_total_responden_1()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner1p1')
+            ->where('kuesioner_1_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
 
     function get_sangatsetuju_kuesioner1p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p1')
             ->where('kuesioner_1_p1', 4);
         return $this->db->count_all_results();
     }
@@ -404,7 +419,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner1p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p1')
             ->where('kuesioner_1_p1', 3);
         return $this->db->count_all_results();
     }
@@ -412,7 +427,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner1p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p1')
             ->where('kuesioner_1_p1', 2);
         return $this->db->count_all_results();
     }
@@ -420,18 +435,25 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner1p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p1')
             ->where('kuesioner_1_p1', 1);
         return $this->db->count_all_results();
     }
 
 
     // Kuesioner 2 Pertanyaan 1
+    function get_total_responden_2_1()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner1p2_1')
+            ->where('kuesioner_2_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
 
     function get_sangatsetuju_kuesioner2p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_1')
             ->where('kuesioner_2_p1', 4);
         return $this->db->count_all_results();
     }
@@ -439,7 +461,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner2p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_1')
             ->where('kuesioner_2_p1', 3);
         return $this->db->count_all_results();
     }
@@ -447,7 +469,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner2p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_1')
             ->where('kuesioner_2_p1', 2);
         return $this->db->count_all_results();
     }
@@ -455,17 +477,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner2p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_1')
             ->where('kuesioner_2_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 2 Pertanyaan 2
-
+    function get_total_responden_2_2()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner1p2_2')
+            ->where('kuesioner_2_p2 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner2p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_2')
             ->where('kuesioner_2_p2', 4);
         return $this->db->count_all_results();
     }
@@ -473,7 +501,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner2p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_2')
             ->where('kuesioner_2_p2', 3);
         return $this->db->count_all_results();
     }
@@ -481,7 +509,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner2p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_2')
             ->where('kuesioner_2_p2', 2);
         return $this->db->count_all_results();
     }
@@ -489,17 +517,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner2p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p2_2')
             ->where('kuesioner_2_p2', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 3 Pertanyaan 1
-
+    function get_total_responden_3_1()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner1p3_1')
+            ->where('kuesioner_3_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner3p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_1')
             ->where('kuesioner_3_p1', 4);
         return $this->db->count_all_results();
     }
@@ -507,7 +541,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner3p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_1')
             ->where('kuesioner_3_p1', 3);
         return $this->db->count_all_results();
     }
@@ -515,7 +549,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner3p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_1')
             ->where('kuesioner_3_p1', 2);
         return $this->db->count_all_results();
     }
@@ -523,17 +557,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner3p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_1')
             ->where('kuesioner_3_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 3 Pertanyaan 2
-
+    function get_total_responden_3_2()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner1p3_2')
+            ->where('kuesioner_3_p2 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner3p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_2')
             ->where('kuesioner_3_p2', 4);
         return $this->db->count_all_results();
     }
@@ -541,7 +581,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner3p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_2')
             ->where('kuesioner_3_p2', 3);
         return $this->db->count_all_results();
     }
@@ -549,7 +589,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner3p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_2')
             ->where('kuesioner_3_p2', 2);
         return $this->db->count_all_results();
     }
@@ -557,17 +597,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner3p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner1p3_2')
             ->where('kuesioner_3_p2', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 4 Pertanyaan 1
-
+    function get_total_responden_4_1()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner2p1')
+            ->where('kuesioner_4_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner4p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p1')
             ->where('kuesioner_4_p1', 4);
         return $this->db->count_all_results();
     }
@@ -575,7 +621,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner4p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p1')
             ->where('kuesioner_4_p1', 3);
         return $this->db->count_all_results();
     }
@@ -583,7 +629,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner4p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p1')
             ->where('kuesioner_4_p1', 2);
         return $this->db->count_all_results();
     }
@@ -591,17 +637,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner4p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p1')
             ->where('kuesioner_4_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 4 Pertanyaan 2
-
+    function get_total_responden_4_2()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner2p2')
+            ->where('kuesioner_4_p2 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner4p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p2')
             ->where('kuesioner_4_p2', 4);
         return $this->db->count_all_results();
     }
@@ -609,7 +661,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner4p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p2')
             ->where('kuesioner_4_p2', 3);
         return $this->db->count_all_results();
     }
@@ -617,7 +669,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner4p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p2')
             ->where('kuesioner_4_p2', 2);
         return $this->db->count_all_results();
     }
@@ -625,17 +677,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner4p2()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner2p2')
             ->where('kuesioner_4_p2', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 5 Pertanyaan 1
-
+    function get_total_responden_5()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner3')
+            ->where('kuesioner_5_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner5p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner3')
             ->where('kuesioner_5_p1', 4);
         return $this->db->count_all_results();
     }
@@ -643,7 +701,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner5p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner3')
             ->where('kuesioner_5_p1', 3);
         return $this->db->count_all_results();
     }
@@ -651,7 +709,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner5p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner3')
             ->where('kuesioner_5_p1', 2);
         return $this->db->count_all_results();
     }
@@ -659,17 +717,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner5p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner3')
             ->where('kuesioner_5_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 6 Pertanyaan 1
-
+    function get_total_responden_6()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner4')
+            ->where('kuesioner_6_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner6p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner4')
             ->where('kuesioner_6_p1', 4);
         return $this->db->count_all_results();
     }
@@ -677,7 +741,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner6p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner4')
             ->where('kuesioner_6_p1', 3);
         return $this->db->count_all_results();
     }
@@ -685,7 +749,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner6p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner4')
             ->where('kuesioner_6_p1', 2);
         return $this->db->count_all_results();
     }
@@ -693,17 +757,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner6p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner4')
             ->where('kuesioner_6_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 7 Pertanyaan 1
-
+    function get_total_responden_7()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner5')
+            ->where('kuesioner_7_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner7p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner5')
             ->where('kuesioner_7_p1', 4);
         return $this->db->count_all_results();
     }
@@ -711,7 +781,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner7p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner5')
             ->where('kuesioner_7_p1', 3);
         return $this->db->count_all_results();
     }
@@ -719,7 +789,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner7p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner5')
             ->where('kuesioner_7_p1', 2);
         return $this->db->count_all_results();
     }
@@ -727,17 +797,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner7p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner5')
             ->where('kuesioner_7_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 8 Pertanyaan 1
-
+    function get_total_responden_8()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner6')
+            ->where('kuesioner_8_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner8p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner6')
             ->where('kuesioner_8_p1', 4);
         return $this->db->count_all_results();
     }
@@ -745,7 +821,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner8p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner6')
             ->where('kuesioner_8_p1', 3);
         return $this->db->count_all_results();
     }
@@ -753,7 +829,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner8p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner6')
             ->where('kuesioner_8_p1', 2);
         return $this->db->count_all_results();
     }
@@ -761,17 +837,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner8p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner6')
             ->where('kuesioner_8_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 9 Pertanyaan 1
-
+    function get_total_responden_9()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner7')
+            ->where('kuesioner_9_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner9p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner7')
             ->where('kuesioner_9_p1', 4);
         return $this->db->count_all_results();
     }
@@ -779,7 +861,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner9p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner7')
             ->where('kuesioner_9_p1', 3);
         return $this->db->count_all_results();
     }
@@ -787,7 +869,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner9p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner7')
             ->where('kuesioner_9_p1', 2);
         return $this->db->count_all_results();
     }
@@ -795,17 +877,23 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner9p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner7')
             ->where('kuesioner_9_p1', 1);
         return $this->db->count_all_results();
     }
 
     // Kuesioner 10 Pertanyaan 1
-
+    function get_total_responden_10()
+    {
+        $this->db->select('*')
+            ->from('tbl_kuesioner8')
+            ->where('kuesioner_10_p1 !=', 0);
+        return $this->db->count_all_results();
+    }
     function get_sangatsetuju_kuesioner10p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner8')
             ->where('kuesioner_10_p1', 4);
         return $this->db->count_all_results();
     }
@@ -813,7 +901,7 @@ class Kuesioner_model extends CI_Model
     function get_setuju_kuesioner10p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner8')
             ->where('kuesioner_10_p1', 3);
         return $this->db->count_all_results();
     }
@@ -821,7 +909,7 @@ class Kuesioner_model extends CI_Model
     function get_tidaksetuju_kuesioner10p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner8')
             ->where('kuesioner_10_p1', 2);
         return $this->db->count_all_results();
     }
@@ -829,7 +917,7 @@ class Kuesioner_model extends CI_Model
     function get_sangattidaksetuju_kuesioner10p1()
     {
         $this->db->select('*')
-            ->from('tbl_kuesioner')
+            ->from('tbl_kuesioner8')
             ->where('kuesioner_10_p1', 1);
         return $this->db->count_all_results();
     }
