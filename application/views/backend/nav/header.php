@@ -246,17 +246,18 @@
                             </ul>
                         </li>
 
-                        <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-folder"></span>
                                 <p>Kategori</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/penyakit'); ?>">Penyakit</a></li>
                                 <li><a href="<?php echo site_url('backend/wilker'); ?>">Wilayah Kerja</a></li>
+                                <li><a href="<?php echo site_url('backend/satuan'); ?>">Satuan</a></li>
                                 <li><a href="<?php echo site_url('backend/jabatan'); ?>">Jabatan</a></li>
                                 <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk Koordinator</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span>
                                 <p>Laporan KLW</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -271,7 +272,7 @@
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw9'); ?>">Laporan UKLW 9</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span>
                                 <p>Laporan PKSE</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -315,14 +316,14 @@
                             </ul>
                         </li>
 
-                        <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-folder"></span>
                                 <p>Kategori</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk Koordinator</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span>
                                 <p>Laporan KLW</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -337,7 +338,7 @@
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw9'); ?>">Laporan UKLW 9</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span>
                                 <p>Laporan PKSE</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -352,7 +353,7 @@
                         </li>
 
                     <?php else : ?>
-                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_klw'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span>
                                 <p>Laporan KLW</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -367,7 +368,7 @@
                                 <li><a href="<?php echo site_url('backend/laporan_klw/klw9'); ?>">Laporan UKLW 9</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                        <li class="droplink"><a href="<?php echo site_url('backend/laporan_pkse'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-pie-chart"></span>
                                 <p>Laporan PKSE</p><span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">

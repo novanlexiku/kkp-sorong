@@ -1,11 +1,11 @@
 <div class="page-inner">
     <div class="page-title">
-        <h3>Wilayah Kerja</h3>
+        <h3>Daftar Satuan</h3>
         <div class="page-breadcrumb">
             <ol class="breadcrumb">
                 <li><a href="<?php echo site_url('backend/dashboard'); ?>">Dashboard</a></li>
                 <li><a href="#">Kategori</a></li>
-                <li class="active">Wilayah Kerja</li>
+                <li class="active">Satuan</li>
             </ol>
         </div>
     </div>
@@ -15,7 +15,7 @@
 
                 <div class="panel panel-white">
                     <div class="panel-body">
-                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Wilker</button>
+                        <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Tambah Satuan</button>
 
                         <div class="table-responsive">
                             <table id="data-table" class="display table" style="width: 100%; ">
@@ -23,7 +23,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Alamat</th>
+                                        <th>Singkat</th>
                                         <th style="text-align: center;">Action</th>
                                     </tr>
                                 </thead>
@@ -32,14 +32,14 @@
                                     $no = 0;
                                     foreach ($data->result() as $row) :
                                         $no++;
-                                    ?> 
+                                    ?>
                                         <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td><?php echo $row->wilker_nama; ?></td>
-                                            <td><?php echo $row->wilker_alamat; ?></td>
+                                            <td style="width: 50px;"><?php echo $no; ?></td>
+                                            <td><?php echo $row->satuan_nama; ?></td>
+                                            <td><?php echo $row->satuan_singkat; ?></td>
                                             <td style="text-align: center;">
-                                                <a href="javascript:void(0);" class="btn btn-xs btn-edit" data-toggle="modal" data-target="#EditModal<?php echo $row->wilker_id; ?>"><span class="icon-pencil"></span></a>
-                                                <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->wilker_id; ?>"><span class="fa fa-trash"></span></a>
+                                                <a href="javascript:void(0);" class="btn btn-xs btn-edit" data-toggle="modal" data-target="#EditModal<?php echo $row->satuan_id; ?>"><span class="icon-pencil"></span></a>
+                                                <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->satuan_id; ?>"><span class="fa fa-trash"></span></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -59,20 +59,20 @@
 </main><!-- Page Content -->
 
 <!--ADD RECORD MODAL-->
-<form action="<?php echo site_url('backend/wilker/save'); ?>" method="post">
+<form action="<?php echo site_url('backend/satuan/save'); ?>" method="post">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Wilayah Kerja Baru</h4>
+                    <h4 class="modal-title" id="myModalLabel">Satuan Baru</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" name="nama" class="form-control" placeholder="Nama Wilayah Kerja" required>
+                        <input type="text" name="nama" class="form-control" placeholder="Nama Satuan" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="alamat" class="form-control" placeholder="Alamat Wilayah Kerja">
+                        <input type="text" name="singkat" class="form-control" placeholder="Singkatan Satuan">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -87,25 +87,25 @@
 foreach ($data->result() as $row) :
 ?>
     <!--EDIT RECORD MODAL-->
-    <form action="<?php echo site_url('backend/wilker/edit'); ?>" method="post">
-        <div class="modal fade" id="EditModal<?php echo $row->wilker_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form action="<?php echo site_url('backend/satuan/edit'); ?>" method="post">
+        <div class="modal fade" id="EditModal<?php echo $row->satuan_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Wilayah Kerja</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Satuan</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="text" name="nama" value="<?php echo $row->wilker_nama; ?>" class="form-control" placeholder="Nama Wilayah Kerja" required>
+                            <input type="text" name="nama" value="<?php echo $row->satuan_nama; ?>" class="form-control" placeholder="Nama Satuan" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="alamat" value="<?php echo $row->wilker_alamat; ?>" class="form-control" placeholder="Alamat Wilayah Kerja">
+                            <input type="text" name="singkat" value="<?php echo $row->satuan_singkat; ?>" class="form-control" placeholder="Singkatan Satuan">
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="kode" value="<?php echo $row->wilker_id; ?>" required>
+                        <input type="hidden" name="kode" value="<?php echo $row->satuan_id; ?>" required>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-success">Edit</button>
                     </div>
@@ -115,13 +115,13 @@ foreach ($data->result() as $row) :
     </form>
 <?php endforeach; ?>
 <!--DELETE RECORD MODAL-->
-<form action="<?php echo site_url('backend/wilker/delete'); ?>" method="post">
+<form action="<?php echo site_url('backend/satuan/delete'); ?>" method="post">
     <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Delete Wilayah Kerja</h4>
+                    <h4 class="modal-title" id="myModalLabel">Hapus Satuan</h4>
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-info">
@@ -175,7 +175,7 @@ foreach ($data->result() as $row) :
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: "Wilayah Kerja Tersimpan!",
+            text: "Satuan Tersimpan!",
             showHideTransition: 'slide',
             icon: 'success',
             hideAfter: false,
@@ -187,7 +187,7 @@ foreach ($data->result() as $row) :
     <script type="text/javascript">
         $.toast({
             heading: 'Info',
-            text: "Wilayah Kerja Diperbarui!",
+            text: "Satuan Diperbarui!",
             showHideTransition: 'slide',
             icon: 'info',
             hideAfter: false,
@@ -199,7 +199,7 @@ foreach ($data->result() as $row) :
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: "Wilayah Kerja Dihapus!.",
+            text: "Satuan Dihapus!.",
             showHideTransition: 'slide',
             icon: 'success',
             hideAfter: false,
