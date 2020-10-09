@@ -9,7 +9,8 @@ class Inventaris extends CI_Controller
 
         // Load image model 
         $this->load->model('backend/inventaris_model');
-        $this->load->model('backend/users_model');
+        $this->load->model('backend/satuan_model');
+        $this->load->model('backend/wilker_model');
         $this->load->helper('form');
         $this->load->library('form_validation');
 
@@ -22,7 +23,7 @@ class Inventaris extends CI_Controller
         $data = array();
 
         $data['data'] = $this->inventaris_model->get_all_inventaris();
-        $data['user'] = $this->users_model->get_users_inventaris();
+        $data['satuan'] = $this->satuan_model->get_all_satuan();
         $data['title'] = 'Daftar Inventaris KKP';
 
         // Load the list page view 
@@ -32,8 +33,9 @@ class Inventaris extends CI_Controller
     function save()
     {
         $nama = $this->input->post('nama');
-        $alamat = $this->input->post('alamat');
-        $this->inventaris_model->add_new_row($nama, $alamat);
+        $satuan = $this->input->post('satuan');
+        $jenis = $this->input->post('jenis');
+        $this->inventaris_model->add_new_row($nama, $satuan, $jenis);
         $this->session->set_flashdata('msg', 'success');
         redirect('backend/inventaris');
     }
@@ -42,9 +44,10 @@ class Inventaris extends CI_Controller
     {
         $id   = $this->input->post('kode', TRUE);
         $nama = $this->input->post('nama');
-        $alamat = $this->input->post('alamat');
+        $satuan = $this->input->post('satuan');
+        $jenis = $this->input->post('jenis');
 
-        $this->inventaris_model->edit_row($id, $nama, $alamat);
+        $this->inventaris_model->edit_row($id, $nama, $satuan, $jenis);
         $this->session->set_flashdata('msg', 'info');
         redirect('backend/inventaris');
     }

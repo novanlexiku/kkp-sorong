@@ -231,20 +231,6 @@
                         <li><a href="<?php echo site_url('backend/users'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span>
                                 <p>Pengguna</p>
                             </a></li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
-                                <p>Pengaturan</p><span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
-                                <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
-                                <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
-                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
-                                <li><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
-                                <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
-                                <li><a href="<?php echo site_url('backend/testimonial'); ?>">Testimonials</a></li>
-                                <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
-                            </ul>
-                        </li>
 
                         <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-folder"></span>
                                 <p>Kategori</p><span class="arrow"></span>
@@ -253,6 +239,7 @@
                                 <li><a href="<?php echo site_url('backend/penyakit'); ?>">Penyakit</a></li>
                                 <li><a href="<?php echo site_url('backend/wilker'); ?>">Wilayah Kerja</a></li>
                                 <li><a href="<?php echo site_url('backend/satuan'); ?>">Satuan</a></li>
+                                <li><a href="<?php echo site_url('backend/inventaris'); ?>">Data Inventaris</a></li>
                                 <li><a href="<?php echo site_url('backend/jabatan'); ?>">Jabatan</a></li>
                                 <li><a href="<?php echo site_url('backend/users/tunjuk_wilker'); ?>">Tunjuk Koordinator</a></li>
                             </ul>
@@ -285,6 +272,20 @@
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse7'); ?>">Laporan PKSE 7</a></li>
                             </ul>
                         </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Pengaturan</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
+                                <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
+                                <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
+                                <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
+                                <li><a href="<?php echo site_url('backend/testimonial'); ?>">Testimonials</a></li>
+                                <li><a href="<?php echo site_url('backend/navbar'); ?>">Navbar</a></li>
+                            </ul>
+                        </li>
                     <?php elseif ($this->session->userdata('access') == '1') : ?>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span>
                                 <p>Post Berita</p><span class="arrow"></span>
@@ -302,19 +303,6 @@
                         <li><a href="<?php echo site_url('backend/users'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span>
                                 <p>Pengguna</p>
                             </a></li>
-                        <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
-                                <p>Pengaturan</p><span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
-                                <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
-                                <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
-                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
-                                <li><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
-                                <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
-                                <li><a href="<?php echo site_url('backend/testimonial'); ?>">Testimonials</a></li>
-                            </ul>
-                        </li>
 
                         <li class="droplink"><a href="<?php echo site_url('backend/penyakit'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-folder"></span>
                                 <p>Kategori</p><span class="arrow"></span>
@@ -349,6 +337,19 @@
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse5'); ?>">Laporan PKSE 5</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse6'); ?>">Laporan PKSE 6</a></li>
                                 <li><a href="<?php echo site_url('backend/laporan_pkse/pkse7'); ?>">Laporan PKSE 7</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="<?php echo site_url('backend/settings'); ?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span>
+                                <p>Pengaturan</p><span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo site_url('backend/settings'); ?>">Basic</a></li>
+                                <li><a href="<?php echo site_url('backend/home_setting'); ?>">Home</a></li>
+                                <li><a href="<?php echo site_url('backend/about_setting'); ?>">Sambutan</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_gallery'); ?>">Foto</a></li>
+                                <li><a href="<?php echo site_url('backend/manage_download'); ?>">Download</a></li>
+                                <li><a href="<?php echo site_url('backend/profile_setting'); ?>">Profile</a></li>
+                                <li><a href="<?php echo site_url('backend/testimonial'); ?>">Testimonials</a></li>
                             </ul>
                         </li>
 
